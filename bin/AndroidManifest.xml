@@ -1,0 +1,60 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jt.rfid.ui"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="16" />
+    
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".AppStart"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Anim_style2" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".WhatsnewDoor" android:theme="@style/Anim_style2" />
+        <activity android:name=".MainWeixin" android:theme="@style/Anim_style2" />
+        <activity android:name=".Login"  android:theme="@android:style/Theme.NoTitleBar" />        
+        <activity android:name=".Welcome"  android:theme="@style/Anim_style2"  />
+        <activity android:name=".Whatsnew"  android:theme="@style/Anim_style2" />
+        <activity android:name=".ChatActivity"  android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".ShakeActivity"  android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".InfoXiaohei"  android:theme="@android:style/Theme.NoTitleBar" />
+       <!-- 标签操作 start -->
+        <activity android:name=".DesignatedAreaReadAndWriteActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".TagLockAndUnlockActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".TagDestroyActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".FastWriteTagActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- 标签操作 end -->
+        
+        <!-- 参数设置 start -->
+        <activity android:name=".WorkPatternActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".CommunicationModeActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".Antenna4ChannelActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".Antenna16ChannelActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name=".Antenna32ChannelActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <!-- 参数设置 end -->
+        <activity android:name="Exit" android:theme="@style/MyDialogStyle" />        
+        <activity android:name="ExitFromSettings" android:theme="@style/MyDialogStyleBottom" /> 
+        <activity android:name="InfoXiaoheiHead" android:theme="@style/HeadScale" />
+        <activity android:name="LoadingActivity" android:theme="@style/MyDialogStyle" />             
+        <activity android:name="MainTopRightDialog" android:theme="@style/MyDialogStyleTop" /> 
+         
+    </application>
+
+</manifest>

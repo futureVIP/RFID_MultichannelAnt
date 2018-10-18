@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="top" >
+
+    <LinearLayout
+        android:id="@+id/linearLayoutAntenna1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" >
+
+        <TextView
+            android:id="@+id/chk_antenna_1"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="标签数量"
+            android:textColor="@color/bg_black"/>
+
+        <TextView
+            android:id="@+id/checkBox1"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0" 
+            android:textColor="@color/bg_red"/>
+
+        <TextView
+            android:id="@+id/checkBox4"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="读取次数"
+            android:textColor="@color/bg_black" />
+
+        <TextView
+            android:id="@+id/checkBox3"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0" 
+            android:textColor="@color/bg_black"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutAntenna2"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/linearLayoutAntenna1" >
+
+        <TextView
+            android:id="@+id/chk_adsaf"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ID" 
+            android:textColor="@color/bg_black"/>
+
+        <TextView
+            android:id="@+id/checkBox1dd"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="EPC" 
+            android:textColor="@color/bg_black"/>
+
+        <TextView
+            android:id="@+id/checkBox4dd"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="count" 
+            android:textColor="@color/bg_black"/>
+    </LinearLayout>
+
+</RelativeLayout>
