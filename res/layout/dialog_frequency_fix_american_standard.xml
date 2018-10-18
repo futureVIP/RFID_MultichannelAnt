@@ -4,12 +4,9 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:gravity="top" >
-
     <!-- 读卡器设置start -->
 
-
     <!-- 读卡器设置end -->
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,33 +20,21 @@
             android:layout_width="match_parent"
             android:layout_height="50dp" >
 
-            <CheckBox
-                android:id="@+id/checkBox1"
+            <TextView
+                android:id="@+id/textView1"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:text="902.5" />
+                android:gravity="center"
+                android:text="欧标定频"
+                android:textColor="@color/bg_black" />
 
-            <CheckBox
-                android:id="@+id/checkBox4"
+            <Spinner
+                android:id="@+id/spinner1"
                 android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:text="903.0" />
-
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:text="903.5" />
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:text="CheckBox" />
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/frequency_fix_european_standard" />
 
         </LinearLayout>
     </LinearLayout>

@@ -58,7 +58,7 @@ public class WhatsnewDoor extends Activity {
 		new Handler().postDelayed(new Runnable(){
 			@Override
 			public void run(){
-				Intent intent = new Intent (WhatsnewDoor.this,MainWeixin.class);			
+				Intent intent = new Intent (WhatsnewDoor.this,MainReader.class);			
 				startActivity(intent);			
 				WhatsnewDoor.this.finish();
 			}

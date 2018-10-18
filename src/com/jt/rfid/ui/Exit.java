@@ -40,7 +40,7 @@ public class Exit extends Activity {
       }  
 	public void exitbutton0(View v) {  
     	this.finish();
-    	MainWeixin.instance.finish();//关闭Main 这个Activity
+    	MainReader.instance.finish();//关闭Main 这个Activity
       }  
 	
 }

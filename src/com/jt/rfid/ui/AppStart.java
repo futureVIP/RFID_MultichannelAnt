@@ -15,7 +15,7 @@ public class AppStart extends Activity {
 		new Handler().postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				Intent intent = new Intent(AppStart.this, MainWeixin.class);// Welcome
+				Intent intent = new Intent(AppStart.this, MainReader.class);// Welcome
 				startActivity(intent);
 				AppStart.this.finish();
 			}

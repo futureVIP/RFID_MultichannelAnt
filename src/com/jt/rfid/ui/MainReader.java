@@ -21,9 +21,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
-public class MainWeixin extends Activity {
+public class MainReader extends Activity {
 
-	public static MainWeixin instance = null;
+	public static MainReader instance = null;
 	
 	private ViewPager mTabPager;
 	private ImageView mTabImg;// 动画图片
@@ -242,7 +242,7 @@ public class MainWeixin extends Activity {
 				menu_display = false;
 			} else {
 				Intent intent = new Intent();
-				intent.setClass(MainWeixin.this, Exit.class);
+				intent.setClass(MainReader.this, Exit.class);
 				startActivity(intent);
 			}
 		}
@@ -277,7 +277,7 @@ public class MainWeixin extends Activity {
 						// Toast.makeText(Main.this, "退出",
 						// Toast.LENGTH_LONG).show();
 						Intent intent = new Intent();
-						intent.setClass(MainWeixin.this, Exit.class);
+						intent.setClass(MainReader.this, Exit.class);
 						startActivity(intent);
 						menuWindow.dismiss(); // 响应点击事件之后关闭Menu
 					}
@@ -296,76 +296,95 @@ public class MainWeixin extends Activity {
 
 	// 设置标题栏右侧按钮的作用
 	public void btnmainright(View v) {
-		Intent intent = new Intent(MainWeixin.this, MainTopRightDialog.class);
+		Intent intent = new Intent(MainReader.this, MainTopRightDialog.class);
 		startActivity(intent);
 		// Toast.makeText(getApplicationContext(), "点击了功能按钮",
 		// Toast.LENGTH_LONG).show();
 	}
 
 	public void startchat(View v) { // 小黑 对话界面
-		Intent intent = new Intent(MainWeixin.this, ChatActivity.class);
+		Intent intent = new Intent(MainReader.this, ChatActivity.class);
 		startActivity(intent);
 		// Toast.makeText(getApplicationContext(), "登录成功",
 		// Toast.LENGTH_LONG).show();
 	}
 
 	public void exit_settings(View v) { // 退出 伪“对话框”，其实是一个activity
-		Intent intent = new Intent(MainWeixin.this, ExitFromSettings.class);
+		Intent intent = new Intent(MainReader.this, ExitFromSettings.class);
 		startActivity(intent);
 	}
 
 	public void btn_shake(View v) { // 手机摇一摇
-		Intent intent = new Intent(MainWeixin.this, ShakeActivity.class);
+		Intent intent = new Intent(MainReader.this, ShakeActivity.class);
 		startActivity(intent);
 	}
 	
 	//标签操作 start
 	public void btn_fast_write_tag(View v){
-		Intent intent = new Intent(MainWeixin.this, FastWriteTagActivity.class);
+		Intent intent = new Intent(MainReader.this, FastWriteTagActivity.class);
 		startActivity(intent);
 	}
 	
 	public void btn_designated_area_read_and_write(View v){
-		Intent intent = new Intent(MainWeixin.this, DesignatedAreaReadAndWriteActivity.class);
+		Intent intent = new Intent(MainReader.this, DesignatedAreaReadAndWriteActivity.class);
 		startActivity(intent);
 	}
 	
 	public void btn_tag_lock_and_unlock(View v){
-		Intent intent = new Intent(MainWeixin.this, TagLockAndUnlockActivity.class);
+		Intent intent = new Intent(MainReader.this, TagLockAndUnlockActivity.class);
 		startActivity(intent);
 	}
 	
 	public void btn_tag_destroy(View v){
-		Intent intent = new Intent(MainWeixin.this, TagDestroyActivity.class);
+		Intent intent = new Intent(MainReader.this, TagDestroyActivity.class);
 		startActivity(intent);
 	}
 	//标签操作 end
 	
 	//参数设置 start
 	public void btn_work_pattern(View v){
-		Intent intent = new Intent(MainWeixin.this, WorkPatternActivity.class);
+		Intent intent = new Intent(MainReader.this, WorkPatternActivity.class);
 		startActivity(intent);
 	}
 	
 	public void btn_communication_mode(View v){
-		Intent intent = new Intent(MainWeixin.this, CommunicationModeActivity.class);
+		Intent intent = new Intent(MainReader.this, CommunicationModeActivity.class);
 		startActivity(intent);
 	}
 	
 	public void btn_antenna4_channel(View v){
-		Intent intent = new Intent(MainWeixin.this, Antenna4ChannelActivity.class);
+		Intent intent = new Intent(MainReader.this, Antenna4ChannelActivity.class);
 		startActivity(intent);
 	}
 	
 	public void btn_antenna16_channel(View v){
-		Intent intent = new Intent(MainWeixin.this, Antenna16ChannelActivity.class);
+		Intent intent = new Intent(MainReader.this, Antenna16ChannelActivity.class);
 		startActivity(intent);
 	}
 	
 	public void btn_antenna32_channel(View v){
-		Intent intent = new Intent(MainWeixin.this, Antenna32ChannelActivity.class);
+		Intent intent = new Intent(MainReader.this, Antenna32ChannelActivity.class);
 		startActivity(intent);
 	}
 	
+	public void btn_frequency_set(View v){
+		Intent intent = new Intent(MainReader.this, FrequencySetActivity.class);
+		startActivity(intent);
+	}
+	
+	public void btn_device_number(View v){
+		Intent intent = new Intent(MainReader.this, DeviceNumberActivity.class);
+		startActivity(intent);
+	}
+	
+	public void btn_power_set(View v){
+		Intent intent = new Intent(MainReader.this, PowerSetActivity.class);
+		startActivity(intent);
+	}
+	
+	public void btn_read_tag_pattern(View v){
+		Intent intent = new Intent(MainReader.this, ReadTagPatternActivity.class);
+		startActivity(intent);
+	}
 	//参数设置 end
 }

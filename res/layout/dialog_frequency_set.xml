@@ -6,6 +6,45 @@
     android:gravity="top" >
 
     <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout_setAntenna"
+        android:layout_below="@+id/tab_setting" >
+
+        <ScrollView
+            android:id="@+id/sv_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fadingEdge="vertical"
+            android:scrollbars="vertical"
+            android:visibility="visible" >
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent" >
+
+               <include
+                   layout="@layout/dialog_frequency_hopping_european_standard"
+                   android:visibility="gone" />
+
+               <include
+                   layout="@layout/dialog_frequency_hopping_american_standard"
+                   android:visibility="gone" />
+
+               <include
+                   layout="@layout/dialog_frequency_fix_american_standard"
+                   android:visibility="gone" />
+
+               <include
+                   layout="@layout/dialog_frequency_fix_european_standard"
+                   android:visibility="visible" />
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/shake_title_bar"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
@@ -45,7 +84,7 @@
     <RelativeLayout
         android:id="@+id/tab_setting"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_below="@+id/shake_title_bar"
         android:orientation="horizontal"
         android:visibility="visible" >
@@ -53,7 +92,7 @@
         <LinearLayout
             android:id="@+id/linearLayout_Antenna1"
             android:layout_width="match_parent"
-            android:layout_height="50dp" >
+            android:layout_height="30dp" >
 
             <TextView
                 android:id="@+id/cb_antenna1"
@@ -64,20 +103,6 @@
                 android:text="欧标和美标"
                 android:textColor="@color/bg_black" />
 
-            <Spinner
-                android:id="@+id/Spinner02"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:entries="@array/antenna_power" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout_Antenna4"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/linearLayout_Antenna1" >
-
             <TextView
                 android:id="@+id/TextView03"
                 android:layout_width="0dp"
@@ -86,27 +111,29 @@
                 android:gravity="center"
                 android:text="频率设置"
                 android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_Antenna4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout_Antenna1" >
+
+            <Spinner
+                android:id="@+id/Spinner02"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/frequency_american_and_european_standard" />
 
             <Spinner
                 android:id="@+id/Spinner04"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:entries="@array/antenna_power" />
+                android:entries="@array/frequency_set" />
         </LinearLayout>
     </RelativeLayout>
-
-    <ScrollView
-        android:id="@+id/sv_setting"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/linearLayout_setAntenna"
-        android:layout_below="@+id/tab_setting"
-        android:fadingEdge="vertical"
-        android:scrollbars="vertical"
-        android:visibility="visible" >
-
-    </ScrollView>
     <!-- 读卡器设置end -->
 
     <LinearLayout
@@ -118,25 +145,31 @@
 
         <Button
             android:id="@+id/button_read_antenna"
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.76"
             android:onClick="on_button_read_antenna"
-            android:text="@string/read_antenna"
+            android:text="读取"
             android:textColor="#000000"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/button_set_antenna"
-            style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.76"
             android:onClick="on_button_set_antenna"
-            android:text="@string/set_antenna"
+            android:text="默认设置"
             android:textColor="#000000"
             android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.76"
+            android:text="设置" />
+
     </LinearLayout>
 
 </RelativeLayout>

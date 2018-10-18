@@ -39,7 +39,6 @@ public class Login extends Activity {
 			.create().show();
          }
         else{
-           
         	new AlertDialog.Builder(Login.this)
 			.setIcon(getResources().getDrawable(R.drawable.login_error_icon))
 			.setTitle("µÇÂ¼Ê§°Ü")

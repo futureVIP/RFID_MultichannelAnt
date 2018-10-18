@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="frequency_american_and_european_standard">
+        <item>欧标</item>
+        <item>美标</item>
+    </string-array>
+    
+      <string-array name="frequency_set">
+        <item>跳频</item>
+        <item>定频</item>
+    </string-array>
+    
+    <string-array name="frequency_fix_american_standard">
+        <item>1-902.5Mhz</item>
+        <item>2-903.0Mhz</item>
+        <item>3-903.5Mhz</item>
+        <item>4-904.0Mhz</item>
+        <item>5-904.5Mhz</item>
+        <item>6-905.0Mhz</item>
+        <item>7-905.5Mhz</item>
+        <item>8-906.0Mhz</item>
+        <item>9-906.5Mhz</item>
+        <item>10-907.0Mhz</item>
+        <item>11-907.5Mhz</item>
+        <item>12-908.0Mhz</item>
+        <item>13-908.5Mhz</item>
+        <item>14-909.0Mhz</item>
+        <item>15-909.5Mhz</item>
+        <item>16-910.0Mhz</item>
+        <item>17-910.5Mhz</item>
+        <item>18-911.0Mhz</item>
+        <item>19-911.5Mhz</item>
+        <item>20-912.0Mhz</item>
+        <item>21-912.5Mhz</item>
+        <item>22-913.0Mhz</item>
+        <item>23-913.5Mhz</item>
+        <item>24-914.0Mhz</item>
+        <item>25-914.5Mhz</item>
+        <item>26-915.0Mhz</item>
+        <item>27-915.5Mhz</item>
+        <item>28-916.0Mhz</item>
+        <item>29-916.5Mhz</item>
+        <item>30-917.0Mhz</item>
+        <item>31-917.5Mhz</item>
+        <item>32-918.0Mhz</item>
+        <item>33-918.5Mhz</item>
+        <item>34-919.0Mhz</item>
+        <item>35-919.5Mhz</item>
+        <item>36-920.0Mhz</item>
+        <item>37-920.5Mhz</item>
+        <item>38-921.0Mhz</item>
+        <item>39-921.5Mhz</item>
+        <item>40-922.0Mhz</item>
+        <item>41-922.5Mhz</item>
+        <item>42-923.0Mhz</item>
+        <item>43-923.5Mhz</item>
+        <item>44-924.0Mhz</item>
+        <item>45-924.5Mhz</item>
+        <item>46-925.0Mhz</item>
+        <item>47-925.5Mhz</item>
+        <item>48-926.0Mhz</item>
+        <item>49-926.5Mhz</item>
+        <item>50-927.0Mhz</item>
+    </string-array>
+    <string-array name="frequency_fix_european_standard">
+        <item>1-865.5Mhz</item>
+        <item>2-866.0Mhz</item>
+        <item>3-866.5Mhz</item>
+        <item>4-867.0Mhz</item>
+        <item>5-867.5Mhz</item>
+    </string-array>
+
+</resources>
