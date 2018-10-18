@@ -22,4 +22,11 @@
         <item>韦根</item>
         <item>RS232</item>
     </string-array>
+
+    <!-- 读卡模式方式 -->
+    <string-array name="read_tag_mode_dis">
+        <item>单标签</item>
+        <item>多标签</item>
+    </string-array>
+
 </resources>

@@ -51,21 +51,24 @@ public final class R {
         /**  R2K通讯方式 
          */
         public static final int communication_mode_r2k=0x7f050004;
+        /**  读卡模式方式 
+         */
+        public static final int read_tag_mode_dis=0x7f050006;
         /**  标签区域 
          */
-        public static final int tag_area=0x7f050006;
+        public static final int tag_area=0x7f050007;
         /**  标签起始地址 
          */
-        public static final int tag_length=0x7f050008;
+        public static final int tag_length=0x7f050009;
         /**  标签锁和解锁区域 
          */
-        public static final int tag_lock_area=0x7f050009;
+        public static final int tag_lock_area=0x7f05000a;
         /**  标签锁和解锁操作类型 
          */
-        public static final int tag_lock_operation_type=0x7f05000a;
+        public static final int tag_lock_operation_type=0x7f05000b;
         /**  标签起始地址 
          */
-        public static final int tag_start_address=0x7f050007;
+        public static final int tag_start_address=0x7f050008;
         /**  标签区域 
          */
         public static final int work_pattern=0x7f050003;
@@ -289,22 +292,23 @@ public final class R {
         public static final int ImageView02=0x7f0b0093;
         public static final int ImageView03=0x7f0b0091;
         public static final int ImageView04=0x7f0b0092;
-        public static final int ImageView05=0x7f0b008e;
-        public static final int ImageView06=0x7f0b008d;
+        public static final int ImageView05=0x7f0b008f;
+        public static final int ImageView06=0x7f0b008e;
         public static final int LinearLayout01=0x7f0b006b;
         public static final int LinearLayout02=0x7f0b0072;
         public static final int LinearLayout03=0x7f0b006f;
         public static final int Spinner01=0x7f0b0039;
         public static final int Spinner02=0x7f0b0069;
+        public static final int Spinner04=0x7f0b0074;
         public static final int TextView01=0x7f0b0036;
         public static final int TextView02=0x7f0b006d;
         public static final int TextView03=0x7f0b006c;
-        public static final int action_settings=0x7f0b00ad;
-        public static final int add_friend=0x7f0b007f;
-        public static final int add_friend_shake=0x7f0b008b;
-        public static final int add_friend_shake2=0x7f0b008c;
-        public static final int add_friend_shake3=0x7f0b008f;
-        public static final int anim_text=0x7f0b00a4;
+        public static final int action_settings=0x7f0b00ae;
+        public static final int add_friend=0x7f0b0080;
+        public static final int add_friend_shake=0x7f0b008c;
+        public static final int add_friend_shake2=0x7f0b008d;
+        public static final int add_friend_shake3=0x7f0b0094;
+        public static final int anim_text=0x7f0b00a5;
         public static final int btn_back=0x7f0b0012;
         public static final int btn_send=0x7f0b0015;
         public static final int button1=0x7f0b0064;
@@ -340,27 +344,27 @@ public final class R {
         public static final int chk_adsaf=0x7f0b000e;
         public static final int chk_antenna_1=0x7f0b0009;
         public static final int chk_antenna_2=0x7f0b0065;
-        public static final int content=0x7f0b009d;
+        public static final int content=0x7f0b009e;
         public static final int editText1=0x7f0b0073;
         public static final int editText2=0x7f0b006e;
         public static final int et_sendmessage=0x7f0b0016;
-        public static final int exitBtn0=0x7f0b0075;
-        public static final int exitBtn1=0x7f0b0076;
-        public static final int exit_layout=0x7f0b0074;
-        public static final int exit_layout2=0x7f0b0077;
-        public static final int forget_passwd=0x7f0b0085;
-        public static final int handle=0x7f0b009e;
-        public static final int imageLeft=0x7f0b00a2;
-        public static final int imageRight=0x7f0b00a3;
-        public static final int imageView1=0x7f0b0095;
-        public static final int imageView2=0x7f0b0096;
-        public static final int imageView3=0x7f0b0097;
-        public static final int imageView4=0x7f0b0098;
-        public static final int img_address=0x7f0b007a;
-        public static final int img_friends=0x7f0b007b;
-        public static final int img_settings=0x7f0b007c;
-        public static final int img_tab_now=0x7f0b0078;
-        public static final int img_weixin=0x7f0b0079;
+        public static final int exitBtn0=0x7f0b0076;
+        public static final int exitBtn1=0x7f0b0077;
+        public static final int exit_layout=0x7f0b0075;
+        public static final int exit_layout2=0x7f0b0078;
+        public static final int forget_passwd=0x7f0b0086;
+        public static final int handle=0x7f0b009f;
+        public static final int imageLeft=0x7f0b00a3;
+        public static final int imageRight=0x7f0b00a4;
+        public static final int imageView1=0x7f0b0096;
+        public static final int imageView2=0x7f0b0097;
+        public static final int imageView3=0x7f0b0098;
+        public static final int imageView4=0x7f0b0099;
+        public static final int img_address=0x7f0b007b;
+        public static final int img_friends=0x7f0b007c;
+        public static final int img_settings=0x7f0b007d;
+        public static final int img_tab_now=0x7f0b0079;
+        public static final int img_weixin=0x7f0b007a;
         public static final int iv_userhead=0x7f0b0019;
         public static final int linearLayout1=0x7f0b0003;
         public static final int linearLayoutAntenna1=0x7f0b0008;
@@ -380,36 +384,36 @@ public final class R {
         public static final int linearLayout_Antenna_workTime_power=0x7f0b0055;
         public static final int linearLayout_setAntenna=0x7f0b001e;
         public static final int linearlayout_serialPort=0x7f0b0068;
-        public static final int listView_data=0x7f0b0089;
+        public static final int listView_data=0x7f0b008a;
         public static final int listview=0x7f0b0017;
-        public static final int login_login_btn=0x7f0b0086;
-        public static final int login_passwd_edit=0x7f0b0084;
-        public static final int login_reback_btn=0x7f0b007e;
-        public static final int login_top_layout=0x7f0b0082;
-        public static final int login_user_edit=0x7f0b0083;
+        public static final int login_login_btn=0x7f0b0087;
+        public static final int login_passwd_edit=0x7f0b0085;
+        public static final int login_reback_btn=0x7f0b007f;
+        public static final int login_top_layout=0x7f0b0083;
+        public static final int login_user_edit=0x7f0b0084;
         public static final int main_bottom=0x7f0b0001;
-        public static final int main_dialog_layout=0x7f0b0094;
-        public static final int main_login_btn=0x7f0b009f;
-        public static final int main_regist_btn=0x7f0b00a0;
+        public static final int main_dialog_layout=0x7f0b0095;
+        public static final int main_login_btn=0x7f0b00a0;
+        public static final int main_regist_btn=0x7f0b00a1;
         public static final int mainweixin=0x7f0b0000;
-        public static final int menu_close=0x7f0b0087;
-        public static final int menu_close_btn=0x7f0b0088;
-        public static final int page0=0x7f0b00a7;
-        public static final int page1=0x7f0b00a8;
-        public static final int page2=0x7f0b00a9;
-        public static final int page3=0x7f0b00aa;
-        public static final int page4=0x7f0b00ab;
-        public static final int page5=0x7f0b00ac;
-        public static final int pagertitle=0x7f0b00a6;
-        public static final int progressBar1=0x7f0b0081;
+        public static final int menu_close=0x7f0b0088;
+        public static final int menu_close_btn=0x7f0b0089;
+        public static final int page0=0x7f0b00a8;
+        public static final int page1=0x7f0b00a9;
+        public static final int page2=0x7f0b00aa;
+        public static final int page3=0x7f0b00ab;
+        public static final int page4=0x7f0b00ac;
+        public static final int page5=0x7f0b00ad;
+        public static final int pagertitle=0x7f0b00a7;
+        public static final int progressBar1=0x7f0b0082;
         public static final int right_btn=0x7f0b0013;
         public static final int rl_bottom=0x7f0b0014;
         public static final int rl_layout=0x7f0b0011;
-        public static final int shakeBg=0x7f0b0099;
-        public static final int shakeImgDown=0x7f0b009b;
-        public static final int shakeImgUp=0x7f0b009a;
+        public static final int shakeBg=0x7f0b009a;
+        public static final int shakeImgDown=0x7f0b009c;
+        public static final int shakeImgUp=0x7f0b009b;
         public static final int shake_title_bar=0x7f0b001c;
-        public static final int slidingDrawer1=0x7f0b009c;
+        public static final int slidingDrawer1=0x7f0b009d;
         public static final int spinner1=0x7f0b005f;
         public static final int spinner4=0x7f0b003a;
         public static final int spinner_antenna_power1=0x7f0b005a;
@@ -420,20 +424,20 @@ public final class R {
         public static final int spinner_antenna_work_time3=0x7f0b005d;
         public static final int spinner_baudRate=0x7f0b006a;
         public static final int spinner_simple=0x7f0b0060;
-        public static final int startBtn=0x7f0b00a1;
+        public static final int startBtn=0x7f0b00a2;
         public static final int sv_setting=0x7f0b001d;
         public static final int tab_setting=0x7f0b001f;
         public static final int tabpager=0x7f0b0002;
         public static final int textView1=0x7f0b0037;
-        public static final int title=0x7f0b007d;
-        public static final int title2=0x7f0b008a;
+        public static final int title=0x7f0b007e;
+        public static final int title2=0x7f0b008b;
         public static final int tv_antenna_power=0x7f0b0058;
         public static final int tv_antenna_work_time=0x7f0b0057;
         public static final int tv_chatcontent=0x7f0b001a;
         public static final int tv_sendtime=0x7f0b0018;
         public static final int tv_username=0x7f0b001b;
-        public static final int whatsnew_viewpager=0x7f0b00a5;
-        public static final int xh_head_img=0x7f0b0080;
+        public static final int whatsnew_viewpager=0x7f0b00a6;
+        public static final int xh_head_img=0x7f0b0081;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -448,34 +452,38 @@ public final class R {
         public static final int dialog_antenna4_channel=0x7f030009;
         public static final int dialog_communication_mode=0x7f03000a;
         public static final int dialog_designated_area_read_and_write=0x7f03000b;
-        public static final int dialog_fast_wirte_tag=0x7f03000c;
-        public static final int dialog_tag_destroy=0x7f03000d;
-        public static final int dialog_tag_lock_and_unlock=0x7f03000e;
-        public static final int dialog_work_pattern=0x7f03000f;
-        public static final int exit_dialog=0x7f030010;
-        public static final int exit_dialog_from_settings=0x7f030011;
-        public static final int footer=0x7f030012;
-        public static final int info_xiaohei=0x7f030013;
-        public static final int info_xiaohei_head=0x7f030014;
-        public static final int loading=0x7f030015;
-        public static final int login=0x7f030016;
-        public static final int main=0x7f030017;
-        public static final int main_menu=0x7f030018;
-        public static final int main_tab_basic_opera=0x7f030019;
-        public static final int main_tab_other_settings=0x7f03001a;
-        public static final int main_tab_params_settings=0x7f03001b;
-        public static final int main_tab_tag_opera=0x7f03001c;
-        public static final int main_top_right_dialog=0x7f03001d;
-        public static final int shake_activity=0x7f03001e;
-        public static final int welcome=0x7f03001f;
-        public static final int whats1=0x7f030020;
-        public static final int whats2=0x7f030021;
-        public static final int whats3=0x7f030022;
-        public static final int whats4=0x7f030023;
-        public static final int whats5=0x7f030024;
-        public static final int whats6=0x7f030025;
-        public static final int whats_door=0x7f030026;
-        public static final int whatsnew_viewpager=0x7f030027;
+        public static final int dialog_device_number=0x7f03000c;
+        public static final int dialog_fast_wirte_tag=0x7f03000d;
+        public static final int dialog_frequency_set=0x7f03000e;
+        public static final int dialog_power=0x7f03000f;
+        public static final int dialog_read_tag_pattern=0x7f030010;
+        public static final int dialog_tag_destroy=0x7f030011;
+        public static final int dialog_tag_lock_and_unlock=0x7f030012;
+        public static final int dialog_work_pattern=0x7f030013;
+        public static final int exit_dialog=0x7f030014;
+        public static final int exit_dialog_from_settings=0x7f030015;
+        public static final int footer=0x7f030016;
+        public static final int info_xiaohei=0x7f030017;
+        public static final int info_xiaohei_head=0x7f030018;
+        public static final int loading=0x7f030019;
+        public static final int login=0x7f03001a;
+        public static final int main=0x7f03001b;
+        public static final int main_menu=0x7f03001c;
+        public static final int main_tab_basic_opera=0x7f03001d;
+        public static final int main_tab_other_settings=0x7f03001e;
+        public static final int main_tab_params_settings=0x7f03001f;
+        public static final int main_tab_tag_opera=0x7f030020;
+        public static final int main_top_right_dialog=0x7f030021;
+        public static final int shake_activity=0x7f030022;
+        public static final int welcome=0x7f030023;
+        public static final int whats1=0x7f030024;
+        public static final int whats2=0x7f030025;
+        public static final int whats3=0x7f030026;
+        public static final int whats4=0x7f030027;
+        public static final int whats5=0x7f030028;
+        public static final int whats6=0x7f030029;
+        public static final int whats_door=0x7f03002a;
+        public static final int whatsnew_viewpager=0x7f03002b;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;

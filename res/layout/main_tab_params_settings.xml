@@ -226,43 +226,6 @@
                 android:onClick="btn_shake" >
 
                 <ImageView
-                    android:id="@+id/add_friend_shake3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/find_more_friend_shake" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/add_friend_shake3"
-                    android:padding="8dp"
-                    android:text="频率和其它参数"
-                    android:textColor="#000"
-                    android:textSize="17sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/mm_submenu" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/preference_single_item"
-                android:clickable="true"
-                android:gravity="center_vertical"
-                android:onClick="btn_shake" >
-
-                <ImageView
                     android:id="@+id/ImageView01"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -388,7 +351,44 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/ImageView02"
                     android:padding="8dp"
-                    android:text="美标和欧标"
+                    android:text="频率设置(美标和欧标)"
+                    android:textColor="#000"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="matrix"
+                    android:src="@drawable/mm_submenu" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/preference_single_item"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="btn_shake" >
+
+                <ImageView
+                    android:id="@+id/add_friend_shake3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="matrix"
+                    android:src="@drawable/find_more_friend_shake" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/add_friend_shake3"
+                    android:padding="8dp"
+                    android:text="其它参数(预留)"
                     android:textColor="#000"
                     android:textSize="17sp" />
 
