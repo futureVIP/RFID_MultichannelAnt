@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/shake_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/title_bar"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:onClick="shake_activity_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="销毁标签"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:src="@drawable/mm_title_btn_menu" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tag_destroy_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/btn_tag_destroy_set"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="销毁标签" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tag_destroy_visit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/shake_title_bar"
+        android:background="@drawable/linearlayout_underline" >
+
+        <TextView
+            android:id="@+id/tv_tag_destroy_visit"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="访问密码"
+            android:textColor="@color/bg_black" />
+
+        <EditText
+            android:id="@+id/et_tag_destroy_visit_pwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ems="10"
+            android:inputType="number"
+            android:text="00000000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tag_destroy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ll_tag_destroy_visit"
+        android:background="@drawable/linearlayout_underline" >
+
+        <TextView
+            android:id="@+id/tv_tag_destroy_pwd"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="灭活密码"
+            android:textColor="@color/bg_black" />
+
+        <EditText
+            android:id="@+id/et_tag_destroy_pwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ems="10"
+            android:inputType="number"
+            android:text="00000000" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+</RelativeLayout>

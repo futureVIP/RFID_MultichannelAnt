@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="top" >
+
+    <LinearLayout
+        android:id="@+id/lineLay_basic_btn_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+         <Button
+            android:id="@+id/btn_basic_beginInv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="连续寻卡" />
+         
+        <Button
+            android:id="@+id/btn_basic_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="停止" />
+
+        <Button
+            android:id="@+id/btn_basic_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/clear" />
+
+        <Button
+            android:id="@+id/btn_basic_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="exit_settings"
+            android:background="@drawable/btn_style_red"
+            android:text="@string/exit" />
+    </LinearLayout>
+
+</RelativeLayout>

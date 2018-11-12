@@ -1,0 +1,478 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="top" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/linearlayout_underline" >
+
+            <CheckBox
+                android:id="@+id/CheckBox08"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="902.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox05"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="903.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox06"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="903.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox07"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="904.0" 
+                android:textColor="@color/bg_black"/>
+
+            <CheckBox
+                android:id="@+id/CheckBox04"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="904.5"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <CheckBox
+                android:id="@+id/CheckBox01"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="905.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox02"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="905.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox03"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="906.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/tv_number"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="906.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/tv_basic_read_time"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="907.5"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1" >
+
+                <CheckBox
+                    android:id="@+id/CheckBox17"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:text="908.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/CheckBox18"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:text="909.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/CheckBox19"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:text="909.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/CheckBox20"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:text="910.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/CheckBox21"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:text="910.5"
+                    android:textColor="@color/bg_black" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/CheckBox14"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="908.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox13"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="909.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox12"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="909.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox15"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="910.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox16"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="910.5"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <CheckBox
+                android:id="@+id/CheckBox11"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="908.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox10"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="909.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox09"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="909.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/tv_basic_time"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="910.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="910.5"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <CheckBox
+                android:id="@+id/CheckBox911.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="911.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox911.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="911.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox912.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="912.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox912.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="912.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox913.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="913.0"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/linearlayout_underline" >
+
+            <CheckBox
+                android:id="@+id/CheckBox913.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="913.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox914.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="914.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox914.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="914.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox915.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="915.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox916.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="916.5"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <CheckBox
+                android:id="@+id/CheckBox917.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="917.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox918.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="918.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox919.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="919.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox920.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="920.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox921.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="921.5"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <CheckBox
+                android:id="@+id/CheckBox922.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="922.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox922.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="922.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox923.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="923.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox923.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="923.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox924.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="924.0"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <CheckBox
+                android:id="@+id/CheckBox925.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="925.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox925.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="925.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox926.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="926.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox926.5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="926.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/checkBox927.0"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="927.0"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

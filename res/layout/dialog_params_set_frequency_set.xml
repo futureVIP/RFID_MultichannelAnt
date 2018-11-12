@@ -1,0 +1,169 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="top" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_communication_mode_btn"
+        android:layout_below="@+id/tab_setting" >
+
+        <ScrollView
+            android:id="@+id/sv_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:fadingEdge="vertical"
+            android:scrollbars="vertical"
+            android:visibility="visible" >
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent" >
+               <include
+                   layout="@layout/template_frequency_hopping_european_standard"
+                   android:visibility="gone" />
+               <include
+                   layout="@layout/template_frequency_hopping_american_standard"
+                   android:visibility="gone" />
+               <include
+                   layout="@layout/template_frequency_fix_american_standard"
+                   android:visibility="gone" />
+               <include
+                   layout="@layout/template_frequency_fix_european_standard"
+                   android:visibility="visible" />
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/shake_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/title_bar"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:onClick="shake_activity_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="频率设置"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:src="@drawable/mm_title_btn_menu" />
+    </RelativeLayout>
+    <!-- 读卡器设置start -->
+
+    <RelativeLayout
+        android:id="@+id/tab_setting"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/shake_title_bar"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout_Antenna1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" >
+
+            <TextView
+                android:id="@+id/tv_communication_output_mode"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="欧标和美标"
+                android:textColor="@color/bg_black" />
+
+            <TextView
+                android:id="@+id/TextView03"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="频率设置"
+                android:textColor="@color/bg_black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_communication_mode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/linearLayout_Antenna1" >
+
+            <Spinner
+                android:id="@+id/spinner_work_pattern"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/frequency_american_and_european_standard" />
+
+            <Spinner
+                android:id="@+id/spinner_communication_output_mode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:entries="@array/frequency_set" />
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- 读卡器设置end -->
+
+    <LinearLayout
+        android:id="@+id/ll_communication_mode_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/btn_communication_mode_readddd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.76"
+            android:onClick="on_button_read_antenna"
+            android:text="读取"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_communication_mode_default_set"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.76"
+            android:onClick="on_button_set_antenna"
+            android:text="默认设置"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_read_pattern_set"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.76"
+            android:text="设置" />
+
+    </LinearLayout>
+
+</RelativeLayout>

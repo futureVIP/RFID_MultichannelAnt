@@ -1,0 +1,260 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="top" >
+
+    <RelativeLayout
+        android:id="@+id/shake_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/title_bar"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:onClick="shake_activity_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="天线参数"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:src="@drawable/mm_title_btn_menu" />
+    </RelativeLayout>
+    <!-- 读卡器设置start -->
+
+    <ScrollView
+        android:id="@+id/sv_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_communication_mode_btn"
+        android:layout_below="@+id/shake_title_bar"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:id="@+id/tab_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/ll_4antenna_workTime_power"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/linearLayoutHead"
+                android:background="@drawable/linearlayout_underline" >
+
+                <TextView
+                    android:id="@+id/tv_4connect_info_hint"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center|center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tv_4antenna_work_time"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="工作时间(ms)"
+                    android:textColor="@color/bg_black" />
+
+                 <TextView
+                     android:id="@+id/tv_4antenna_power"
+                     android:layout_width="0dp"
+                     android:layout_height="fill_parent"
+                     android:layout_weight="2"
+                     android:gravity="center"
+                     android:text="功率(dbm)" 
+                     android:textColor="@color/bg_black"/>
+
+            </LinearLayout>
+            <!-- 1号_天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_4antenna_group1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_underline"
+                android:layout_below="@+id/ll_4antenna_workTime_power" >
+
+                <CheckBox
+                    android:id="@+id/cb_4antenna1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1号" 
+                    android:textColor="@color/bg_black"/>
+
+                <Spinner
+                    android:id="@+id/spinner_4antenna_work_time1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/antenna_work_time" />
+
+                <Spinner
+                    android:id="@+id/spinner_4antenna_power1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/antenna_power" />
+            </LinearLayout>
+            <!-- 1号_天线参数设置 end -->
+
+
+            <!-- 2号_天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_4antenna_group2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_underline"
+                android:layout_below="@+id/ll_4antenna_group1" >
+
+                <CheckBox
+                    android:id="@+id/cb_4antenna2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2号"
+                    android:textColor="@color/bg_black" />
+
+                <Spinner
+                    android:id="@+id/spinner_4antenna_work_time2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/antenna_work_time" />
+
+                <Spinner
+                    android:id="@+id/spinner_4antenna_power2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/antenna_power" />
+            </LinearLayout>
+            <!-- 2号_天线参数设置 end -->
+
+
+            <!-- 3号_天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_4antenna_group3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_underline"
+                android:layout_below="@+id/ll_4antenna_group2" >
+
+                <CheckBox
+                    android:id="@+id/cb_4antenna3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3号"
+                    android:textColor="@color/bg_black" />
+
+                <Spinner
+                    android:id="@+id/spinner_4antenna_work_time3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/antenna_work_time" />
+
+                <Spinner
+                    android:id="@+id/spinner_4antenna_power3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/antenna_power" />
+            </LinearLayout>
+            <!-- 3号_天线参数设置 end -->
+
+
+            <!-- 4号_天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_4antenna_group4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_underline"
+                android:layout_below="@+id/ll_4antenna_group3" >
+
+                <CheckBox
+                    android:id="@+id/cb_4antenna4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4号" 
+                    android:textColor="@color/bg_black"/>
+
+                <Spinner
+                    android:id="@+id/spinner_4antenna_work_time4"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/antenna_work_time" />
+
+                <Spinner
+                    android:id="@+id/spinner_4antenna_power4"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/antenna_power" />
+            </LinearLayout>
+            <!-- 4号_天线参数设置 end -->
+
+        </RelativeLayout>
+    </ScrollView>
+    <!-- 读卡器设置end -->
+
+    <LinearLayout
+        android:id="@+id/ll_communication_mode_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/btn_4antenna_read"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.76"
+            android:onClick="on_button_read_antenna"
+            android:text="@string/read_antenna"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_4antenna_set"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.76"
+            android:onClick="on_button_set_antenna"
+            android:text="@string/set_antenna"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

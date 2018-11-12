@@ -1,0 +1,519 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="top" >
+
+    <RelativeLayout
+        android:id="@+id/shake_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/title_bar"
+        android:gravity="center_vertical" >
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:onClick="shake_activity_back"
+            android:text="返回"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="天线参数"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:src="@drawable/mm_title_btn_menu" />
+    </RelativeLayout>
+    <!-- 读卡器设置start -->
+    <ScrollView
+        android:id="@+id/sv_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_communication_mode_btn"
+        android:layout_below="@+id/shake_title_bar"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical"
+        android:visibility="visible">
+        <RelativeLayout
+            android:id="@+id/tab_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+            <!-- 1组(1-4号)天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_32antenna1_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_underline" >
+                <CheckBox
+                    android:id="@+id/cb_32antenna1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1号"
+                    android:textColor="@color/bg_black" />
+                <CheckBox
+                    android:id="@+id/cb_32antenna2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2号"
+                    android:textColor="@color/bg_black" />
+                <CheckBox
+                    android:id="@+id/cb_32antenna3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3号"
+                    android:textColor="@color/bg_black" />
+                <CheckBox
+                    android:id="@+id/cb_32antenna4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4号" 
+                    android:textColor="@color/bg_black"/>
+                <CheckBox
+                    android:id="@+id/cb_32antenna1_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all1"
+                    android:textColor="@color/bg_black" />
+            </LinearLayout>
+            <!-- 1组(1-4号)天线参数设置 end -->
+
+            <!-- 2组(5-8号)天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_32antenna2_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_32antenna1_group"
+                android:background="@drawable/linearlayout_underline" >
+                <CheckBox
+                    android:id="@+id/cb_32antenna5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5号"
+                    android:textColor="@color/bg_black" />
+                <CheckBox
+                    android:id="@+id/cb_32antenna6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="6号" 
+                    android:textColor="@color/bg_black"/>
+                <CheckBox
+                    android:id="@+id/cb_32antenna7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="7号" 
+                    android:textColor="@color/bg_black"/>
+                <CheckBox
+                    android:id="@+id/cb_32antenna8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="8号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna2_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all2" 
+                    android:textColor="@color/bg_black"/>
+            </LinearLayout>
+            <!-- 2组(5-8号)天线参数设置 end -->
+            <!-- 3组(9-12号)天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_32antenna3_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_32antenna2_group"
+                android:background="@drawable/linearlayout_underline" >
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="9号"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="10号"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="11号"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="12号"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna3_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all3" 
+                    android:textColor="@color/bg_black"/>
+            </LinearLayout>
+            <!-- 3组(9-12号)天线参数设置 end -->
+
+            <!-- 4组(13-16号)天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_32antenna4_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_32antenna3_group"
+                android:background="@drawable/linearlayout_underline" >
+                <CheckBox
+                    android:id="@+id/cb_32antenna13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="13号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="14号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="15号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="16号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna4_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all4" 
+                    android:textColor="@color/bg_black" />
+            </LinearLayout>
+            <!-- 4组(13-16号)天线参数设置 end -->
+            
+            <!-- 5组(17-20号)天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_32antenna5_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_32antenna4_group"
+                android:background="@drawable/linearlayout_underline" >
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="17号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="18号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="19号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="20号" 
+                    android:textColor="@color/bg_black"/>
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna5_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all5" 
+                    android:textColor="@color/bg_black"/>
+            </LinearLayout>
+            <!-- 5组(17-20号)天线参数设置 end -->
+            
+            <!-- 6组(21-24号)天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_32antenna6_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_32antenna5_group"
+                android:background="@drawable/linearlayout_underline" >
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="21号"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="22号"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="23号"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="24号"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna6_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all6" 
+                    android:textColor="@color/bg_black"/>
+            </LinearLayout>
+            <!-- 6组(21-24号)天线参数设置 end -->
+            
+            <!-- 7组(25-28号)天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_32antenna7_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_32antenna6_group"
+                android:background="@drawable/linearlayout_underline" >
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="25号" android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="26号" android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna27"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="27号" android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna28"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="28号" android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna7_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all7" 
+                    android:textColor="@color/bg_black"/>
+            </LinearLayout>
+             <!-- 7组(25-28号)天线参数设置 end -->
+            
+            <!-- 8组(29-32号)天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_32antenna8_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_32antenna7_group" 
+                android:background="@drawable/linearlayout_underline">
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna29"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="29号" android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="30号" android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="31号" android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna32"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="32号" android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_32antenna8_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all8"
+                    android:textColor="@color/bg_black" />
+            </LinearLayout>
+            <!-- 8组(29-32号)天线参数设置 end -->
+            
+            <LinearLayout
+                android:id="@+id/ll_32worktime_power"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/ll_32antenna8_group"
+                android:background="@drawable/linearlayout_underline" >
+
+                <TextView
+                    android:id="@+id/tv_32work_time"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="工作时间(ms)" 
+                    android:textColor="@color/bg_black"/>
+
+                <TextView
+                    android:id="@+id/tv_32power"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="功率(dbm)"
+                    android:textColor="@color/bg_black" />
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/ll_32worktime_power_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_32worktime_power"
+                android:background="@drawable/linearlayout_underline" >
+
+                <Spinner
+                    android:id="@+id/spinner_32work_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" 
+                    android:entries="@array/antenna_work_time"/>
+
+                <Spinner
+                    android:id="@+id/spinner_32power"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/antenna_power" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+    <!-- 读卡器设置end -->
+
+    <LinearLayout
+        android:id="@+id/ll_32setAntenna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/btn_32read_antenna"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.76"
+            android:text="@string/read_antenna"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_32set_antenna"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.76"
+            android:text="@string/set_antenna"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

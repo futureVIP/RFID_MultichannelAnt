@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="top" >
+    <!-- 读卡器设置start -->
+
+    <!-- 读卡器设置end -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <CheckBox
+                android:id="@+id/CheckBox08"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="865.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox05"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="966.0" 
+                android:textColor="@color/bg_black"/>
+
+            <CheckBox
+                android:id="@+id/CheckBox06"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="866.5" 
+                android:textColor="@color/bg_black"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/linearlayout_underline"
+            android:layout_height="50dp" >
+
+            <CheckBox
+                android:id="@+id/CheckBox01"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="867.0"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox02"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="867.5"
+                android:textColor="@color/bg_black" />
+
+            <CheckBox
+                android:id="@+id/CheckBox03"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="868.0" 
+                android:textColor="@color/bg_black"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

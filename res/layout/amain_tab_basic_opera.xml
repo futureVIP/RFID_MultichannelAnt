@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fcfcfc"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/title_bar"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/tv_basic_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/tab_menu_basic_opera"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/btn_basic_opera_right"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:onClick="btnmainright"
+            android:src="@drawable/title_btn_function" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView_data"
+        android:layout_width="match_parent"
+        android:layout_height="282dp"
+        android:layout_above="@+id/lineLay_basic_btn_group"
+        android:layout_below="@+id/template_basic_head"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/corners_background"
+        android:cacheColorHint="#00000000"
+        android:divider="#0a0f0b"
+        android:dividerHeight="1dp" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/lineLay_basic_btn_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <include 
+            android:id="@+id/iclude_basic_opera_btn_group" 
+            layout="@layout/template_basic_opera_btn_group"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/template_basic_head"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/title"
+        android:gravity="center_vertical" >
+
+        <include layout="@layout/template_basic_opera_header" />
+    </RelativeLayout>
+
+</RelativeLayout>

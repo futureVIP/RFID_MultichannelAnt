@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="baudrates">
+        <item>9600</item>
+        <item>19200</item>
+        <item>38400</item>
+        <item>57600</item>
+        <item>115200</item>
+        <item>230400</item>
+    </string-array>
+
+    <!-- 天线的工作时间 -->
+    <string-array name="antenna_work_time">
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>600</item>
+        <item>700</item>
+        <item>800</item>
+        <item>900</item>
+        <item>1000</item>
+        <item>1100</item>
+        <item>1200</item>
+        <item>1300</item>
+        <item>1400</item>
+        <item>1500</item>
+        <item>1600</item>
+        <item>1700</item>
+        <item>1800</item>
+        <item>1900</item>
+        <item>2000</item>
+        <item>2100</item>
+        <item>2200</item>
+        <item>2300</item>
+        <item>2400</item>
+        <item>2500</item>
+        <item>2600</item>
+        <item>2700</item>
+        <item>2800</item>
+        <item>2900</item>
+        <item>3000</item>
+    </string-array>
+
+    <!-- 天线的功率 -->
+    <string-array name="antenna_power">
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+    <!-- 标签区域 -->
+    <string-array name="work_pattern">
+        <item>主从模式</item>
+        <item>定时模式</item>
+        <item>触发模式</item>
+    </string-array>
+
+    <!-- R2K通讯方式 -->
+    <string-array name="communication_mode_r2k">
+        <item>串口</item>
+        <item>网口</item>
+        <item>RS485</item>
+        <item>WIFI</item>
+    </string-array>
+
+    <!-- DIS通讯方式 -->
+    <string-array name="communication_mode_dis">
+        <item>RS485/RJ45</item>
+        <item>韦根</item>
+        <item>RS232</item>
+    </string-array>
+
+    <!-- 读卡模式方式 -->
+    <string-array name="read_tag_mode_dis">
+        <item>单标签</item>
+        <item>多标签</item>
+    </string-array>
+    <string-array name="usb_delivery_outlet">
+        <item>韦根26(1字节+2字节),8位10进制数</item>
+        <item>韦根26(3字节),8位10进制数</item>
+        <item>00 + 3字节16进制数</item>
+        <item>4字节16进制数</item>
+        <item>12字节16进制数</item>
+        <item>12字节TID</item>
+        <item>0000 + 前3字节16进制数</item>
+    </string-array>
+
+    <!-- 标签区域 -->
+    <string-array name="tag_area">
+        <item>Reserve</item>
+        <item>EPC</item>
+        <item>TID</item>
+        <item>User</item>
+    </string-array>
+    <!-- 标签起始地址 -->
+    <string-array name="tag_start_address">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+    <!-- 标签起始地址 -->
+    <string-array name="tag_length">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+    <!-- 标签锁和解锁区域 -->
+    <string-array name="tag_lock_area">
+        <item>Kill</item>
+        <item>Access</item>
+        <item>EPC</item>
+        <item>TID</item>
+        <item>User</item>
+    </string-array>
+    <!-- 标签锁和解锁操作类型 -->
+    <string-array name="tag_lock_operation_type">
+        <item>解锁</item>
+        <item>永久可写</item>
+        <item>安全锁定</item>
+        <item>永久不可写</item>
+    </string-array>
+    <string-array name="buzzer_switch">
+        <item>关闭</item>
+        <item>开启</item>
+    </string-array>
+    <string-array name="relay_switch">
+        <item>关闭</item>
+        <item>开启</item>
+    </string-array>
+    <string-array name="relay_close_time">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="frequency_american_and_european_standard">
+        <item>欧标</item>
+        <item>美标</item>
+    </string-array>
+    <string-array name="frequency_set">
+        <item>跳频</item>
+        <item>定频</item>
+    </string-array>
+    <string-array name="frequency_fix_american_standard">
+        <item>1-902.5Mhz</item>
+        <item>2-903.0Mhz</item>
+        <item>3-903.5Mhz</item>
+        <item>4-904.0Mhz</item>
+        <item>5-904.5Mhz</item>
+        <item>6-905.0Mhz</item>
+        <item>7-905.5Mhz</item>
+        <item>8-906.0Mhz</item>
+        <item>9-906.5Mhz</item>
+        <item>10-907.0Mhz</item>
+        <item>11-907.5Mhz</item>
+        <item>12-908.0Mhz</item>
+        <item>13-908.5Mhz</item>
+        <item>14-909.0Mhz</item>
+        <item>15-909.5Mhz</item>
+        <item>16-910.0Mhz</item>
+        <item>17-910.5Mhz</item>
+        <item>18-911.0Mhz</item>
+        <item>19-911.5Mhz</item>
+        <item>20-912.0Mhz</item>
+        <item>21-912.5Mhz</item>
+        <item>22-913.0Mhz</item>
+        <item>23-913.5Mhz</item>
+        <item>24-914.0Mhz</item>
+        <item>25-914.5Mhz</item>
+        <item>26-915.0Mhz</item>
+        <item>27-915.5Mhz</item>
+        <item>28-916.0Mhz</item>
+        <item>29-916.5Mhz</item>
+        <item>30-917.0Mhz</item>
+        <item>31-917.5Mhz</item>
+        <item>32-918.0Mhz</item>
+        <item>33-918.5Mhz</item>
+        <item>34-919.0Mhz</item>
+        <item>35-919.5Mhz</item>
+        <item>36-920.0Mhz</item>
+        <item>37-920.5Mhz</item>
+        <item>38-921.0Mhz</item>
+        <item>39-921.5Mhz</item>
+        <item>40-922.0Mhz</item>
+        <item>41-922.5Mhz</item>
+        <item>42-923.0Mhz</item>
+        <item>43-923.5Mhz</item>
+        <item>44-924.0Mhz</item>
+        <item>45-924.5Mhz</item>
+        <item>46-925.0Mhz</item>
+        <item>47-925.5Mhz</item>
+        <item>48-926.0Mhz</item>
+        <item>49-926.5Mhz</item>
+        <item>50-927.0Mhz</item>
+    </string-array>
+    <string-array name="frequency_fix_european_standard">
+        <item>1-865.5Mhz</item>
+        <item>2-866.0Mhz</item>
+        <item>3-866.5Mhz</item>
+        <item>4-867.0Mhz</item>
+        <item>5-867.5Mhz</item>
+    </string-array>
+
+</resources>

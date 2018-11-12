@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:gravity="top" >
+    
+    <LinearLayout
+        android:id="@+id/ll_tag_show_count_and_time"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/linearlayout_underline" >
+
+        <TextView
+            android:id="@+id/tv_tag_show_time"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="标签数量"
+            android:textColor="@color/bg_black" />
+
+        <TextView
+            android:id="@+id/tv_basic_amount"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/bg_red" />
+
+        <TextView
+            android:id="@+id/tv_basic_read_time"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="读取次数"
+            android:textColor="@color/bg_black" />
+
+        <TextView
+            android:id="@+id/tv_basic_time"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/bg_black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_column_show"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/linearlayout_underline" >
+
+        <TextView
+            android:id="@+id/tv_basic_id"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ID"
+            android:textColor="@color/bg_black" />
+
+        <TextView
+            android:id="@+id/tv_basic_epc"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="EPC"
+            android:textColor="@color/bg_black" />
+
+        <TextView
+            android:id="@+id/tv_basic_antenner"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="ant"
+            android:textColor="@color/bg_black" />
+
+        <TextView
+            android:id="@+id/tv_basic_count"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="count"
+            android:textColor="@color/bg_black" />
+    </LinearLayout>
+
+</RelativeLayout>

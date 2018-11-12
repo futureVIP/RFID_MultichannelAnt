@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="top" >
+    <!-- 读卡器设置start -->
+
+    <!-- 读卡器设置end -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="visible" 
+            android:background="@drawable/linearlayout_underline">
+
+            <TextView
+                android:id="@+id/tv_read_pattern"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="继电器(1)"
+                android:textColor="@color/bg_black" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="打开(1)"
+                android:textColor="@color/bg_black" />
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="关闭(1)"
+                android:textColor="@color/bg_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/linearlayout_underline" >
+
+            <TextView
+                android:id="@+id/tv_connect_info_hint"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="继电器(2)"
+                android:textColor="@color/bg_black" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="打开(2)" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="关闭(2)" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
