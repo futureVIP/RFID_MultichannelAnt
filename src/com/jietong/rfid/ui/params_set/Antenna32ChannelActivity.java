@@ -21,7 +21,6 @@ import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.ui.R;
-import com.jietong.rfid.util.Multichannel32_16AntCb;
 
 public class Antenna32ChannelActivity extends Activity implements OnCheckedChangeListener, OnClickListener {
 	CheckBox cbAntennaGroup[];

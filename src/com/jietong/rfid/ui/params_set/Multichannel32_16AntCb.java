@@ -1,4 +1,4 @@
-package com.jietong.rfid.util;
+package com.jietong.rfid.ui.params_set;
 
 import java.util.List;
 import android.widget.CheckBox;

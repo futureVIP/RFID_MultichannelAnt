@@ -1,6 +1,7 @@
 package com.jietong.rfid.ui;
 
 import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,14 +14,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.util.Toasts;
 
-public class ConnectActivity extends Activity implements OnItemClickListener,
-		OnClickListener {
+public class ConnectActivity extends Activity implements OnItemClickListener,OnClickListener {
 
+	public static ConnectActivity instance = null;
 	private TextView tvConnectHint;
 	private Spinner spinnerSerialPort;
 	private Spinner spinnerBaudRate;
@@ -30,6 +32,7 @@ public class ConnectActivity extends Activity implements OnItemClickListener,
 	private static String comm;
 	private static int baudRate;
 	private int isConnect = 0;
+	private TextView tvLanguageSet;
 	private ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
@@ -40,6 +43,7 @@ public class ConnectActivity extends Activity implements OnItemClickListener,
 	}
 
 	private void inital() {
+		instance = this;
 		controlInital();
 		eventListener();
 		getSerialPorts();
@@ -52,12 +56,14 @@ public class ConnectActivity extends Activity implements OnItemClickListener,
 		autoConnect = (Button) findViewById(R.id.btn_auto_connect);
 		deviceConnect = (Button) findViewById(R.id.btn_device_connect);
 		btnEntryPage = (Button) findViewById(R.id.btn_entry_page);
+		tvLanguageSet = (TextView) findViewById(R.id.tv_language);
 	}
 
 	private void eventListener() {
 		autoConnect.setOnClickListener(this);
 		deviceConnect.setOnClickListener(this);
 		btnEntryPage.setOnClickListener(this);
+		tvLanguageSet.setOnClickListener(this);
 	}
 
 	private void getSerialPorts() {
@@ -72,17 +78,17 @@ public class ConnectActivity extends Activity implements OnItemClickListener,
 			aspnDevices.setDropDownViewResource(simple_spinner_dropdown_item);
 			spinnerSerialPort.setAdapter(aspnDevices);
 			if (serialPorts.size() > 6) {
-				spinnerSerialPort.setSelection(6);// 默认串口为"/dev/ttyS0"
+				spinnerSerialPort.setSelection(6);
 			}
-			tvConnectHint.setText("获取串口成功!");
+			tvConnectHint.setText(R.string.msg_get_serialPort_succeed);
 			deviceConnect.setEnabled(true);
 		} else {
-			tvConnectHint.setText("未找到串口号,请检查设备是否有串口!");
+			tvConnectHint.setText(R.string.msg_get_serialPort_failure);
 			deviceConnect.setEnabled(false);
 		}
 	}
 
-	public void connect_back(View v) { // 标题栏 返回按钮
+	public void connect_back(View v) {
 		this.finish();
 	}
 
@@ -99,6 +105,8 @@ public class ConnectActivity extends Activity implements OnItemClickListener,
 			Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
 			startActivity(intent);
 			break;
+		case R.id.tv_language:
+			break;
 		default:
 			break;
 		}
@@ -113,22 +121,22 @@ public class ConnectActivity extends Activity implements OnItemClickListener,
 			if (ReaderUtil.readers == null) {
 				ReaderUtil.readers = readerService.serialPortConnect(comm,baudRate);
 				if (ReaderUtil.readers != null) {
-					tvConnectHint.setText("连接成功!");
+					tvConnectHint.setText(R.string.msg_connect_succeed);
 					readerService.version(ReaderUtil.readers);
 				} else {
-					tvConnectHint.setText("连接失败!");
+					tvConnectHint.setText(R.string.msg_connect_failure);
 				}
 			}
 			isConnect = 1;
-			deviceConnect.setText("断开连接");
+			deviceConnect.setText(R.string.msg_disconnect_connect);
 			break;
 		case 1:
 			if (ReaderUtil.readers != null) {
 				readerService.disconnect(ReaderUtil.readers);
 				ReaderUtil.readers = null;
-				tvConnectHint.setText("断开连接!");
+				tvConnectHint.setText(R.string.msg_disconnect_connect);
 			}
-			deviceConnect.setText("连接设备");
+			deviceConnect.setText(R.string.btn_connect_device);
 			isConnect = 0;
 			break;
 		}
@@ -139,7 +147,7 @@ public class ConnectActivity extends Activity implements OnItemClickListener,
 		if (null != version) {
 			Toasts.makeTextShort(this, version);
 		} else {
-			Toasts.makeTextShort(this, "获取失败，请检查连接是否正常!");
+			Toasts.makeTextShort(this,R.string.msg_get_version_failure);
 		}
 	}
 

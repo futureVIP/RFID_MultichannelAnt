@@ -27,9 +27,9 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 	private Spinner spinnerDesignatedArea;
 	private Spinner spinnerDesignatedStartAddress;
 	private Spinner spinnerDesignatedLength;
-	private ArrayAdapter<String> areaAdapter = null; // 指定区域适配器
-	private ArrayAdapter<String> startAddressAdapter = null; // 起始地址适配器
-	private ArrayAdapter<String> lengthAdapter = null; // 长度适配器
+	private ArrayAdapter<String> areaAdapter = null;
+	private ArrayAdapter<String> startAddressAdapter = null; 
+	private ArrayAdapter<String> lengthAdapter = null; 
 	private int areaPosition = 0;
 	private int startAddressPosition = 0;
 	private int lengthPosition = 0;
@@ -212,10 +212,10 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 				byte[] password = new byte[4];
 				String visit = etVisitPwd.getText().toString().trim();
 				if (visit.length() != 8) {
-					Toasts.makeTextShort(getApplicationContext(), "长度不足8位");
+					//Toasts.makeTextShort(getApplicationContext(), R.string.msg_pwd_must_eight);
 					return;
 				} else if (!Regex.isHexCharacter(visit)) {
-					Toasts.makeTextShort(getApplicationContext(),"无效字符(有效字符0-9|a-f|A-F)");
+					//Toasts.makeTextShort(getApplicationContext(),R.string.msg_pwd_Invalid_char);
 					return;
 				}
 				for (int i = 0; i < 4; ++i) {
@@ -228,7 +228,7 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 			}
 
 		};
-		timer.schedule(task, 1000, 2000);// 在1秒后执行此任务,每次间隔2秒执行一次,如果传递一个Data参数,就可以在某个固定的时间执行这个任务.
+		timer.schedule(task, 1000, 2000);
 	}
 
 	private void showData(final String data) {
@@ -268,10 +268,10 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 		byte[] password = new byte[4];
 		String visit = etVisitPwd.getText().toString().trim();
 		if (visit.length() != 8) {
-			Toasts.makeTextShort(this, "长度不足8位");
+			Toasts.makeTextShort(this, R.string.msg_pwd_must_eight);
 			return;
 		} else if (!Regex.isHexCharacter(visit)) {
-			Toasts.makeTextShort(this, "无效字符(有效字符0-9|a-f|A-F)");
+			Toasts.makeTextShort(this, R.string.msg_pwd_Invalid_char);
 			return;
 		}
 		String inData = mactvDataArea.getText().toString().replace(" ", "");
@@ -280,7 +280,7 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 			return;
 		}
 		if (!Regex.isHexCharacter(inData)) {
-			Toasts.makeTextShort(this, "数据中含有0－9，A－F之外的非法字符");
+			Toasts.makeTextShort(this, R.string.msg_pwd_Invalid_char);
 			return;
 		}
 		service.writeTagData(ReaderUtil.readers, bank, begin, size, inData,
@@ -291,16 +291,14 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 		byte bank = (byte) areaPosition;
 		byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress
 				.getSelectedItem().toString());
-		byte size = (byte) Integer.parseInt(spinnerDesignatedLength
-				.getSelectedItem().toString());
+		byte size = (byte) Integer.parseInt(spinnerDesignatedLength.getSelectedItem().toString());
 		byte[] password = new byte[4];
 		String visit = etVisitPwd.getText().toString().trim();
 		if (visit.length() != 8) {
-			Toasts.makeTextShort(getApplicationContext(), "长度不足8位");
+			Toasts.makeTextShort(getApplicationContext(),R.string.msg_pwd_must_eight);
 			return;
 		} else if (!Regex.isHexCharacter(visit)) {
-			Toasts.makeTextShort(getApplicationContext(),
-					"无效字符(有效字符0-9|a-f|A-F)");
+			Toasts.makeTextShort(getApplicationContext(),R.string.msg_pwd_Invalid_char);
 			return;
 		}
 		for (int i = 0; i < 4; ++i) {
@@ -308,8 +306,7 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 			password[i] = Byte.parseByte(str, 16);
 		}
 
-		String data = service.readTagData(ReaderUtil.readers, bank, begin,
-				size, password);
+		String data = service.readTagData(ReaderUtil.readers, bank, begin,size, password);
 		if (data != null) {
 			Toasts.makeTextShort(getApplicationContext(), "获取成功!");
 			mactvDataArea.setText(data);

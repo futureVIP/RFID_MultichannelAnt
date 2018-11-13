@@ -187,12 +187,12 @@
         <item>永久不可写</item>
     </string-array>
     <string-array name="buzzer_switch">
-        <item>关闭</item>
-        <item>开启</item>
+        <item>off</item>
+        <item>on</item>
     </string-array>
     <string-array name="relay_switch">
-        <item>关闭</item>
-        <item>开启</item>
+        <item>off</item>
+        <item>on</item>
     </string-array>
     <string-array name="relay_close_time">
         <item>1</item>

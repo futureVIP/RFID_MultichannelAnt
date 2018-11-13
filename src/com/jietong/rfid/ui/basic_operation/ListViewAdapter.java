@@ -1,5 +1,5 @@
 
-package com.jietong.rfid.util;
+package com.jietong.rfid.ui.basic_operation;
 
 import android.content.Context;
 import android.view.LayoutInflater;

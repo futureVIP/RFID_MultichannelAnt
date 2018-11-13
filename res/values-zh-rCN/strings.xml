@@ -2,18 +2,6 @@
 <resources>
 
     <string name="app_name">UHF程序</string>
-    
-        <string name="tab_menu_basic_opera">基本操作</string>
-    <string name="tab_menu_tag_opera">标签操作</string>
-    <string name="tab_menu_params_setting">参数设置</string>
-    <string name="tab_menu_other_setting">其它设置</string>
-    
-    
-    <string name="id">序号</string>
-    <string name="count">    次数</string>
-    <string name="inventory">开始盘存</string>
-    <string name="stop_inventory">停止盘存</string>
-    <string name="clear">清除</string>
     <string name="membank">数据区:</string>
     <string name="accesspassword">访问密码:</string>
     <string name="addr">起始地址:</string>
@@ -22,9 +10,7 @@
     <string name="power">功率(dbm)</string>
     <string name="work_time">工作时间(ms)</string>
     <string name="setting">设置</string>
-    <string name="exit">退出</string>
     <string name="returnback">返回</string>
-    <string name="txt_tag_count">标签数量:</string>
     <string name="write">写标签</string>
     <string name="writedata">写数据(HEX):</string>
     <string name="pwrdata">功率:</string>
@@ -49,31 +35,6 @@
     <string name="koreaFreq">韩国频率范围：917700kHz~923300kHz</string>
     <string name="setSuccess">设置成功</string>
     <string name="freqNotNull">频率数值不能为空</string>
-    <string name="about_msg">Serial Port API sample v1.1\n
-\n
-This program is the sample application provided with project android-serialport-api.\n
-\n
-More information and bug report on [http://code.google.com/p/android-serialport-api]\n
-\n
-Copyright 2010-2011 Cedric Priscal\n
-\n
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at\n
-\n
-http://www.apache.org/licenses/LICENSE-2.0\n
-\n
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.\n</string>
-    <string name="error_configuration">Please configure your serial port first.</string>
-    <string name="error_security">You do not have read/write permission to the serial
-		port.</string>
-    <string name="error_unknown">The serial port can not be opened for an unknown
-		reason.</string>
-
     <!-- 2018-06-20 modify -->
     <string name="antenna_1">1号</string>
     <string name="antenna_2">2号</string>
@@ -90,4 +51,54 @@ limitations under the License.\n</string>
     <string name="connect">连接</string>
     <string name="disconnect">断开连接</string>
     <string name="serialPort">串口</string>
+    
+    <!-- 2018-11-13 modify -->
+    <!-- 连接设备页面 -->
+    <string name="btn_return">返回</string>
+    <string name="tv_connect_device">连接设备</string>
+    <string name="tv_info_hint">信息提示</string>
+    <string name="tv_serialPort">串口</string>
+    <string name="tv_port">端口</string>
+    <string name="btn_connect_device">连接设备</string>
+    <string name="btn_entry_page">进入界面</string>
+    <string name="btn_get_verstion">获取版本号</string>
+    <string name="msg_get_serialPort_succeed">获取串口成功</string>
+    <string name="msg_get_serialPort_failure">未找到串口号,请检查设备是否有串口!</string>
+    <string name="msg_connect_succeed">连接成功</string>
+	<string name="msg_connect_failure">连接失败</string>
+    <string name="msg_disconnect_connect">断开连接</string>
+    <string name="msg_get_version_failure">获取失败，请检查连接是否正常!</string>
+    <!-- 基本操作页面 -->
+    <string name="tab_menu_basic_opera">基本操作</string>
+    <string name="tab_menu_tag_opera">标签操作</string>
+    <string name="tab_menu_params_setting">参数设置</string>
+    <string name="tab_menu_other_setting">其它设置</string>
+    <string name="tv_tag_count">标签数量:</string>
+    <string name="tv_read_count">读取次数</string>
+    <string name="tv_id">序号</string>
+    <string name="tv_epc">EPC</string>
+    <string name="tv_antenna">天线号</string>
+    <string name="tv_count">次数</string>
+    <string name="btn_inventory">开始盘存</string>
+    <string name="btn_stop_inventory">停止盘存</string>
+    <string name="btn_clear">清空</string>
+	<string name="btn_exit">退出</string>
+	<string name="msg_stop_read_tag_succeed">停止连续读卡成功!</string>
+	<string name="msg_stop_read_tag_failure">停止连续读卡失败!</string>
+	<string name="tv_designated_area_read_write">指定区域读/写</string>
+	<!-- tag operation -->
+	<string name="tv_tag_lock_unlock">标签加解锁</string>
+	<string name="tv_tag_destory">标签销毁</string>
+	<string name="tv_designated_area">区域</string>
+	<string name="tv_read_write_start_address">起始地址</string>
+	<string name="tv_read_write_length">长度</string>
+	<string name="tv_read_write_data">数据</string>
+	<string name="tv_read_write_visit_password">访问密码</string>
+	<string name="btn_read_write_continue_read">连续读取</string>
+	<string name="btn_read_write_stop">停止</string>
+	<string name="btn_read_write_read_tag">读取</string>
+	<string name="btn_read_write_write_tag">写卡</string>
+	<string name="btn_read_write_clear">清空</string>
+	<string name="msg_pwd_must_eight">密码必须为8位</string>
+	<string name="msg_pwd_Invalid_char">无效字符(有效字符0-9|A-F)</string>
 </resources>

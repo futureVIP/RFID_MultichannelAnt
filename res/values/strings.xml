@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">RFID_UI</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">RFID_UI</string>
-    
-    <string name="tab_menu_basic_opera">基本操作</string>
-    <string name="tab_menu_tag_opera">标签操作</string>
-    <string name="tab_menu_params_setting">参数设置</string>
-    <string name="tab_menu_other_setting">其它设置</string>
     <string name="returnback">back</string>
-    
     <string name="id">ID</string>
 	<string name="count">count</string>
-	<string name="inventory">Start Inventory</string>
 	<string name="senter">senter</string>
-    <string name="stop_inventory">Stop Inventory</string>
-	<string name="clear">Clear</string>
-	
 	<string name="setting">setting</string>
-	<string name="exit">exit</string>
 	<string name="pwrback">Back</string>
 	<string name="txt_tag_count">tag count:</string>
 	<string name="txt_tag_time">tag time:</string>
-	
 	<string name="membank">Membank</string>
 	<string name="accesspassword">Access Password</string>
 	<string name="addr">Address(word)</string>
@@ -55,35 +41,9 @@
     <string name="koreaFreq">Korea：917700kHz~923300kHz</string>
     <string name="setSuccess">Set success</string>
     <string name="freqNotNull">Frequency not null</string>
-    
-    
-    
-    <string name="about_msg">Serial Port API sample v1.1\n
-\n
-This program is the sample application provided with project android-serialport-api.\n
-\n
-More information and bug report on [http://code.google.com/p/android-serialport-api]\n
-\n
-Copyright 2010-2011 Cedric Priscal\n
-\n
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at\n
-\n
-http://www.apache.org/licenses/LICENSE-2.0\n
-\n
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.\n
-</string>
     <string name="error_configuration">Please configure your serial port first.</string>
-    <string name="error_security">You do not have read/write permission to the serial
-		port.</string>
-    <string name="error_unknown">The serial port can not be opened for an unknown
-		reason.</string>
-
+    <string name="error_security">You do not have read/write permission to the serialport.</string>
+    <string name="error_unknown">The serial port can not be opened for an unknown reason.</string>
         <!-- 2018-06-20 modify -->
     <string name="antenna_1">1</string>
     <string name="antenna_2">2</string>
@@ -100,5 +60,57 @@ limitations under the License.\n
     <string name="connect">connect</string>
     <string name="disconnect">disconnect</string>
     <string name="serialPort">serialPort</string>
-
+    
+    
+    
+    <!-- 2018-11-13 modify -->
+    <!-- connect device -->
+    <string name="btn_return">return</string>
+    <string name="btn_connect_device">connect device</string>
+    <string name="btn_entry_page">entry page</string>
+    <string name="btn_get_verstion">get version</string>
+    <string name="tv_connect_device">connect device</string>
+    <string name="tv_info_hint">information hint</string>
+    <string name="tv_serialPort">serialPort</string>
+    <string name="tv_port">port</string>
+    <string name="msg_get_serialPort_succeed">get serialPort succeed</string>
+    <string name="msg_get_serialPort_failure">The serial port is not found. Please check whether the equipment has serial port</string>
+	<string name="msg_connect_succeed">connect succeed</string>
+	<string name="msg_connect_failure">connect failure</string>
+	<string name="msg_disconnect_connect">disconnect connect</string>
+	<string name="msg_get_version_failure">Acquisition failed, please check if the connection is normal</string>
+	<!-- basic operation -->
+    <string name="tab_menu_basic_opera">basic operation</string>
+    <string name="tab_menu_tag_opera">Tags operate</string>
+    <string name="tab_menu_params_setting">parameter setting</string>
+    <string name="tab_menu_other_setting">other setting</string>
+    <string name="tv_tag_count">tag count</string>
+    <string name="tv_read_count">read count</string>
+    <string name="tv_id">ID</string>
+    <string name="tv_epc">EPC</string>
+    <string name="tv_antenna">ant no.</string>
+    <string name="tv_count">count</string>
+    <string name="btn_inventory">start Inventory</string>
+    <string name="btn_stop_inventory">stop Inventory</string>
+    <string name="btn_clear">clear</string>
+	<string name="btn_exit">exit</string>
+	<string name="msg_stop_read_tag_succeed">stop read tag succeed</string>
+	<string name="msg_stop_read_tag_failure">stop read tag succeed</string>
+	<!-- tag operation -->
+	<string name="tv_designated_area_read_write">Reading/Writing specific zone</string>
+	<string name="tv_tag_lock_unlock">tag lock unlock</string>
+	<string name="tv_tag_destory">tag destory</string>
+	<string name="tv_designated_area">bank</string>
+	<string name="tv_read_write_start_address">starting address</string>
+	<string name="tv_read_write_length">length</string>
+	<string name="tv_read_write_data">data</string>
+	<string name="tv_read_write_visit_password">access password</string>
+	<string name="btn_read_write_continue_read">continue read</string>
+	<string name="btn_read_write_stop">stop</string>
+	<string name="btn_read_write_read_tag">read tag</string>
+	<string name="btn_read_write_write_tag">write tag</string>
+	<string name="btn_read_write_clear">clear</string>
+	<string name="msg_pwd_must_eight">password must be 8 bits</string>
+	<string name="msg_pwd_Invalid_char">contains illegal characters(0 en dash 9,A en dash F)</string>
+	
 </resources>

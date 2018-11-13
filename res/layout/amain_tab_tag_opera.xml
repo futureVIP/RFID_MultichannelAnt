@@ -82,7 +82,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="指定区域读/写"
+                    android:text="@string/tv_designated_area_read_write"
                     android:textColor="#000"
                     android:textSize="17sp" />
 
@@ -109,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="标签加解锁"
+                    android:text="@string/tv_tag_lock_unlock"
                     android:textColor="#000"
                     android:textSize="17sp" />
 
@@ -135,7 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="标签销毁"
+                    android:text="@string/tv_tag_destory"
                     android:textColor="#000"
                     android:textSize="17sp" />
 
@@ -159,7 +159,7 @@
                 android:gravity="center"
                 android:onClick="exit_settings"
                 android:padding="4dp"
-                android:text="退出登陆"
+                android:text="@string/btn_exit"
                 android:textColor="#fff"
                 android:textSize="18sp" />
         </LinearLayout>

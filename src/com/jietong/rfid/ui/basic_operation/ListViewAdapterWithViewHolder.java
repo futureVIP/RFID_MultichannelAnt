@@ -1,12 +1,10 @@
-package com.jietong.rfid.ui;
+package com.jietong.rfid.ui.basic_operation;
 
 import android.content.Context;
 import android.widget.TextView;
 import java.util.List;
 import com.jietong.rfid.uhf.entity.EPC;
 import com.jietong.rfid.ui.R;
-import com.jietong.rfid.util.ListViewAdapter;
-import com.jietong.rfid.util.ViewHolder;
 
 public class ListViewAdapterWithViewHolder extends ListViewAdapter<EPC> {
 

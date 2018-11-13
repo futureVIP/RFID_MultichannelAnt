@@ -32,6 +32,7 @@ import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.CallBack;
 import com.jietong.rfid.uhf.tool.CallBackStopReadCard;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
+import com.jietong.rfid.ui.basic_operation.ListViewAdapterWithViewHolder;
 import com.jietong.rfid.ui.other_operation.AdjacentDiscrimnantActivity;
 import com.jietong.rfid.ui.other_operation.BuzzerSetActivity;
 import com.jietong.rfid.ui.other_operation.UsbDeliveryOutletActivity;
@@ -82,11 +83,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	private ListView listViewData;
 	private List<EPC> listEPC;
 	// private Button mRightBtn;
-	// 天线参数
 	RelativeLayout rlAntenna4channel;
 	RelativeLayout rlAntenna16channel;
 	RelativeLayout rlAntenna32channel;
-	// 相邻居判别
 	RelativeLayout rlAdjacentDiscriminant;
 	private ListViewAdapterWithViewHolder listViewAdapterWithViewHolder;
 	ReaderService service = new ReaderServiceImpl();
@@ -109,20 +108,18 @@ public class MainActivity extends Activity implements OnClickListener {
 		mTab2.setOnClickListener(new MyOnClickListener(1));
 		mTab3.setOnClickListener(new MyOnClickListener(2));
 		mTab4.setOnClickListener(new MyOnClickListener(3));
-		Display currDisplay = getWindowManager().getDefaultDisplay();// 获取屏幕当前分辨率
+		Display currDisplay = getWindowManager().getDefaultDisplay();
 		int displayWidth = currDisplay.getWidth();
 		int displayHeight = currDisplay.getHeight();
-		one = displayWidth / 4; // 设置水平动画平移大小
+		one = displayWidth / 4; 
 		two = one * 2;
 		three = one * 3;
-		// Log.i("info", "获取的屏幕分辨率为" + one + two + three + "X" + displayHeight);
 		btnBeginInv.setOnClickListener(this);
 		btnBasicStop.setOnClickListener(this);
 		btnBasicClear.setOnClickListener(this);
 	}
 
 	private void controlInital() {
-		// 启动activity时不自动弹出软键盘
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		instance = this;
 		listEPC = new ArrayList<EPC>();
@@ -132,25 +129,21 @@ public class MainActivity extends Activity implements OnClickListener {
 		mTab3 = (ImageView) findViewById(R.id.img_friends);
 		mTab4 = (ImageView) findViewById(R.id.img_settings);
 		mTabImg = (ImageView) findViewById(R.id.img_tab_now);
-		// 将要分页显示的View装入数组中
 		LayoutInflater mLi = LayoutInflater.from(this);
 		View view1 = mLi.inflate(R.layout.amain_tab_basic_opera, null);
 		View view2 = mLi.inflate(R.layout.amain_tab_tag_opera, null);
 		View view3 = mLi.inflate(R.layout.amain_tab_params_settings, null);
 		View view4 = mLi.inflate(R.layout.amain_tab_other_settings, null);
-		basicOpera(view1);// 基本操作_页面1
-		tagOpera(view2); //标签操作_页面2
-		paramsSet(view3);// 参数设置_页面3
-		otherOpera(view4);// 其它设置_页面4
-		// 每个页面的view数据
+		basicOpera(view1);
+		tagOpera(view2);
+		paramsSet(view3);
+		otherOpera(view4);
 		final ArrayList<View> views = new ArrayList<View>();
 		views.add(view1);
 		views.add(view2);
 		views.add(view3);
 		views.add(view4);
-		// 填充ViewPager的数据适配器
 		PagerAdapter mPagerAdapter = new PagerAdapter() {
-
 			@Override
 			public boolean isViewFromObject(View arg0, Object arg1) {
 				return arg0 == arg1;
@@ -447,7 +440,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	public void dataFilter(List<EPC> listEPC, String epc, int ant) {
-		// 第一次读入数据
 		if (listEPC.isEmpty()) {
 			EPC epcTag = new EPC();
 			epcTag.setId(1);
@@ -459,14 +451,12 @@ public class MainActivity extends Activity implements OnClickListener {
 			for (int i = 0; i < listEPC.size(); i++) {
 				int count = listEPC.size();
 				EPC mEPC = listEPC.get(i);
-				// list中有此EPC
 				if (epc.equals(mEPC.getEpc()) && ant == mEPC.getAnt()) {
 					mEPC.setCount(mEPC.getCount() + 1);
 					listEPC.set(i, mEPC);
 					break;
 				} else if (i == (listEPC.size() - 1)) {
 					count++;
-					// list中没有此epc
 					EPC newEPC = new EPC();
 					newEPC.setId(count);
 					newEPC.setEpc(epc);
@@ -494,7 +484,6 @@ public class MainActivity extends Activity implements OnClickListener {
 			@Override
 			public void run() {
 				dataFilter(listEPC2, epc, ant);
-				// 为数据绑定适配器
 				listViewAdapterWithViewHolder = new ListViewAdapterWithViewHolder(getApplicationContext(), listEPC);
 				listViewData.setAdapter(listViewAdapterWithViewHolder);
 			}
@@ -516,33 +505,31 @@ public class MainActivity extends Activity implements OnClickListener {
 				@Override
 				public void run() {
 					if (result) {
-						Toasts.makeTextShort(getApplicationContext(), "停止成功!");
+						Toasts.makeTextShort(getApplicationContext(), R.string.msg_stop_read_tag_succeed);
 					} else {
-						Toasts.makeTextShort(getApplicationContext(), "停止失败!");
+						Toasts.makeTextShort(getApplicationContext(), R.string.msg_stop_read_tag_failure);
 					}
 				}
 			});
 		}
 	}
 
-	/********************* 以下为跳转页面 ************************************************/
-	// 设置标题栏右侧按钮的作用
 	public void btnmainright(View v) {
 		Intent intent = new Intent(MainActivity.this, MainTopRightDialog.class);
 		startActivity(intent);
 	}
 
-	public void exit_settings(View v) { // 退出 伪“对话框”，其实是一个activity
+	public void exit_settings(View v) { 
 		Intent intent = new Intent(MainActivity.this, ExitFromSettings.class);
 		startActivity(intent);
 	}
 
-	public void btn_shake(View v) { // 手机摇一摇
+	public void btn_shake(View v) { 
 		Intent intent = new Intent(MainActivity.this, ShakeActivity.class);
 		startActivity(intent);
 	}
 
-	// 标签操作 start
+	// tag operation start
 	public void btn_designated_area_read_and_write(View v) {
 		Intent intent = new Intent(MainActivity.this,
 				DesignatedAreaReadAndWriteActivity.class);
@@ -559,8 +546,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		Intent intent = new Intent(MainActivity.this, TagDestroyActivity.class);
 		startActivity(intent);
 	}
-	// 标签操作 end
-	// 参数设置 start
+	//  tag operation end
+	
+	//  params set start
 	public void btn_work_pattern(View v) {
 		Intent intent = new Intent(MainActivity.this, WorkPatternActivity.class);
 		startActivity(intent);
@@ -613,7 +601,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		startActivity(intent);
 	}
 
-	// 参数设置 end
+	// params set end
 	public void btn_usb_delivery_outlet(View v) {
 		Intent intent = new Intent(MainActivity.this,
 				UsbDeliveryOutletActivity.class);
@@ -626,9 +614,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	public void btn_adjacent_discriminant(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				AdjacentDiscrimnantActivity.class);
+		Intent intent = new Intent(MainActivity.this,AdjacentDiscrimnantActivity.class);
 		startActivity(intent);
 	}
-	/********************* 以上为跳转页面 ************************************************/
 }

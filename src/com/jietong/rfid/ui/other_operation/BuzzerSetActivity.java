@@ -21,7 +21,7 @@ public class BuzzerSetActivity extends Activity implements OnClickListener,OnIte
 	private Button btnRead;
 	private Button btnSet;
 	private int state;
-	
+	private int showInfo;
 	ReaderService readerService = new ReaderServiceImpl();
 	
 	@Override
@@ -72,28 +72,26 @@ public class BuzzerSetActivity extends Activity implements OnClickListener,OnIte
 	
 	private void buzzerSet() {
 		boolean result = readerService.setBuzzer(ReaderUtil.readers, (byte)state);
-		String showInfo;
 		if(result){
-			showInfo = "设置成功!";
+			//showInfo = "设置成功!";
 		}else{
-			showInfo = "设置失败!";
+			//showInfo = "设置失败!";
 		}
-		Toasts.makeTextShort(this, showInfo);
+		//Toasts.makeTextShort(this, showInfo);
 	}
 
 	private void buzzerRead() {
 		int result = readerService.getBuzzer(ReaderUtil.readers);
-		String showInfo;
 		if(result > -1){
-			showInfo = "获取成功!";
+			//showInfo = "获取成功!";
 			spinnerBuzzer.setSelection(result);
 		}else{
-			showInfo ="获取失败!";
+			//showInfo ="获取失败!";
 		}
-		Toasts.makeTextShort(this, showInfo);
+		//Toasts.makeTextShort(this, showInfo);
 	}
 
-	public void shake_activity_back(View v) { // 标题栏 返回按钮
+	public void shake_activity_back(View v) {
 		this.finish();
 	}
 	
