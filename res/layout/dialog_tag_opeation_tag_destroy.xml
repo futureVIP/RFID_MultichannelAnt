@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:background="@drawable/title_btn_back"
             android:onClick="shake_activity_back"
-            android:text="返回"
+            android:text="@string/btn_return"
             android:textColor="#fff"
             android:textSize="14sp" />
 
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="销毁标签"
+            android:text="@string/tv_tag_destroy"
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
@@ -40,20 +40,7 @@
             android:src="@drawable/mm_title_btn_menu" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_tag_destroy_btn"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true" >
-
-        <Button
-            android:id="@+id/btn_tag_destroy_set"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:text="销毁标签" />
-    </LinearLayout>
+   
 
     <LinearLayout
         android:id="@+id/ll_tag_destroy_visit"
@@ -69,7 +56,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="访问密码"
+            android:text="@string/tv_access_password"
             android:textColor="@color/bg_black" />
 
         <EditText
@@ -79,8 +66,7 @@
             android:layout_weight="2"
             android:ems="10"
             android:inputType="number"
-            android:text="00000000" />
-
+            android:text="@string/et_access_password_value" />
     </LinearLayout>
 
     <LinearLayout
@@ -97,7 +83,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="灭活密码"
+            android:text="@string/tv_destroy_password"
             android:textColor="@color/bg_black" />
 
         <EditText
@@ -107,10 +93,23 @@
             android:layout_weight="2"
             android:ems="10"
             android:inputType="number"
-            android:text="00000000" >
-
-            <requestFocus />
+            android:text="@string/et_destroy_password_value" >
         </EditText>
+    </LinearLayout>
+    
+     <LinearLayout
+        android:id="@+id/ll_tag_destroy_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/btn_tag_destroy_set"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_destroy_tag" />
     </LinearLayout>
 
 </RelativeLayout>

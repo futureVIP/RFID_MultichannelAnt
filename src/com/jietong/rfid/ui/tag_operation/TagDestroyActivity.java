@@ -7,7 +7,6 @@ import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
@@ -16,9 +15,9 @@ import com.jietong.rfid.util.Regex;
 import com.jietong.rfid.util.Toasts;
 
 public class TagDestroyActivity extends Activity implements OnClickListener {
-	EditText etKillPwd;
-	EditText etAccessPwd;
-	Button btnTagDestroy;
+	private EditText etKillPwd;
+	private EditText etAccessPwd;
+	private Button btnTagDestroy;
 	
 	ReaderService readerService = new ReaderServiceImpl();
 	
@@ -30,12 +29,10 @@ public class TagDestroyActivity extends Activity implements OnClickListener {
 	}
 
 	private void inital() {
-		// 启动activity时不自动弹出软键盘
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		etKillPwd = (EditText)findViewById(R.id.et_tag_destroy_pwd);
 		etAccessPwd = (EditText)findViewById(R.id.et_tag_destroy_visit_pwd);
 		btnTagDestroy = (Button)findViewById(R.id.btn_tag_destroy_set);
-		
 		btnTagDestroy.setOnClickListener(this);
 	}
 
@@ -58,6 +55,9 @@ public class TagDestroyActivity extends Activity implements OnClickListener {
 	}
 
 	private void tagDestroy() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		byte [] accessPwd = new byte[4];
 		byte [] killPwd = new byte[4];
 		
@@ -65,34 +65,32 @@ public class TagDestroyActivity extends Activity implements OnClickListener {
 		String pwd = etKillPwd.getText().toString().replace(" ", "");
 		
 		if (pwd.length() != 8 || visitPwd.length() != 8 ) {
-			Toasts.makeTextShort(this, "密码必须为8位");
+			Toasts.makeTextShort(this,R.string.msg_pwd_must_eight);
 			return;
 		}
 		if (!Regex.isHexCharacter(pwd) || !Regex.isHexCharacter(visitPwd)) {
-			Toasts.makeTextShort(this, "密码含有0－9，A－F之外的非法字符");
+			Toasts.makeTextShort(this,R.string.msg_pwd_Invalid_char);
 			return;
 		}
 		String defaultPwd = "00000000";
 		if(visitPwd.equals(defaultPwd) || pwd.equals(defaultPwd)){
-			Toasts.makeTextShort(this, "默认密码不能执行操作,请修改后再操作!");
+			Toasts.makeTextShort(this, R.string.msg_default_destroy_password_no_operation);
 			return;
 		}
 		for (int i = 0; i < 4; ++i) {
 			String str = visitPwd.substring(i * 2, (2 + i * 2));
-			// 把字符串的子串转为16进制的8位无符号整数
 			accessPwd[i] = Byte.parseByte(str, 16);
 		}
 		
 		for (int i = 0; i < 4; ++i) {
 			String str = pwd.substring(i * 2, (2 + i * 2));
-			// 把字符串的子串转为16进制的8位无符号整数
 			killPwd[i] = Byte.parseByte(str, 16);
 		}
 		boolean result = readerService.killTag(ReaderUtil.readers,accessPwd,killPwd);
 		if(result){
-			Toasts.makeTextShort(this, "销毁成功!");
+			Toasts.makeTextShort(this,R.string.msg_destroy_tag_succeed);
 		}else{
-			Toasts.makeTextShort(this, "销毁失败!");
+			Toasts.makeTextShort(this,R.string.msg_destroy_tag_failed);
 		}
 	}
 }

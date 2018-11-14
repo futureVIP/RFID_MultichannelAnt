@@ -15,7 +15,6 @@ public class UsbDeliveryOutletActivity extends Activity {
 	}
 	
 	private void inital() {
-		// 启动activity时不自动弹出软键盘
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 	}
 

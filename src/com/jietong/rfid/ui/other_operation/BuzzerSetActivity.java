@@ -9,7 +9,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.Spinner;
-
 import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
@@ -21,7 +20,6 @@ public class BuzzerSetActivity extends Activity implements OnClickListener,OnIte
 	private Button btnRead;
 	private Button btnSet;
 	private int state;
-	private int showInfo;
 	ReaderService readerService = new ReaderServiceImpl();
 	
 	@Override
@@ -71,24 +69,28 @@ public class BuzzerSetActivity extends Activity implements OnClickListener,OnIte
 	}
 	
 	private void buzzerSet() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		boolean result = readerService.setBuzzer(ReaderUtil.readers, (byte)state);
 		if(result){
-			//showInfo = "设置成功!";
+			Toasts.makeTextShort(this, R.string.msg_other_set_buzzer_set_succeed);
 		}else{
-			//showInfo = "设置失败!";
+			Toasts.makeTextShort(this, R.string.msg_other_set_buzzer_set_failed);
 		}
-		//Toasts.makeTextShort(this, showInfo);
 	}
 
 	private void buzzerRead() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		int result = readerService.getBuzzer(ReaderUtil.readers);
 		if(result > -1){
-			//showInfo = "获取成功!";
 			spinnerBuzzer.setSelection(result);
+			Toasts.makeTextShort(this, R.string.msg_other_set_buzzer_read_succeed);
 		}else{
-			//showInfo ="获取失败!";
+			Toasts.makeTextShort(this, R.string.msg_other_set_buzzer_read_failed);
 		}
-		//Toasts.makeTextShort(this, showInfo);
 	}
 
 	public void shake_activity_back(View v) {

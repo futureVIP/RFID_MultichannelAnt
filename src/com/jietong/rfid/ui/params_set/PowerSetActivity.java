@@ -7,12 +7,14 @@ import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.ui.R;
 
 public class PowerSetActivity extends Activity implements OnClickListener{
-	TextView tvPowerSet;
-	Button btnRead;
-	Button btnSet;
+	private TextView tvPowerSet;
+	private Button btnRead;
+	private Button btnSet;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -45,10 +47,15 @@ public class PowerSetActivity extends Activity implements OnClickListener{
 	}
 	
 	private void powerSet() {
-		
+		if(null == ReaderUtil.readers){
+			return;
+		}
 	}
 
 	private void powerRead() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		//ReaderUtil.readerService.get
 	}
 

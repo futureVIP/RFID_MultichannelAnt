@@ -17,10 +17,10 @@ import com.jietong.rfid.ui.R;
 import com.jietong.rfid.util.Toasts;
 
 public class WorkPatternActivity extends Activity implements OnClickListener,OnItemSelectedListener {
-	Spinner spinnerWorkPattern;
-	Button btnRead;
-	Button btnSet;
-	int workPattern;
+	private Spinner spinnerWorkPattern;
+	private Button btnRead;
+	private Button btnSet;
+	private int workPattern;
 	ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
@@ -31,7 +31,6 @@ public class WorkPatternActivity extends Activity implements OnClickListener,OnI
 	}
 
 	private void inital() {
-		// 启动activity时不自动弹出软键盘
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		spinnerWorkPattern = (Spinner) findViewById(R.id.spinner_work_pattern);
 		btnRead = (Button) findViewById(R.id.btn_work_pattern_read);
@@ -79,21 +78,27 @@ public class WorkPatternActivity extends Activity implements OnClickListener,OnI
 	}
 
 	private void workPatternSet() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		boolean result = readerService.setWorkMode(ReaderUtil.readers, workPattern);
 		if(result){
-			Toasts.makeTextShort(this, "设置工作模式成功!");
+			Toasts.makeTextShort(this, R.string.msg_work_mode_set_succeed);
 		}else{
-			Toasts.makeTextShort(this, "设置工作模式失败!");
+			Toasts.makeTextShort(this,R.string.msg_work_mode_set_failed);
 		}
 	}
 
 	private void workPatternRead() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		int result = readerService.getWorkMode(ReaderUtil.readers);
 		if(result > -1 && result < 3){
 			spinnerWorkPattern.setSelection(result);
-			Toasts.makeTextShort(this, "获取工作模式成功!");
+			Toasts.makeTextShort(this,R.string.msg_work_mode_read_succeed);
 		}else{
-			Toasts.makeTextShort(this, "获取工作模式失败!");
+			Toasts.makeTextShort(this, R.string.msg_work_mode_read_failed);
 		}
 	}
 }

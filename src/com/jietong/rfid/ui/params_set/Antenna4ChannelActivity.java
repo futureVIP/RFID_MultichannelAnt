@@ -10,7 +10,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
-
 import com.jietong.rfid.uhf.entity.AntStruct;
 import com.jietong.rfid.uhf.entity.OperationAntenna;
 import com.jietong.rfid.uhf.service.ReaderService;
@@ -21,20 +20,12 @@ import com.jietong.rfid.util.Toasts;
 
 public class Antenna4ChannelActivity extends Activity implements
 		OnClickListener, OnItemSelectedListener {
-	CheckBox cbAntenna[];
-	Spinner spinnerWorkTime[];
-	Spinner spinnerPower[];
-	Button btnRead;
-	Button btnSet;
-	int workTime1;
-	int workTime2;
-	int workTime3;
-	int workTime4;
-	int power1;
-	int power2;
-	int power3;
-	int power4;
-	ReaderService service = new ReaderServiceImpl();
+	private CheckBox cbAntenna[];
+	private Spinner spinnerWorkTime[];
+	private Spinner spinnerPower[];
+	private Button btnRead;
+	private Button btnSet;
+	ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -44,7 +35,6 @@ public class Antenna4ChannelActivity extends Activity implements
 	}
 
 	private void inital() {
-		// 启动activity时不自动弹出软键盘
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		cbAntenna = new CheckBox[4];
 		cbAntenna[0] = (CheckBox) findViewById(R.id.cb_4antenna1);
@@ -89,28 +79,20 @@ public class Antenna4ChannelActivity extends Activity implements
 		int temp = Integer.parseInt(parent.getSelectedItem().toString());
 		switch (parent.getId()) {
 		case R.id.spinner_4antenna_work_time1:
-			workTime1 = temp;
 			break;
 		case R.id.spinner_4antenna_work_time2:
-			workTime2 = temp;
 			break;
 		case R.id.spinner_4antenna_work_time3:
-			workTime3 = temp;
 			break;
 		case R.id.spinner_4antenna_work_time4:
-			workTime4 = temp;
 			break;
 		case R.id.spinner_4antenna_power1:
-			power1 = temp;
 			break;
 		case R.id.spinner_4antenna_power2:
-			power2 = temp;
 			break;
 		case R.id.spinner_4antenna_power3:
-			power3 = temp;
 			break;
 		case R.id.spinner_4antenna_power4:
-			power4 = temp;
 			break;
 		}
 	}
@@ -150,20 +132,23 @@ public class Antenna4ChannelActivity extends Activity implements
 			String power = spinnerPower[i].getSelectedItem().toString();
 			ant.power[i] = Integer.parseInt(power);
 		}
-		boolean result = service.setAnt(ReaderUtil.readers, ant);
+		boolean result = readerService.setAnt(ReaderUtil.readers, ant);
 		if(result){
-			Toasts.makeTextShort(this, "设置天线成功!");
+			Toasts.makeTextShort(this,R.string.msg_antenna_params_set_succeed);
 		}else{
-			Toasts.makeTextShort(this, "设置天线失败!");
+			Toasts.makeTextShort(this,R.string.msg_antenna_params_set_failed);
 		}
 	}
 
 	private void antennaRead() {
-		AntStruct ant = service.getAnt(ReaderUtil.readers);
+		if(null == ReaderUtil.readers){
+			return;
+		}
+		AntStruct ant = readerService.getAnt(ReaderUtil.readers);
 		if(ant != null){
-			Toasts.makeTextShort(this, "获取天线成功!");
+			Toasts.makeTextShort(this,R.string.msg_antenna_params_read_succeed);
 		}else{
-			Toasts.makeTextShort(this, "获取天线失败!");
+			Toasts.makeTextShort(this,R.string.msg_antenna_params_read_failed);
 		}
 		for (int i = 0; i < 4; i++) {
 			cbAntenna[i].setChecked(ant.enable[i] == 1);

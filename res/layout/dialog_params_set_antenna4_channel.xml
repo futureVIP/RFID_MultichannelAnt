@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:background="@drawable/title_btn_back"
             android:onClick="shake_activity_back"
-            android:text="返回"
+            android:text="@string/btn_return"
             android:textColor="#fff"
             android:textSize="14sp" />
 
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="天线参数"
+            android:text="@string/tv_antenna_params"
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
@@ -62,9 +62,7 @@
                 android:id="@+id/ll_4antenna_workTime_power"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_below="@+id/linearLayoutHead"
                 android:background="@drawable/linearlayout_underline" >
-
                 <TextView
                     android:id="@+id/tv_4connect_info_hint"
                     android:layout_width="0dp"
@@ -72,14 +70,13 @@
                     android:layout_gravity="center|center_vertical"
                     android:layout_weight="1"
                     android:gravity="center" />
-
                 <TextView
                     android:id="@+id/tv_4antenna_work_time"
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="2"
                     android:gravity="center"
-                    android:text="工作时间(ms)"
+                    android:text="@string/tv_antenna_params_work_time"
                     android:textColor="@color/bg_black" />
 
                  <TextView
@@ -88,7 +85,7 @@
                      android:layout_height="fill_parent"
                      android:layout_weight="2"
                      android:gravity="center"
-                     android:text="功率(dbm)" 
+                     android:text="@string/tv_antenna_params_power" 
                      android:textColor="@color/bg_black"/>
 
             </LinearLayout>
@@ -105,7 +102,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1号" 
+                    android:text="@string/cb_antenna_no.01" 
                     android:textColor="@color/bg_black"/>
 
                 <Spinner
@@ -113,14 +110,14 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:entries="@array/antenna_work_time" />
+                    android:entries="@array/spinner_antenna_work_time" />
 
                 <Spinner
                     android:id="@+id/spinner_4antenna_power1"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:entries="@array/antenna_power" />
+                    android:entries="@array/spinner_antenna_power" />
             </LinearLayout>
             <!-- 1号_天线参数设置 end -->
 
@@ -138,7 +135,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2号"
+                    android:text="@string/cb_antenna_no.02"
                     android:textColor="@color/bg_black" />
 
                 <Spinner
@@ -146,14 +143,14 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:entries="@array/antenna_work_time" />
+                    android:entries="@array/spinner_antenna_work_time" />
 
                 <Spinner
                     android:id="@+id/spinner_4antenna_power2"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:entries="@array/antenna_power" />
+                    android:entries="@array/spinner_antenna_power" />
             </LinearLayout>
             <!-- 2号_天线参数设置 end -->
 
@@ -171,7 +168,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="3号"
+                    android:text="@string/cb_antenna_no.03"
                     android:textColor="@color/bg_black" />
 
                 <Spinner
@@ -179,14 +176,14 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:entries="@array/antenna_work_time" />
+                    android:entries="@array/spinner_antenna_work_time" />
 
                 <Spinner
                     android:id="@+id/spinner_4antenna_power3"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:entries="@array/antenna_power" />
+                    android:entries="@array/spinner_antenna_power" />
             </LinearLayout>
             <!-- 3号_天线参数设置 end -->
 
@@ -204,7 +201,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4号" 
+                    android:text="@string/cb_antenna_no.04" 
                     android:textColor="@color/bg_black"/>
 
                 <Spinner
@@ -212,14 +209,14 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:entries="@array/antenna_work_time" />
+                    android:entries="@array/spinner_antenna_work_time" />
 
                 <Spinner
                     android:id="@+id/spinner_4antenna_power4"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="2"
-                    android:entries="@array/antenna_power" />
+                    android:entries="@array/spinner_antenna_power" />
             </LinearLayout>
             <!-- 4号_天线参数设置 end -->
 
@@ -241,7 +238,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.76"
             android:onClick="on_button_read_antenna"
-            android:text="@string/read_antenna"
+            android:text="@string/btn_antenna_params_read"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -252,7 +249,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.76"
             android:onClick="on_button_set_antenna"
-            android:text="@string/set_antenna"
+            android:text="@string/btn_antenna_params_set"
             android:textColor="#000000"
             android:textSize="16sp" />
     </LinearLayout>

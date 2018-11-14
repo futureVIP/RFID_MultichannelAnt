@@ -47,7 +47,7 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 	private Timer timer = null;
 	private int simple_spinner_item = android.R.layout.simple_spinner_item;
 	private int simple_spinner_dropdown_item = android.R.layout.simple_spinner_dropdown_item;
-	private ReaderService service = new ReaderServiceImpl();
+	private ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -200,33 +200,35 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 	}
 
 	private void continueReadTag() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
+		final byte bank = (byte) areaPosition;
+		final byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress.getSelectedItem().toString());
+		final byte size = (byte) Integer.parseInt(spinnerDesignatedLength.getSelectedItem().toString());
+		final byte[] password = new byte[4];
+		final String visit = etVisitPwd.getText().toString().trim();
+		if (visit.length() != 8) {
+			Toasts.makeTextShort(getApplicationContext(), R.string.msg_pwd_must_eight);
+			return;
+		} else if (!Regex.isHexCharacter(visit)) {
+			Toasts.makeTextShort(getApplicationContext(),R.string.msg_pwd_Invalid_char);
+			return;
+		}
+		for (int i = 0; i < 4; ++i) {
+			String str = visit.substring(i * 2, (2 + i * 2));
+			password[i] = Byte.parseByte(str, 16);
+		}
+		
 		mactvDataArea.setText("");
 		counts = 1;
 		timer = new Timer();
 		TimerTask task = new TimerTask() {
 			@Override
 			public void run() {
-				byte bank = (byte) areaPosition;
-				byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress.getSelectedItem().toString());
-				byte size = (byte) Integer.parseInt(spinnerDesignatedLength.getSelectedItem().toString());
-				byte[] password = new byte[4];
-				String visit = etVisitPwd.getText().toString().trim();
-				if (visit.length() != 8) {
-					//Toasts.makeTextShort(getApplicationContext(), R.string.msg_pwd_must_eight);
-					return;
-				} else if (!Regex.isHexCharacter(visit)) {
-					//Toasts.makeTextShort(getApplicationContext(),R.string.msg_pwd_Invalid_char);
-					return;
-				}
-				for (int i = 0; i < 4; ++i) {
-					String str = visit.substring(i * 2, (2 + i * 2));
-					password[i] = Byte.parseByte(str, 16);
-				}
-				String data = service.readTagData(ReaderUtil.readers, bank,
-						begin, size, password);
+				String data = readerService.readTagData(ReaderUtil.readers, bank,begin, size, password);
 				showData(data);
 			}
-
 		};
 		timer.schedule(task, 1000, 2000);
 	}
@@ -251,15 +253,18 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 						mactvDataArea.setText(sb.toString());
 						counts += 1;
 					}
-					Toasts.makeTextShort(getApplicationContext(), "获取成功!");
+					Toasts.makeTextShort(getApplicationContext(),R.string.msg_read_data_success);
 				} else {
-					Toasts.makeTextShort(getApplicationContext(), "获取失败!");
+					Toasts.makeTextShort(getApplicationContext(),R.string.msg_read_data_failure);
 				}
 			}
 		});
 	}
 
 	private void writeTag() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		byte bank = (byte) areaPosition;
 		byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress
 				.getSelectedItem().toString());
@@ -276,21 +281,27 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 		}
 		String inData = mactvDataArea.getText().toString().replace(" ", "");
 		if (inData.length() % 4 != 0 || inData.length() / 4 != size) {
-			Toasts.makeTextShort(this, "实际数据长度和指定的长度不同");
+			Toasts.makeTextShort(this,R.string.msg_length_diff);
 			return;
 		}
 		if (!Regex.isHexCharacter(inData)) {
 			Toasts.makeTextShort(this, R.string.msg_pwd_Invalid_char);
 			return;
 		}
-		service.writeTagData(ReaderUtil.readers, bank, begin, size, inData,
-				password);
+		boolean result = readerService.writeTagData(ReaderUtil.readers, bank, begin, size, inData,password);
+		if(result){
+			Toasts.makeTextShort(this, R.string.msg_write_to_successful);
+		}else{
+			Toasts.makeTextShort(this, R.string.msg_write_to_failure);
+		}
 	}
 
 	private void readTag() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		byte bank = (byte) areaPosition;
-		byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress
-				.getSelectedItem().toString());
+		byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress.getSelectedItem().toString());
 		byte size = (byte) Integer.parseInt(spinnerDesignatedLength.getSelectedItem().toString());
 		byte[] password = new byte[4];
 		String visit = etVisitPwd.getText().toString().trim();
@@ -306,12 +317,12 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 			password[i] = Byte.parseByte(str, 16);
 		}
 
-		String data = service.readTagData(ReaderUtil.readers, bank, begin,size, password);
+		String data = readerService.readTagData(ReaderUtil.readers, bank, begin,size, password);
 		if (data != null) {
-			Toasts.makeTextShort(getApplicationContext(), "获取成功!");
+			Toasts.makeTextShort(getApplicationContext(),R.string.msg_read_data_success);
 			mactvDataArea.setText(data);
 		} else {
-			Toasts.makeTextShort(getApplicationContext(), "获取失败!");
+			Toasts.makeTextShort(getApplicationContext(),R.string.msg_read_data_failure);
 			return;
 		}
 	}

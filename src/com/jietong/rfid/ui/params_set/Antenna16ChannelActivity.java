@@ -11,25 +11,24 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
-import android.widget.Toast;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-
 import com.jietong.rfid.uhf.entity.AntStruct;
 import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.ui.R;
+import com.jietong.rfid.util.Toasts;
 
 public class Antenna16ChannelActivity extends Activity  implements OnCheckedChangeListener, OnClickListener {
-	CheckBox cbAntennaGroup[];
-	CheckBox cbAntenna[];
-	List<String> checkedStr;
+	private CheckBox cbAntennaGroup[];
+	private CheckBox cbAntenna[];
+	private List<String> checkedStr;
 	// 操作取消一个时，全选取消，这个变量是是否是用户点击
-	boolean checkFoUser = true;
-	Spinner spinnerWorkTime;
-	Spinner spinnerPower;
-	Button btnReaderAntenner;
-	Button btnSetAntenner;
+	private boolean checkFoUser = true;
+	private Spinner spinnerWorkTime;
+	private Spinner spinnerPower;
+	private Button btnReaderAntenner;
+	private Button btnSetAntenner;
 	ReaderService readerService = new ReaderServiceImpl();
 	
 	@Override
@@ -111,6 +110,9 @@ public class Antenna16ChannelActivity extends Activity  implements OnCheckedChan
 	}
 
 	private void setAntenna() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		AntStruct ant = new AntStruct(ReaderUtil.readers.getChannel());
 		for (int i = 0; i < cbAntenna.length; i++) {
 			ant.enable[i] = (byte) (cbAntenna[i].isChecked() ? 1 : 0);
@@ -120,14 +122,22 @@ public class Antenna16ChannelActivity extends Activity  implements OnCheckedChan
 		
 		boolean result = readerService.setAnt(ReaderUtil.readers,ant);
 		if(result){
-			Toast.makeText(getApplicationContext(), "设置天线成功!",Toast.LENGTH_SHORT).show();
+			Toasts.makeTextShort(this, R.string.msg_antenna_params_set_succeed);
+		}else{
+			Toasts.makeTextShort(this, R.string.msg_antenna_params_set_failed);
 		}
 	}
 
 	private void readAntenna() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		AntStruct  ant = readerService.getAnt(ReaderUtil.readers);
 		if(ant != null){
-			Toast.makeText(getApplicationContext(), "读取天线成功!",Toast.LENGTH_SHORT).show();
+			Toasts.makeTextShort(this,R.string.msg_antenna_params_read_succeed);
+		}else{
+			Toasts.makeTextShort(this,R.string.msg_antenna_params_read_failed);
+			return;
 		}
 		for (int i = 0; i < cbAntenna.length; i++) {
 			cbAntenna[i].setChecked(ant.enable[i] == 1);

@@ -88,7 +88,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	RelativeLayout rlAntenna32channel;
 	RelativeLayout rlAdjacentDiscriminant;
 	private ListViewAdapterWithViewHolder listViewAdapterWithViewHolder;
-	ReaderService service = new ReaderServiceImpl();
+	ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -213,10 +213,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	};
 
 	public void antennaShowChannel(){
-		rlAntenna4channel.setVisibility(View.GONE);
-		rlAntenna16channel.setVisibility(View.GONE);
-		rlAntenna32channel.setVisibility(View.GONE);
-		
+//		rlAntenna4channel.setVisibility(View.GONE);
+//		rlAntenna16channel.setVisibility(View.GONE);
+//		rlAntenna32channel.setVisibility(View.GONE);
+		rlAntenna4channel.setVisibility(View.VISIBLE);
+		rlAntenna16channel.setVisibility(View.VISIBLE);
+		rlAntenna32channel.setVisibility(View.VISIBLE);
 		if (null != ReaderUtil.readers) {
 			if (ReaderUtil.readers.getChannel() == 4
 					|| ReaderUtil.readers.getChannel() == 6) {
@@ -401,19 +403,22 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	private void stop() {
+		if (null == ReaderUtil.readers) {
+			return;
+		}
 		runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				if (ReaderUtil.readers != null) {
-					service.stopInv(ReaderUtil.readers, new StopReadData());
-				}
+				readerService.stopInv(ReaderUtil.readers, new StopReadData());
 			}
 		});
 	}
 
 	private void beginInv() {
-		if (ReaderUtil.readers != null) {
-			service.beginInv(ReaderUtil.readers, new ReadData());
+		if (null != ReaderUtil.readers) {
+			readerService.beginInv(ReaderUtil.readers, new ReadData());
+		}else{
+			return;
 		}
 	}
 

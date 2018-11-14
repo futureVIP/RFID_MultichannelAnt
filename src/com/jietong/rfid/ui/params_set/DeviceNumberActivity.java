@@ -16,9 +16,9 @@ import com.jietong.rfid.util.Regex;
 import com.jietong.rfid.util.Toasts;
 
 public class DeviceNumberActivity extends Activity implements OnClickListener{
-	EditText etDeviceNo;
-	Button btnRead;
-	Button btnSet;
+	private EditText etDeviceNo;
+	private Button btnRead;
+	private Button btnSet;
 	
 	ReaderService readerService = new ReaderServiceImpl();
 	
@@ -59,32 +59,38 @@ public class DeviceNumberActivity extends Activity implements OnClickListener{
 	}
 
 	private void deviceNoRead() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		String result = readerService.getDeviceNo(ReaderUtil.readers);
 		if(null != result){
 			etDeviceNo.setText(result);
-			Toasts.makeTextShort(this, "获取成功!");
+			Toasts.makeTextShort(this,R.string.msg_device_number_read_succeed);
 		}else{
-			Toasts.makeTextShort(this, "获取失败!");
+			Toasts.makeTextShort(this,R.string.msg_device_number_read_failed);
 		}
 	}
 
 	private void deviceNoSet() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		String device = etDeviceNo.getText().toString().replace(" ", "");
 		boolean value = Regex.isDecNumber(device);
 		if(!value){
-			Toasts.makeTextShort(this, "非法值");
+			Toasts.makeTextShort(this,R.string.msg_device_number_value_scope);
 			return;
 		}
 		int dev = Integer.parseInt(device);
 		if(dev < 0 || dev > 255){
-			Toasts.makeTextShort(this, "非有效值");
+			Toasts.makeTextShort(this,R.string.msg_device_number_value_scope);
 			return;
 		}
 		boolean result = readerService.setDeviceNo(ReaderUtil.readers, (byte)dev);
 		if(result){
-			Toasts.makeTextShort(this, "设置成功!");
+			Toasts.makeTextShort(this,R.string.msg_device_number_set_succeed);
 		}else{
-			Toasts.makeTextShort(this, "设置失败!");
+			Toasts.makeTextShort(this,R.string.msg_device_number_set_failed);
 		}
 	}
 	

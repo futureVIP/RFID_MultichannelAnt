@@ -19,10 +19,10 @@ import com.jietong.rfid.ui.R;
 import com.jietong.rfid.util.Toasts;
 
 public class CommunicationModeActivity extends Activity implements OnClickListener,OnItemSelectedListener{
-	Spinner spinnerModeOutput;
-	int modeOutput;
-	Button btnReadOutput;
-	Button btnSetOutput;
+	private Spinner spinnerModeOutput;
+	private int modeOutput;
+	private Button btnReadOutput;
+	private Button btnSetOutput;
 	
 	ReaderService readerService = new ReaderServiceImpl();
 	
@@ -81,22 +81,28 @@ public class CommunicationModeActivity extends Activity implements OnClickListen
 	}
 
 	private void outputSet() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		boolean result = readerService.setOutputMode(ReaderUtil.readers, (byte)modeOutput);
 		if(result){
-			Toasts.makeTextShort(this, "设置成功!");
+			Toasts.makeTextShort(this,R.string.msg_output_port_setting_set_succeed);
 		}else{
-			Toasts.makeTextShort(this, "设置失败!");
+			Toasts.makeTextShort(this, R.string.msg_output_port_setting_set_failed);
 		}
 	}
 
 	private void outputRead() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		ByteBuffer modeOutput = ByteBuffer.allocate(1);
 		boolean result = readerService.getOutputMode(ReaderUtil.readers,modeOutput);
 		if(result){
-			Toasts.makeTextShort(this, "设置成功!");
+			Toasts.makeTextShort(this, R.string.msg_output_port_setting_read_succeed);
 			spinnerModeOutput.setSelection(modeOutput.array()[0]);
 		}else{
-			Toasts.makeTextShort(this, "设置失败!");
+			Toasts.makeTextShort(this, R.string.msg_output_port_setting_read_failed);
 		}
 	}
 }

@@ -20,7 +20,7 @@
             android:layout_centerVertical="true"
             android:background="@drawable/title_btn_back"
             android:onClick="shake_activity_back"
-            android:text="返回"
+            android:text="@string/btn_return"
             android:textColor="#fff"
             android:textSize="14sp" />
 
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="标签加解锁"
+            android:text="@string/tv_tag_lock_unlock"
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
@@ -57,7 +57,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="操作区域"
+            android:text="@string/tv_unlock_area"
             android:textColor="@color/bg_black" />
 
         <TextView
@@ -66,7 +66,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="操作类型"
+            android:text="@string/tv_unlock_type"
             android:textColor="@color/bg_black" />
     </LinearLayout>
 
@@ -82,7 +82,7 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:text="执行" />
+            android:text="@string/btn_unlock_perform" />
     </LinearLayout>
 
     <LinearLayout
@@ -90,8 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ll_lock_unlock"
-        android:layout_weight="1" >
+        android:layout_below="@+id/ll_lock_unlock">
 
         <TextView
             android:id="@+id/tv_lock_unlock_visit_pwd"
@@ -99,7 +98,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
-            android:text="访问密码" 
+            android:text="@string/tv_access_password" 
             android:textColor="@color/bg_black"/>
 
         <EditText
@@ -108,7 +107,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:text="00 00 00 00" >
+            android:text="@string/et_access_password_value" >
             <requestFocus />
         </EditText>
     </LinearLayout>
@@ -133,7 +132,7 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:entries="@array/tag_lock_operation_type" />
+            android:entries="@array/spinner_tag_lock_operation_type" />
     </LinearLayout>
 
 </RelativeLayout>

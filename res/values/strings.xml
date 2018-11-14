@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">RFID_UI</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="menu_settings">Settings</string>
     <string name="returnback">back</string>
     <string name="id">ID</string>
-	<string name="count">count</string>
-	<string name="senter">senter</string>
-	<string name="setting">setting</string>
-	<string name="pwrback">Back</string>
-	<string name="txt_tag_count">tag count:</string>
-	<string name="txt_tag_time">tag time:</string>
-	<string name="membank">Membank</string>
-	<string name="accesspassword">Access Password</string>
-	<string name="addr">Address(word)</string>
-	<string name="len">Length(word)</string>
-	<string name="read">Read Tag</string>
-	<string name="write">Write Tag</string>
-	<string name="setpower">Set Power</string>
-	<string name="getpower">Get Power</string>
-	<string name="writedata">Write Data(HEX)</string>
-	<string name="pwrdata">power</string>
-	<string name="locktype">Lock Type</string>
-	<string name="locktag">Lock Tag</string>
-	<string name="kill">Kill Tag</string>
-	<string name="killpassword">Kill Password</string>
-	<string name="readdata">Read Data</string>
-	<string name="back">Back</string>
-	<string name="parameterSetting">Parameter Setting</string>
-	<string name="sensitivity">Sensitivity</string>
-	<string name="set">set</string>
-	<string name="rfPower">RF power</string>
-	<string name="workArea">Work Area</string>
+    <string name="count">count</string>
+    <string name="senter">senter</string>
+    <string name="setting">setting</string>
+    <string name="pwrback">Back</string>
+    <string name="txt_tag_count">tag count:</string>
+    <string name="txt_tag_time">tag time:</string>
+    <string name="membank">Membank</string>
+    <string name="accesspassword">Access Password</string>
+    <string name="addr">Address(word)</string>
+    <string name="len">Length(word)</string>
+    <string name="read">Read Tag</string>
+    <string name="write">Write Tag</string>
+    <string name="setpower">Set Power</string>
+    <string name="getpower">Get Power</string>
+    <string name="writedata">Write Data(HEX)</string>
+    <string name="pwrdata">power</string>
+    <string name="locktype">Lock Type</string>
+    <string name="locktag">Lock Tag</string>
+    <string name="kill">Kill Tag</string>
+    <string name="killpassword">Kill Password</string>
+    <string name="readdata">Read Data</string>
+    <string name="back">Back</string>
+    <string name="parameterSetting">Parameter Setting</string>
+    <string name="sensitivity">Sensitivity</string>
+    <string name="set">set</string>
+    <string name="rfPower">RF power</string>
+    <string name="workArea">Work Area</string>
     <string name="freqSetting">Freq setting</string>
     <string name="china2Freq">China2：920125kHz~924875kHz</string>
     <string name="usaFreq">USA：902250kHz~927750kHz</string>
@@ -44,13 +45,7 @@
     <string name="error_configuration">Please configure your serial port first.</string>
     <string name="error_security">You do not have read/write permission to the serialport.</string>
     <string name="error_unknown">The serial port can not be opened for an unknown reason.</string>
-        <!-- 2018-06-20 modify -->
-    <string name="antenna_1">1</string>
-    <string name="antenna_2">2</string>
-    <string name="antenna_3">3</string>
-    <string name="antenna_4">4</string>
-    <string name="read_antenna">read antenna</string>
-    <string name="set_antenna">set antenna</string>
+    <!-- 2018-06-20 modify -->
     <string name="close_buzzer">close</string>
     <string name="open_buzzer">open</string>
     <string name="buzzer">buzzer</string>
@@ -60,9 +55,7 @@
     <string name="connect">connect</string>
     <string name="disconnect">disconnect</string>
     <string name="serialPort">serialPort</string>
-    
-    
-    
+
     <!-- 2018-11-13 modify -->
     <!-- connect device -->
     <string name="btn_return">return</string>
@@ -75,11 +68,11 @@
     <string name="tv_port">port</string>
     <string name="msg_get_serialPort_succeed">get serialPort succeed</string>
     <string name="msg_get_serialPort_failure">The serial port is not found. Please check whether the equipment has serial port</string>
-	<string name="msg_connect_succeed">connect succeed</string>
-	<string name="msg_connect_failure">connect failure</string>
-	<string name="msg_disconnect_connect">disconnect connect</string>
-	<string name="msg_get_version_failure">Acquisition failed, please check if the connection is normal</string>
-	<!-- basic operation -->
+    <string name="msg_connect_succeed">connect succeed</string>
+    <string name="msg_connect_failure">connect failure</string>
+    <string name="msg_disconnect_connect">disconnect connect</string>
+    <string name="msg_get_version_failure">Acquisition failed, please check if the connection is normal</string>
+    <!-- basic operation -->
     <string name="tab_menu_basic_opera">basic operation</string>
     <string name="tab_menu_tag_opera">Tags operate</string>
     <string name="tab_menu_params_setting">parameter setting</string>
@@ -93,24 +86,150 @@
     <string name="btn_inventory">start Inventory</string>
     <string name="btn_stop_inventory">stop Inventory</string>
     <string name="btn_clear">clear</string>
-	<string name="btn_exit">exit</string>
-	<string name="msg_stop_read_tag_succeed">stop read tag succeed</string>
-	<string name="msg_stop_read_tag_failure">stop read tag succeed</string>
-	<!-- tag operation -->
-	<string name="tv_designated_area_read_write">Reading/Writing specific zone</string>
-	<string name="tv_tag_lock_unlock">tag lock unlock</string>
-	<string name="tv_tag_destory">tag destory</string>
-	<string name="tv_designated_area">bank</string>
-	<string name="tv_read_write_start_address">starting address</string>
-	<string name="tv_read_write_length">length</string>
-	<string name="tv_read_write_data">data</string>
-	<string name="tv_read_write_visit_password">access password</string>
-	<string name="btn_read_write_continue_read">continue read</string>
-	<string name="btn_read_write_stop">stop</string>
-	<string name="btn_read_write_read_tag">read tag</string>
-	<string name="btn_read_write_write_tag">write tag</string>
-	<string name="btn_read_write_clear">clear</string>
-	<string name="msg_pwd_must_eight">password must be 8 bits</string>
-	<string name="msg_pwd_Invalid_char">contains illegal characters(0 en dash 9,A en dash F)</string>
-	
+    <string name="btn_exit">exit</string>
+    <string name="msg_stop_read_tag_succeed">stop read tag succeed</string>
+    <string name="msg_stop_read_tag_failure">stop read tag succeed</string>
+    <!-- tag operation -->
+    <string name="tv_designated_area_read_write">Reading/Writing specific zone</string>
+    <string name="tv_tag_lock_unlock">tag lock unlock</string>
+    <string name="tv_tag_destroy">tag destroy</string>
+    <string name="tv_designated_area">bank</string>
+    <string name="tv_read_write_start_address">starting address</string>
+    <string name="tv_read_write_length">length</string>
+    <string name="tv_read_write_data">data</string>
+    <string name="tv_read_write_visit_password">access password</string>
+    <string name="btn_read_write_continue_read">continue read</string>
+    <string name="btn_read_write_stop">stop</string>
+    <string name="btn_read_write_read_tag">read tag</string>
+    <string name="btn_read_write_write_tag">write tag</string>
+    <string name="btn_read_write_clear">clear</string>
+    <string name="msg_pwd_must_eight">password must be 8 bits</string>
+    <string name="msg_pwd_Invalid_char">contains illegal characters(0 en dash 9,A en dash F)</string>
+    <string name="msg_read_data_success">Read data success</string>
+    <string name="msg_read_data_failure">Failure to read data</string>
+    <string name="msg_length_diff">the data\'s length is differend from length specifications</string>
+    <string name="msg_write_to_failure">write failed</string>
+    <string name="msg_write_to_successful">write to successful</string>
+    <string name="msg_action_failure">The operation failure</string>
+    <string name="msg_action_successful">Operation is successful</string>
+    <string name="tv_unlock_area">Operating zone</string>
+    <string name="tv_unlock_type">Operating type</string>
+    <string name="btn_unlock_perform">Execute</string>
+    <string name="tv_access_password">Access Password</string>
+    <string name="et_access_password_value">00 00 00 00</string>
+    <string name="btn_destroy_tag">Destroy Tag</string>
+    <string name="tv_destroy_password">Destroy Password</string>
+    <string name="et_destroy_password_value">00 00 00 00</string>
+    <string name="msg_default_destroy_password_no_operation">The default password cannot be executed, please modify it before operation!</string>
+    <string name="msg_destroy_tag_succeed">Succeed to destroy tag</string>
+    <string name="msg_destroy_tag_failed">Failed to destroy tag</string>
+
+    <string-array name="spinner_tag_lock_operation_type">
+        <item>Unlock</item>
+        <item>Permanence Writable</item>
+        <item>Security Lock</item>
+        <item>pERMANENCE Unwritable</item>
+    </string-array>
+
+    <!-- parameter setting start -->
+    <string-array name="spinner_work_pattern">
+        <item>Active mode</item>
+        <item>Timing mode</item>
+        <item>Trigger mode</item>
+    </string-array>
+
+    <string name="tv_params_set_work_mode">Work Mode</string>
+    <string name="tv_params_set_communication_mode">communication mode</string>
+    <string name="tv_params_set_antenna_set_4channel">antenna set 4channel</string>
+    <string name="tv_params_set_antenna_set_16channel">antenna set 16channel</string>
+    <string name="tv_params_set_antenna_set_32channel">antenna set 32channel</string>
+    <string name="tv_params_set_device_no">device number</string>
+    <string name="btn_params_set_work_mode_read">read</string>
+    <string name="btn_params_set_work_mode_set">set</string>
+    <string name="msg_work_mode_read_failed">Read failure operating mode</string>
+    <string name="msg_work_mode_read_succeed">Read succeed operating mode</string>
+    <string name="msg_work_mode_set_failed">Work mode setting failure</string>
+    <string name="msg_work_mode_set_succeed">Work mode setting succeed</string>
+    <string name="tv_output_port_setting">output port setting</string>
+    <string name="btn_output_port_setting_read">read</string>
+    <string name="btn_output_port_setting_set">set</string>
+    <string name="msg_output_port_setting_set_succeed">Set the output mode of success</string>
+    <string name="msg_output_port_setting_set_failed">Set the output mode failure</string>
+    <string name="msg_output_port_setting_read_failed">Read the output mode of failure</string>
+    <string name="msg_output_port_setting_read_succeed">Read the output mode of succeed</string>
+
+    <string-array name="spinner_communication_mode_r2k">
+        <item>SerialPort</item>
+        <item>TCP/IP</item>
+        <item>RS485</item>
+        <item>WIFI</item>
+    </string-array>
+
+    <string name="tv_antenna_params">Antenna Params</string>
+    <string name="tv_antenna_params_work_time">Work Time(ms)</string>
+    <string name="tv_antenna_params_power">Power(dbm)</string>
+    <string name="btn_antenna_params_read">read</string>
+    <string name="btn_antenna_params_set">set</string>
+    <string name="cb_antenna_no.01">No.01</string>
+    <string name="cb_antenna_no.02">No.02</string>
+    <string name="cb_antenna_no.03">No.03</string>
+    <string name="cb_antenna_no.04">No.04</string>
+    <string name="cb_antenna_no.05">No.05</string>
+    <string name="cb_antenna_no.06">No.06</string>
+    <string name="cb_antenna_no.07">No.07</string>
+    <string name="cb_antenna_no.08">No.08</string>
+    <string name="cb_antenna_no.09">No.09</string>
+    <string name="cb_antenna_no.10">No.10</string>
+    <string name="cb_antenna_no.11">No.11</string>
+    <string name="cb_antenna_no.12">No.12</string>
+    <string name="cb_antenna_no.13">No.13</string>
+    <string name="cb_antenna_no.14">No.14</string>
+    <string name="cb_antenna_no.15">No.15</string>
+    <string name="cb_antenna_no.16">No.16</string>
+    <string name="cb_antenna_no.17">No.17</string>
+    <string name="cb_antenna_no.18">No.18</string>
+    <string name="cb_antenna_no.19">No.19</string>
+    <string name="cb_antenna_no.20">No.20</string>
+    <string name="cb_antenna_no.21">No.21</string>
+    <string name="cb_antenna_no.22">No.22</string>
+    <string name="cb_antenna_no.23">No.23</string>
+    <string name="cb_antenna_no.24">No.24</string>
+    <string name="cb_antenna_no.25">No.25</string>
+    <string name="cb_antenna_no.26">No.26</string>
+    <string name="cb_antenna_no.27">No.27</string>
+    <string name="cb_antenna_no.28">No.28</string>
+    <string name="cb_antenna_no.29">No.29</string>
+    <string name="cb_antenna_no.30">No.30</string>
+    <string name="cb_antenna_no.31">No.31</string>
+    <string name="cb_antenna_no.32">No.32</string>
+    <string name="msg_antenna_params_read_succeed">Read the antenna parameters successfully</string>
+    <string name="msg_antenna_params_read_failed">Read failure antenna parameters</string>
+    <string name="msg_antenna_params_set_succeed">successful to Setting the antenna parameters</string>
+    <string name="msg_antenna_params_set_failed">Failed to setting the antenna parameters</string>
+    <string name="tv_device_number">Device Number</string>
+    <string name="btn_device_number_read">Read</string>
+    <string name="btn_device_number_set">Set</string>
+    <string name="tv_device_number_value_scope">effective value(0 en dash 255)</string>
+    <string name="msg_device_number_set_failed">Setting the device number failed</string>
+    <string name="msg_device_number_set_succeed">Setting the device number succeed</string>
+    <string name="msg_device_number_read_failed">Device number read failure</string>
+    <string name="msg_device_number_read_succeed">Device number read succeed</string>
+    <string name="msg_device_number_value_scope">effective value(0 en dash 255)</string>
+    <string name="tv_other_set_buzzer">Buzzer</string>
+    <string name="tv_other_set_buzzer_voice">voice set</string>
+    <string name="btn_other_set_buzzer_read">Read</string>
+    <string name="btn_other_set_buzzer_set">Set</string>
+    <string name="msg_other_set_buzzer_read_failed">Buzzer read failure</string>
+    <string name="msg_other_set_buzzer_read_succeed">Buzzer read succeed</string>
+    <string name="msg_other_set_buzzer_set_failed">Setting the buzzer failed</string>
+    <string name="msg_other_set_buzzer_set_succeed">Setting the buzzer succeed</string>
+    <string name="tv_other_set_adjacent_discriminant">Adjacent discriminant</string>
+	<string name="tv_other_set_adjacent_discriminant_time">Time(0 en dash 254s,0 to cancel)</string>
+	<string name="btn_other_set_adjacent_discriminant_read">Read</string>
+	<string name="btn_other_set_adjacent_discriminant_set">Set</string>
+	<string name="msg_other_set_adjacent_discriminant_read_failed">Adjacent to judge read failure</string>
+	<string name="msg_other_set_adjacent_discriminant_read_succeed">Adjacent to judge read succeed</string>
+	<string name="msg_other_set_adjacent_discriminant_set_failed">Adjacent to judge setting failure</string>
+	<string name="msg_other_set_adjacent_discriminant_set_succeed">Adjacent to judge setting succeed</string>
+	<string name="msg_other_set_adjacent_discriminant_value_scope">effective value(1 en dash 254s,0 to cancel)</string>
 </resources>

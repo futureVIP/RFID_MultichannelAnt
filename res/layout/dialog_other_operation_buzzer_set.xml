@@ -20,7 +20,7 @@
             android:layout_centerVertical="true"
             android:background="@drawable/title_btn_back"
             android:onClick="shake_activity_back"
-            android:text="返回"
+            android:text="@string/btn_return"
             android:textColor="#fff"
             android:textSize="14sp" />
 
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="蜂鸣器"
+            android:text="@string/tv_other_set_buzzer"
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
@@ -58,7 +58,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="声音设置"
+            android:text="@string/tv_other_set_buzzer"
             android:textColor="@color/bg_black" />
 
         <Spinner
@@ -82,14 +82,14 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:text="读取" />
+            android:text="@string/btn_other_set_buzzer_read" />
 
         <Button
             android:id="@+id/btn_buzzer_read"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:text="设置" />
+            android:text="@string/btn_other_set_buzzer_set" />
     </LinearLayout>
 
 

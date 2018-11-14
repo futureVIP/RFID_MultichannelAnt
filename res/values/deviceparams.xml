@@ -11,7 +11,7 @@
     </string-array>
 
     <!-- 天线的工作时间 -->
-    <string-array name="antenna_work_time">
+    <string-array name="spinner_antenna_work_time">
         <item>100</item>
         <item>200</item>
         <item>300</item>
@@ -45,7 +45,7 @@
     </string-array>
 
     <!-- 天线的功率 -->
-    <string-array name="antenna_power">
+    <string-array name="spinner_antenna_power">
         <item>20</item>
         <item>21</item>
         <item>22</item>
@@ -58,33 +58,21 @@
         <item>29</item>
         <item>30</item>
     </string-array>
-    <!-- 标签区域 -->
-    <string-array name="work_pattern">
-        <item>主从模式</item>
-        <item>定时模式</item>
-        <item>触发模式</item>
-    </string-array>
-
+ 
     <!-- R2K通讯方式 -->
-    <string-array name="communication_mode_r2k">
-        <item>串口</item>
-        <item>网口</item>
-        <item>RS485</item>
-        <item>WIFI</item>
-    </string-array>
-
+ 
     <!-- DIS通讯方式 -->
     <string-array name="communication_mode_dis">
         <item>RS485/RJ45</item>
         <item>韦根</item>
         <item>RS232</item>
     </string-array>
-
     <!-- 读卡模式方式 -->
     <string-array name="read_tag_mode_dis">
         <item>单标签</item>
         <item>多标签</item>
     </string-array>
+    
     <string-array name="usb_delivery_outlet">
         <item>韦根26(1字节+2字节),8位10进制数</item>
         <item>韦根26(3字节),8位10进制数</item>
@@ -179,13 +167,6 @@
         <item>TID</item>
         <item>User</item>
     </string-array>
-    <!-- 标签锁和解锁操作类型 -->
-    <string-array name="tag_lock_operation_type">
-        <item>解锁</item>
-        <item>永久可写</item>
-        <item>安全锁定</item>
-        <item>永久不可写</item>
-    </string-array>
     <string-array name="buzzer_switch">
         <item>off</item>
         <item>on</item>
@@ -208,19 +189,19 @@
         <item>定频</item>
     </string-array>
     <string-array name="frequency_fix_american_standard">
-        <item>1-902.5Mhz</item>
-        <item>2-903.0Mhz</item>
-        <item>3-903.5Mhz</item>
-        <item>4-904.0Mhz</item>
-        <item>5-904.5Mhz</item>
-        <item>6-905.0Mhz</item>
-        <item>7-905.5Mhz</item>
-        <item>8-906.0Mhz</item>
-        <item>9-906.5Mhz</item>
-        <item>10-907.0Mhz</item>
-        <item>11-907.5Mhz</item>
-        <item>12-908.0Mhz</item>
-        <item>13-908.5Mhz</item>
+        <item>1\-902.5Mhz</item>
+        <item>2\-903.0Mhz</item>
+        <item>3\-903.5Mhz</item>
+        <item>4\-904.0Mhz</item>
+        <item>5\-904.5Mhz</item>
+        <item>6\-905.0Mhz</item>
+        <item>7\-905.5Mhz</item>
+        <item>8\-906.0Mhz</item>
+        <item>9\-906.5Mhz</item>
+        <item>10\-907.0Mhz</item>
+        <item>11\-907.5Mhz</item>
+        <item>12\-908.0Mhz</item>
+        <item>13\-908.5Mhz</item>
         <item>14-909.0Mhz</item>
         <item>15-909.5Mhz</item>
         <item>16-910.0Mhz</item>

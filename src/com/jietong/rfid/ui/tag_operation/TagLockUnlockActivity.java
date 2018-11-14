@@ -19,12 +19,12 @@ import com.jietong.rfid.util.Regex;
 import com.jietong.rfid.util.Toasts;
 
 public class TagLockUnlockActivity extends Activity implements OnClickListener, OnItemSelectedListener {
-	Spinner spinnerArea;
-	Spinner spinnerType;
-	EditText etVisitPwd;
-	Button btnExcute;
-	int lockBank;
-	int lockType;
+	private Spinner spinnerArea;
+	private Spinner spinnerType;
+	private EditText etVisitPwd;
+	private Button btnExcute;
+	private int lockBank;
+	private int lockType;
 	String visitPwd;
 	
 	ReaderService readerService = new ReaderServiceImpl();
@@ -37,7 +37,6 @@ public class TagLockUnlockActivity extends Activity implements OnClickListener, 
 	}
 
 	private void inital() {
-		// 启动activity时不自动弹出软键盘
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		spinnerArea = (Spinner) findViewById(R.id.spinner_lock_unlock_area);
 		spinnerType = (Spinner) findViewById(R.id.spinner_lock_unlock_type);
@@ -59,26 +58,28 @@ public class TagLockUnlockActivity extends Activity implements OnClickListener, 
 	}
 
 	private void tagLockUnlock() {
+		if(null == ReaderUtil.readers){
+			return;
+		}
 		visitPwd = etVisitPwd.getText().toString().replace(" ", "");
 		if (visitPwd.length() != 8) {
-			Toasts.makeTextShort(this, "密码必须为8位");
+			Toasts.makeTextShort(this,R.string.msg_pwd_must_eight);
 			return;
 		}
 		if (!Regex.isHexCharacter(visitPwd)) {
-			Toasts.makeTextShort(this, "密码含有0－9，A－F之外的非法字符");
+			Toasts.makeTextShort(this, R.string.msg_pwd_Invalid_char);
 			return;
 		}
 		byte[] pwd = new byte[4];
 		for (int i = 0; i < 4; ++i) {
 			String str = visitPwd.substring(i * 2, (2 + i * 2));
-			// 把字符串的子串转为16进制的8位无符号整数
 			pwd[i] = Byte.parseByte(str, 16);
 		}
 		boolean result = readerService.lockTag(ReaderUtil.readers,(byte) lockType,(byte) lockBank, pwd);
 		if(result){
-			Toasts.makeTextShort(this, "操作成功!");
+			Toasts.makeTextShort(this,R.string.msg_action_successful);
 		}else{
-			Toasts.makeTextShort(this, "操作失败!");
+			Toasts.makeTextShort(this, R.string.msg_action_failure);
 		}
 	}
 

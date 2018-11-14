@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:background="@drawable/title_btn_back"
             android:onClick="shake_activity_back"
-            android:text="返回"
+            android:text="@string/btn_return"
             android:textColor="#fff"
             android:textSize="14sp" />
 
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="天线参数"
+            android:text="@string/tv_antenna_params"
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
@@ -71,7 +71,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1号"
+                    android:text="@string/cb_antenna_no.01"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -79,7 +79,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2号"
+                    android:text="@string/cb_antenna_no.02"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -87,7 +87,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="3号"
+                    android:text="@string/cb_antenna_no.03"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -95,7 +95,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4号"
+                    android:text="@string/cb_antenna_no.04"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -123,7 +123,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="5号"
+                    android:text="@string/cb_antenna_no.05"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -131,7 +131,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="6号"
+                    android:text="@string/cb_antenna_no.06"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -139,7 +139,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="7号"
+                    android:text="@string/cb_antenna_no.07"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -147,7 +147,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="8号"
+                    android:text="@string/cb_antenna_no.08"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -175,7 +175,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="9号"
+                    android:text="@string/cb_antenna_no.09"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -183,7 +183,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="10号"
+                    android:text="@string/cb_antenna_no.10"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -191,7 +191,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="11号"
+                    android:text="@string/cb_antenna_no.11"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -199,7 +199,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="12号"
+                    android:text="@string/cb_antenna_no.12"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -228,7 +228,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="13号"
+                    android:text="@string/cb_antenna_no.13"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -236,7 +236,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="14号"
+                    android:text="@string/cb_antenna_no.14"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -244,7 +244,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="15号"
+                    android:text="@string/cb_antenna_no.15"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -252,7 +252,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="16号"
+                    android:text="@string/cb_antenna_no.16"
                     android:textColor="@color/bg_black" />
 
                 <CheckBox
@@ -277,7 +277,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="工作时间(ms)"
+                    android:text="@string/tv_antenna_params_work_time"
                     android:textColor="@color/bg_black" />
 
                 <TextView
@@ -286,7 +286,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="功率(dbm)"
+                    android:text="@string/tv_antenna_params_power"
                     android:textColor="@color/bg_black" />
             </LinearLayout>
 
@@ -301,14 +301,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:entries="@array/antenna_work_time" />
+                    android:entries="@array/spinner_antenna_work_time" />
 
                 <Spinner
                     android:id="@+id/spinner_16power"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:entries="@array/antenna_power" />
+                    android:entries="@array/spinner_antenna_power" />
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
@@ -328,7 +328,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.76"
             android:onClick="on_button_read_antenna"
-            android:text="@string/read_antenna"
+            android:text="@string/btn_antenna_params_read"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -339,7 +339,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.76"
             android:onClick="on_button_set_antenna"
-            android:text="@string/set_antenna"
+            android:text="@string/btn_antenna_params_set"
             android:textColor="#000000"
             android:textSize="16sp" />
     </LinearLayout>

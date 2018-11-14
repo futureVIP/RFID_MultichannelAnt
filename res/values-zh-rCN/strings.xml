@@ -51,7 +51,7 @@
     <string name="connect">连接</string>
     <string name="disconnect">断开连接</string>
     <string name="serialPort">串口</string>
-    
+
     <!-- 2018-11-13 modify -->
     <!-- 连接设备页面 -->
     <string name="btn_return">返回</string>
@@ -65,7 +65,7 @@
     <string name="msg_get_serialPort_succeed">获取串口成功</string>
     <string name="msg_get_serialPort_failure">未找到串口号,请检查设备是否有串口!</string>
     <string name="msg_connect_succeed">连接成功</string>
-	<string name="msg_connect_failure">连接失败</string>
+    <string name="msg_connect_failure">连接失败</string>
     <string name="msg_disconnect_connect">断开连接</string>
     <string name="msg_get_version_failure">获取失败，请检查连接是否正常!</string>
     <!-- 基本操作页面 -->
@@ -82,23 +82,146 @@
     <string name="btn_inventory">开始盘存</string>
     <string name="btn_stop_inventory">停止盘存</string>
     <string name="btn_clear">清空</string>
-	<string name="btn_exit">退出</string>
-	<string name="msg_stop_read_tag_succeed">停止连续读卡成功!</string>
-	<string name="msg_stop_read_tag_failure">停止连续读卡失败!</string>
-	<string name="tv_designated_area_read_write">指定区域读/写</string>
-	<!-- tag operation -->
-	<string name="tv_tag_lock_unlock">标签加解锁</string>
-	<string name="tv_tag_destory">标签销毁</string>
-	<string name="tv_designated_area">区域</string>
-	<string name="tv_read_write_start_address">起始地址</string>
-	<string name="tv_read_write_length">长度</string>
-	<string name="tv_read_write_data">数据</string>
-	<string name="tv_read_write_visit_password">访问密码</string>
-	<string name="btn_read_write_continue_read">连续读取</string>
-	<string name="btn_read_write_stop">停止</string>
-	<string name="btn_read_write_read_tag">读取</string>
-	<string name="btn_read_write_write_tag">写卡</string>
-	<string name="btn_read_write_clear">清空</string>
-	<string name="msg_pwd_must_eight">密码必须为8位</string>
-	<string name="msg_pwd_Invalid_char">无效字符(有效字符0-9|A-F)</string>
+    <string name="btn_exit">退出</string>
+    <string name="msg_stop_read_tag_succeed">停止连续读卡成功!</string>
+    <string name="msg_stop_read_tag_failure">停止连续读卡失败!</string>
+    <string name="tv_designated_area_read_write">指定区域读/写</string>
+    <!-- tag operation -->
+    <string name="tv_tag_lock_unlock">标签加解锁</string>
+    <string name="tv_tag_destroy">标签销毁</string>
+    <string name="tv_designated_area">区域</string>
+    <string name="tv_read_write_start_address">起始地址</string>
+    <string name="tv_read_write_length">长度</string>
+    <string name="tv_read_write_data">数据</string>
+    <string name="tv_read_write_visit_password">访问密码</string>
+    <string name="btn_read_write_continue_read">连续读取</string>
+    <string name="btn_read_write_stop">停止</string>
+    <string name="btn_read_write_read_tag">读取</string>
+    <string name="btn_read_write_write_tag">写卡</string>
+    <string name="btn_read_write_clear">清空</string>
+    <string name="msg_pwd_must_eight">密码必须为8位</string>
+    <string name="msg_pwd_Invalid_char">无效字符(有效字符0\-9\|A\-F)</string>
+    <string name="msg_read_data_success">读取数据成功</string>
+    <string name="msg_read_data_failure">读取数据失败</string>
+    <string name="msg_length_diff">实际数据长度和指定的长度不同</string>
+    <string name="msg_write_to_failure">写入失败</string>
+    <string name="msg_write_to_successful">写入成功</string>
+    <string name="msg_action_failure">操作失败</string>
+    <string name="msg_action_successful">操作成功</string>
+    <string name="tv_unlock_area">操作区域</string>
+    <string name="tv_unlock_type">操作类型</string>
+    <string name="btn_unlock_perform">执行</string>
+    <string name="tv_access_password">访问密码</string>
+    <string name="et_access_password_value">00 00 00 00</string>
+    <string name="btn_destroy_tag">销毁标签</string>
+    <string name="tv_destroy_password">销毁密码</string>
+    <string name="et_destroy_password_value">00 00 00 00</string>
+    <string name="msg_default_destroy_password_no_operation">默认密码不能执行操作,请修改后再操作!</string>
+    <string name="msg_destroy_tag_succeed">销毁成功</string>
+    <string name="msg_destroy_tag_failed">销毁失败</string>
+    <!-- 标签锁和解锁操作类型 -->
+    <string-array name="spinner_tag_lock_operation_type">
+        <item>解锁</item>
+        <item>永久可写</item>
+        <item>安全锁定</item>
+        <item>永久不可写</item>
+    </string-array>
+    <!-- 参数设置  start -->
+    <!-- 标签区域 -->
+    <string-array name="spinner_work_pattern">
+        <item>主从模式</item>
+        <item>定时模式</item>
+        <item>触发模式</item>
+    </string-array>
+    <!-- 参数设置  end -->
+    <string name="tv_params_set_work_mode">工作模式</string>
+    <string name="tv_params_set_communication_mode">通信方式</string>
+    <string name="tv_params_set_antenna_set_4channel">天线设置(4通道)</string>
+    <string name="tv_params_set_antenna_set_16channel">天线设置(16通道)</string>
+    <string name="tv_params_set_antenna_set_32channel">天线设置(32通道)</string>
+    <string name="tv_params_set_device_no">设备号</string>
+    <string name="btn_params_set_work_mode_read">读取</string>
+    <string name="btn_params_set_work_mode_set">设置</string>
+    <string name="msg_work_mode_read_failed">读取工作模式失败</string>
+    <string name="msg_work_mode_read_succeed">读取工作模式成功</string>
+    <string name="msg_work_mode_set_failed">设置工作模式失败</string>
+    <string name="msg_work_mode_set_succeed">设置工作模式成功</string>
+    <string name="tv_output_port_setting">设置输出口</string>
+    <string name="btn_output_port_setting_read">读取</string>
+    <string name="btn_output_port_setting_set">设置</string>
+    <string name="msg_output_port_setting_set_succeed">设置输出口成功</string>
+    <string name="msg_output_port_setting_set_failed">设置输出口失败</string>
+    <string name="msg_output_port_setting_read_failed">读取输出口失败</string>
+    <string name="msg_output_port_setting_read_succeed">读取输出口成功</string>
+    <string-array name="spinner_communication_mode_r2k">
+        <item>串口</item>
+        <item>网口</item>
+        <item>RS485</item>
+        <item>WIFI</item>
+    </string-array>
+    <string name="tv_antenna_params">天线参数</string>
+    <string name="tv_antenna_params_work_time">工作时间(ms)</string>
+    <string name="tv_antenna_params_power">功率(dbm)</string>
+    <string name="btn_antenna_params_read">读取</string>
+    <string name="btn_antenna_params_set">设置</string>
+    <string name="cb_antenna_no.01">01号</string>
+    <string name="cb_antenna_no.02">02号</string>
+    <string name="cb_antenna_no.03">03号</string>
+    <string name="cb_antenna_no.04">04号</string>
+    <string name="cb_antenna_no.05">05号</string>
+    <string name="cb_antenna_no.06">06号</string>
+    <string name="cb_antenna_no.07">07号</string>
+    <string name="cb_antenna_no.08">08号</string>
+    <string name="cb_antenna_no.09">09号</string>
+    <string name="cb_antenna_no.10">10号</string>
+    <string name="cb_antenna_no.11">11号</string>
+    <string name="cb_antenna_no.12">12号</string>
+    <string name="cb_antenna_no.13">13号</string>
+    <string name="cb_antenna_no.14">14号</string>
+    <string name="cb_antenna_no.15">15号</string>
+    <string name="cb_antenna_no.16">16号</string>
+    <string name="cb_antenna_no.17">17号</string>
+    <string name="cb_antenna_no.18">18号</string>
+    <string name="cb_antenna_no.19">19号</string>
+    <string name="cb_antenna_no.20">20号</string>
+    <string name="cb_antenna_no.21">21号</string>
+    <string name="cb_antenna_no.22">22号</string>
+    <string name="cb_antenna_no.23">23号</string>
+    <string name="cb_antenna_no.24">24号</string>
+    <string name="cb_antenna_no.25">25号</string>
+    <string name="cb_antenna_no.26">26号</string>
+    <string name="cb_antenna_no.27">27号</string>
+    <string name="cb_antenna_no.28">28号</string>
+    <string name="cb_antenna_no.29">29号</string>
+    <string name="cb_antenna_no.30">30号</string>
+    <string name="cb_antenna_no.31">31号</string>
+    <string name="cb_antenna_no.32">32号</string>
+    <string name="msg_antenna_params_read_succeed">获取天线参数成功</string>
+    <string name="msg_antenna_params_read_failed">获取天线参数失败</string>
+    <string name="msg_antenna_params_set_succeed">设置天线参数成功</string>
+    <string name="msg_antenna_params_set_failed">设置天线参数失败</string>
+    <string name="tv_device_number">设备号</string>
+    <string name="btn_device_number_read">读取</string>
+    <string name="btn_device_number_set">设置</string>
+    <string name="tv_device_number_value_scope">有效值(0-255)</string>
+    <string name="msg_device_number_set_failed">设置设备号失败</string>
+    <string name="msg_device_number_set_succeed">设置设备号成功</string>
+    <string name="msg_device_number_read_failed">读取设备号失败</string>
+    <string name="msg_device_number_read_succeed">读取设备号成功</string>
+    <string name="msg_device_number_value_scope">有效值(0-255)</string>
+    <string name="tv_other_set_buzzer">蜂鸣器</string>
+    <string name="tv_other_set_adjacent_discriminant">相邻判别</string>
+    <string name="tv_other_set_buzzer_voice">声音设置</string>
+    <string name="btn_other_set_buzzer_read">读取</string>
+    <string name="btn_other_set_buzzer_set">设置</string>
+    <string name="msg_other_set_buzzer_read_failed">读取蜂鸣器失败</string>
+    <string name="msg_other_set_buzzer_read_succeed">读取蜂鸣器成功</string>
+    <string name="msg_other_set_buzzer_set_failed">设置蜂鸣器失败</string>
+    <string name="msg_other_set_buzzer_set_succeed">设置蜂鸣器成功</string>
+    <string name="msg_other_set_adjacent_discriminant_read_failed">读取相邻判断别失败</string>
+	<string name="msg_other_set_adjacent_discriminant_read_succeed">读取相邻判断别成功</string>
+	<string name="msg_other_set_adjacent_discriminant_set_failed">设置相邻判断别失败</string>
+	<string name="msg_other_set_adjacent_discriminant_set_succeed">设置相邻判断别成功</string>
+	<string name="msg_other_set_adjacent_discriminant_value_scope">无效值(有效值1-254s,0 取消)</string>
+
 </resources>
