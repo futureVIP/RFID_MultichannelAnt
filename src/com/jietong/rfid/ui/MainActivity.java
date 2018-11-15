@@ -74,12 +74,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button btnBeginInv;
 	private Button btnBasicStop;
 	private Button btnBasicClear;
-	private ArrayList<Map<String, Object>> listMap;
 	private int tagAmount = 0;
 	private int tagCount = 0;
 	public TextView tvBasicAmount;
 	public TextView tvBasicTime;
-	// ListView
+	// ListVie
 	private ListView listViewData;
 	private List<EPC> listEPC;
 	// private Button mRightBtn;
@@ -213,12 +212,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	};
 
 	public void antennaShowChannel(){
-//		rlAntenna4channel.setVisibility(View.GONE);
-//		rlAntenna16channel.setVisibility(View.GONE);
-//		rlAntenna32channel.setVisibility(View.GONE);
-		rlAntenna4channel.setVisibility(View.VISIBLE);
-		rlAntenna16channel.setVisibility(View.VISIBLE);
-		rlAntenna32channel.setVisibility(View.VISIBLE);
+		rlAntenna4channel.setVisibility(View.GONE);
+		rlAntenna16channel.setVisibility(View.GONE);
+		rlAntenna32channel.setVisibility(View.GONE);
+		
 		if (null != ReaderUtil.readers) {
 			if (ReaderUtil.readers.getChannel() == 4
 					|| ReaderUtil.readers.getChannel() == 6) {
@@ -560,38 +557,32 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	public void btn_communication_mode_r2k(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				CommunicationModeActivity.class);
+		Intent intent = new Intent(MainActivity.this,CommunicationModeActivity.class);
 		startActivity(intent);
 	}
 
 	public void btn_antenna4_channel(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				Antenna4ChannelActivity.class);
+		Intent intent = new Intent(MainActivity.this,Antenna4ChannelActivity.class);
 		startActivity(intent);
 	}
 
 	public void btn_antenna16_channel(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				Antenna16ChannelActivity.class);
+		Intent intent = new Intent(MainActivity.this,Antenna16ChannelActivity.class);
 		startActivity(intent);
 	}
 
 	public void btn_antenna32_channel(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				Antenna32ChannelActivity.class);
+		Intent intent = new Intent(MainActivity.this,Antenna32ChannelActivity.class);
 		startActivity(intent);
 	}
 
 	public void btn_frequency_set(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				FrequencySetActivity.class);
+		Intent intent = new Intent(MainActivity.this,FrequencySetActivity.class);
 		startActivity(intent);
 	}
 
 	public void btn_device_number(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				DeviceNumberActivity.class);
+		Intent intent = new Intent(MainActivity.this,DeviceNumberActivity.class);
 		startActivity(intent);
 	}
 
@@ -601,15 +592,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	public void btn_read_tag_pattern(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				ReadTagPatternActivity.class);
+		Intent intent = new Intent(MainActivity.this, ReadTagPatternActivity.class);
 		startActivity(intent);
 	}
 
-	// params set end
 	public void btn_usb_delivery_outlet(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				UsbDeliveryOutletActivity.class);
+		Intent intent = new Intent(MainActivity.this,UsbDeliveryOutletActivity.class);
 		startActivity(intent);
 	}
 

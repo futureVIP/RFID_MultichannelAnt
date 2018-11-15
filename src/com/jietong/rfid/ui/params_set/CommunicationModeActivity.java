@@ -96,11 +96,10 @@ public class CommunicationModeActivity extends Activity implements OnClickListen
 		if(null == ReaderUtil.readers){
 			return;
 		}
-		ByteBuffer modeOutput = ByteBuffer.allocate(1);
-		boolean result = readerService.getOutputMode(ReaderUtil.readers,modeOutput);
-		if(result){
+		int result = readerService.getOutputMode(ReaderUtil.readers);
+		if(result > -1){
 			Toasts.makeTextShort(this, R.string.msg_output_port_setting_read_succeed);
-			spinnerModeOutput.setSelection(modeOutput.array()[0]);
+			spinnerModeOutput.setSelection(result);
 		}else{
 			Toasts.makeTextShort(this, R.string.msg_output_port_setting_read_failed);
 		}

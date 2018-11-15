@@ -32,7 +32,6 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 	private static String comm;
 	private static int baudRate;
 	private int isConnect = 0;
-	private TextView tvLanguageSet;
 	private ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
@@ -56,14 +55,12 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 		autoConnect = (Button) findViewById(R.id.btn_auto_connect);
 		deviceConnect = (Button) findViewById(R.id.btn_device_connect);
 		btnEntryPage = (Button) findViewById(R.id.btn_entry_page);
-		tvLanguageSet = (TextView) findViewById(R.id.tv_language);
 	}
 
 	private void eventListener() {
 		autoConnect.setOnClickListener(this);
 		deviceConnect.setOnClickListener(this);
 		btnEntryPage.setOnClickListener(this);
-		tvLanguageSet.setOnClickListener(this);
 	}
 
 	private void getSerialPorts() {
@@ -104,8 +101,6 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 		case R.id.btn_entry_page:
 			Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
 			startActivity(intent);
-			break;
-		case R.id.tv_language:
 			break;
 		default:
 			break;

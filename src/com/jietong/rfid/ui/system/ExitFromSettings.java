@@ -8,7 +8,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 public class ExitFromSettings extends Activity implements OnClickListener {
 	//private MyDialog dialog;
@@ -47,8 +46,7 @@ public class ExitFromSettings extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.exit_layout2:
-			Toast.makeText(getApplicationContext(), "提示：点击窗口外部关闭窗口！", 
-					Toast.LENGTH_SHORT).show();	
+			//Toasts.makeTextShort(this, "提示：点击窗口外部关闭窗口！");	
 			break;
 		}
 	}  

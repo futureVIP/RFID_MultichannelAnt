@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/exit_layout"
+        android:id="@+id/ll_exit_program"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -8,15 +8,17 @@
         android:background="@drawable/confirm_dialog_bg2" >
 
         <TextView
+            android:id="@+id/tv_exit_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:padding="5dp"
             android:textColor="#333"
             android:textSize="20sp"
-            android:text="退出读写器" />
+            android:text="@string/tv_program_exits" />
         
         <TextView
+            android:id="@+id/tv_exit_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#333"
@@ -24,10 +26,11 @@
             android:padding="10dp"
             android:textSize="16sp"
             android:gravity="center_horizontal"
-            android:text="退出后，你将收不到新的消\n息.确定要退出？" /> 
+            android:text="" /> 
         
 
         <LinearLayout
+             android:id="@+id/ll_exit_btn_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"           
             android:layout_marginTop="33dp"
@@ -35,28 +38,28 @@
              >
             
             <Button
-              android:id="@+id/exitBtn0"
+              android:id="@+id/btn_exit_yes"
               android:layout_width="110dp"
               android:layout_height="wrap_content"
-              android:text="是"
+              android:text="@string/btn_yes"
               android:textSize="16sp"
               android:textColor="#fff"
               android:background="@drawable/btn_style_green"
               android:gravity="center"
-			  android:onClick="exitbutton0"
+			  android:onClick="btn_exit_yes"
               />
             
             <Button
-              android:id="@+id/exitBtn1"
+              android:id="@+id/btn_exit_no"
               android:layout_width="110dp"
               android:layout_height="wrap_content"
               android:layout_marginLeft="10dp"
-              android:text="否"
+              android:text="@string/btn_no"
               android:textSize="16sp"
               android:textColor="#333"
               android:background="@drawable/btn_style_white"
               android:gravity="center"
-			  android:onClick="exitbutton1"
+			  android:onClick="btn_exit_no"
               />
         </LinearLayout>
 

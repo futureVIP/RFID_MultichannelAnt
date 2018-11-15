@@ -30,7 +30,8 @@
             android:layout_marginRight="5dp"
             android:background="@drawable/title_btn_right"
             android:onClick="btnmainright"
-            android:src="@drawable/title_btn_function" />
+            android:src="@drawable/title_btn_function"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <ListView

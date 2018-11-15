@@ -63,7 +63,7 @@
     <string name="btn_entry_page">进入界面</string>
     <string name="btn_get_verstion">获取版本号</string>
     <string name="msg_get_serialPort_succeed">获取串口成功</string>
-    <string name="msg_get_serialPort_failure">未找到串口号,请检查设备是否有串口!</string>
+    <string name="msg_get_serialPort_failure">未找到串口号!</string>
     <string name="msg_connect_succeed">连接成功</string>
     <string name="msg_connect_failure">连接失败</string>
     <string name="msg_disconnect_connect">断开连接</string>
@@ -83,6 +83,10 @@
     <string name="btn_stop_inventory">停止盘存</string>
     <string name="btn_clear">清空</string>
     <string name="btn_exit">退出</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_no">否</string>
+    <string name="btn_yes">是</string>
+    <string name="tv_program_exits">程序退出</string>
     <string name="msg_stop_read_tag_succeed">停止连续读卡成功!</string>
     <string name="msg_stop_read_tag_failure">停止连续读卡失败!</string>
     <string name="tv_designated_area_read_write">指定区域读/写</string>

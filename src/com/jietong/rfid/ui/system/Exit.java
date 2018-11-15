@@ -8,7 +8,6 @@ import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import com.jietong.rfid.ui.MainActivity;
 import com.jietong.rfid.ui.R;
-import com.jietong.rfid.util.Toasts;
 
 public class Exit extends Activity implements OnClickListener {
 
@@ -22,7 +21,7 @@ public class Exit extends Activity implements OnClickListener {
 	}
 
 	private void inital() {
-		layout = (LinearLayout) findViewById(R.id.exit_layout);
+		layout = (LinearLayout) findViewById(R.id.ll_exit_program);
 		eventListener();
 	}
 
@@ -36,11 +35,11 @@ public class Exit extends Activity implements OnClickListener {
 		return true;
 	}
 
-	public void exitbutton1(View v) {
+	public void btn_exit_no(View v) {
 		this.finish();
 	}
 
-	public void exitbutton0(View v) {
+	public void btn_exit_yes(View v) {
 		this.finish();
 		MainActivity.instance.finish();// 关闭Main 这个Activity
 	}
@@ -48,8 +47,8 @@ public class Exit extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.exit_layout:
-			Toasts.makeTextShort(this, "提示：点击窗口外部关闭窗口！");
+		case R.id.ll_exit_program:
+			//Toasts.makeTextShort(this, "提示：点击窗口外部关闭窗口！");
 			break;
 		}
 	}

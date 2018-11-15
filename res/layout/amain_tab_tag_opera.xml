@@ -27,9 +27,9 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
             android:background="@drawable/title_btn_right"
-            android:text="保留"
             android:textColor="#fff"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <ScrollView

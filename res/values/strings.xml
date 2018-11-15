@@ -59,7 +59,7 @@
     <!-- 2018-11-13 modify -->
     <!-- connect device -->
     <string name="btn_return">return</string>
-    <string name="btn_connect_device">connect device</string>
+    <string name="btn_connect_device">connect</string>
     <string name="btn_entry_page">entry page</string>
     <string name="btn_get_verstion">get version</string>
     <string name="tv_connect_device">connect device</string>
@@ -67,7 +67,7 @@
     <string name="tv_serialPort">serialPort</string>
     <string name="tv_port">port</string>
     <string name="msg_get_serialPort_succeed">get serialPort succeed</string>
-    <string name="msg_get_serialPort_failure">The serial port is not found. Please check whether the equipment has serial port</string>
+    <string name="msg_get_serialPort_failure">The serial port is not found.</string>
     <string name="msg_connect_succeed">connect succeed</string>
     <string name="msg_connect_failure">connect failure</string>
     <string name="msg_disconnect_connect">disconnect connect</string>
@@ -83,14 +83,18 @@
     <string name="tv_epc">EPC</string>
     <string name="tv_antenna">ant no.</string>
     <string name="tv_count">count</string>
-    <string name="btn_inventory">start Inventory</string>
-    <string name="btn_stop_inventory">stop Inventory</string>
+    <string name="btn_inventory">start</string>
+    <string name="btn_stop_inventory">stop</string>
     <string name="btn_clear">clear</string>
-    <string name="btn_exit">exit</string>
+    <string name="btn_exit">Exit</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="tv_program_exits">Program Exits</string>
+    <string name="btn_no">No</string>
+    <string name="btn_yes">Yes</string>
     <string name="msg_stop_read_tag_succeed">stop read tag succeed</string>
     <string name="msg_stop_read_tag_failure">stop read tag succeed</string>
     <!-- tag operation -->
-    <string name="tv_designated_area_read_write">Reading/Writing specific zone</string>
+    <string name="tv_designated_area_read_write">Read/Write specific zone</string>
     <string name="tv_tag_lock_unlock">tag lock unlock</string>
     <string name="tv_tag_destroy">tag destroy</string>
     <string name="tv_designated_area">bank</string>

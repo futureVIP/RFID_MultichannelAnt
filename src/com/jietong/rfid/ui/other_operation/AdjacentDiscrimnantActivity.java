@@ -68,11 +68,11 @@ public class AdjacentDiscrimnantActivity extends Activity implements OnClickList
 			return;
 		}
 		int value = Integer.parseInt(adjcentDiscrimnant);
-		if (value < 1 || value > 254) {
+		if (value < 0 || value > 254) {
 			Toasts.makeTextShort(this,R.string.msg_other_set_adjacent_discriminant_value_scope);
 			return;
 		}
-		boolean total = readerService.setTrigModeDelayTime(ReaderUtil.readers,(byte) value);
+		boolean total = readerService.setNeighJudge(ReaderUtil.readers,(byte) value);
 		if (total) {
 			Toasts.makeTextShort(this, R.string.msg_other_set_adjacent_discriminant_set_succeed);
 		} else {
@@ -84,7 +84,7 @@ public class AdjacentDiscrimnantActivity extends Activity implements OnClickList
 		if(null == ReaderUtil.readers){
 			return;
 		}
-		int total = readerService.getTrigModeDelayTime(ReaderUtil.readers);
+		int total = readerService.getNeighJudge(ReaderUtil.readers);
 		if (total != -1) {
 			tvAdjacentDiscriminantTime.setText(String.valueOf(total));
 			Toasts.makeTextShort(this, R.string.msg_other_set_adjacent_discriminant_read_succeed);
