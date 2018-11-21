@@ -2,6 +2,8 @@ package com.jietong.rfid.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -45,6 +47,10 @@ public class AppStart extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+//		Resources resource = getApplicationContext().getResources();
+//		Configuration configuration = resource.getConfiguration();
+//		configuration.fontScale = 1.0f;// 设置字体的缩放比例
+//		resource.updateConfiguration(configuration, resource.getDisplayMetrics());
 		String msg = "----------onResume----------";
 		Log.d(TAG, msg);
 	}

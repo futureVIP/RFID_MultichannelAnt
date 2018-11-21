@@ -244,11 +244,9 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 					} else {
 						StringBuffer sb = new StringBuffer();
 						sb.append(mactvDataArea.getText());
-						sb.append("\r");
-						sb.append("\n");
+						sb.append("\r\n");
 						sb.append(counts);
-						sb.append(".");
-						sb.append(" ");
+						sb.append(". ");
 						sb.append(data);
 						mactvDataArea.setText(sb.toString());
 						counts += 1;

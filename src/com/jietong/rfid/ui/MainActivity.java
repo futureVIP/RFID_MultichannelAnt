@@ -2,7 +2,6 @@ package com.jietong.rfid.ui;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,14 +44,12 @@ import com.jietong.rfid.ui.params_set.FrequencySetActivity;
 import com.jietong.rfid.ui.params_set.PowerSetActivity;
 import com.jietong.rfid.ui.params_set.ReadTagPatternActivity;
 import com.jietong.rfid.ui.params_set.WorkPatternActivity;
-import com.jietong.rfid.ui.system.Exit;
 import com.jietong.rfid.ui.system.ExitFromSettings;
 import com.jietong.rfid.ui.system.MainTopRightDialog;
 import com.jietong.rfid.ui.system.ShakeActivity;
 import com.jietong.rfid.ui.tag_operation.DesignatedAreaReadAndWriteActivity;
 import com.jietong.rfid.ui.tag_operation.TagDestroyActivity;
 import com.jietong.rfid.ui.tag_operation.TagLockUnlockActivity;
-import com.jietong.rfid.util.Toasts;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -71,6 +68,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private boolean menu_display = false;
 	private PopupWindow menuWindow;
 	private LayoutInflater inflater;
+	private Button btnInvOnce;
 	private Button btnBeginInv;
 	private Button btnBasicStop;
 	private Button btnBasicClear;
@@ -113,6 +111,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		one = displayWidth / 4; 
 		two = one * 2;
 		three = one * 3;
+		btnInvOnce.setOnClickListener(this);
 		btnBeginInv.setOnClickListener(this);
 		btnBasicStop.setOnClickListener(this);
 		btnBasicClear.setOnClickListener(this);
@@ -176,6 +175,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		listViewData = (ListView) view1.findViewById(R.id.listView_data);
 		tvBasicAmount = (TextView) view1.findViewById(R.id.tv_basic_amount);
 		tvBasicTime = (TextView) view1.findViewById(R.id.tv_basic_time);
+		btnInvOnce = (Button) view1.findViewById(R.id.btn_basic_inv_once);
 		btnBeginInv = (Button) view1.findViewById(R.id.btn_basic_beginInv);
 		btnBasicStop = (Button) view1.findViewById(R.id.btn_basic_stop);
 		btnBasicClear = (Button) view1.findViewById(R.id.btn_basic_clear);
@@ -250,53 +250,42 @@ public class MainActivity extends Activity implements OnClickListener {
 				}
 				break;
 			case 1:
-				mTab2.setImageDrawable(getResources().getDrawable(
-						R.drawable.tab_address_pressed));
+				mTab2.setImageDrawable(getResources().getDrawable(R.drawable.tab_address_pressed));
 				if (currIndex == 0) {
 					animation = new TranslateAnimation(zero, one, 0, 0);
-					mTab1.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_weixin_normal));
+					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_weixin_normal));
 				} else if (currIndex == 2) {
 					animation = new TranslateAnimation(two, one, 0, 0);
-					mTab3.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_find_frd_normal));
+					mTab3.setImageDrawable(getResources().getDrawable(R.drawable.tab_find_frd_normal));
 				} else if (currIndex == 3) {
 					animation = new TranslateAnimation(three, one, 0, 0);
-					mTab4.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_settings_normal));
+					mTab4.setImageDrawable(getResources().getDrawable(R.drawable.tab_settings_normal));
 				}
 				break;
 			case 2:
-				mTab3.setImageDrawable(getResources().getDrawable(
-						R.drawable.tab_find_frd_pressed));
+				mTab3.setImageDrawable(getResources().getDrawable(R.drawable.tab_find_frd_pressed));
 				if (currIndex == 0) {
 					animation = new TranslateAnimation(zero, two, 0, 0);
-					mTab1.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_weixin_normal));
+					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_weixin_normal));
 				} else if (currIndex == 1) {
 					animation = new TranslateAnimation(one, two, 0, 0);
-					mTab2.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_address_normal));
+					mTab2.setImageDrawable(getResources().getDrawable(R.drawable.tab_address_normal));
 				} else if (currIndex == 3) {
 					animation = new TranslateAnimation(three, two, 0, 0);
-					mTab4.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_settings_normal));
+					mTab4.setImageDrawable(getResources().getDrawable(R.drawable.tab_settings_normal));
 				}
 				break;
 			case 3:
 				mTab4.setImageDrawable(getResources().getDrawable(R.drawable.tab_settings_pressed));
 				if (currIndex == 0) {
 					animation = new TranslateAnimation(zero, three, 0, 0);
-					mTab1.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_weixin_normal));
+					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_weixin_normal));
 				} else if (currIndex == 1) {
 					animation = new TranslateAnimation(one, three, 0, 0);
-					mTab2.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_address_normal));
+					mTab2.setImageDrawable(getResources().getDrawable(R.drawable.tab_address_normal));
 				} else if (currIndex == 2) {
 					animation = new TranslateAnimation(two, three, 0, 0);
-					mTab3.setImageDrawable(getResources().getDrawable(
-							R.drawable.tab_find_frd_normal));
+					mTab3.setImageDrawable(getResources().getDrawable(R.drawable.tab_find_frd_normal));
 				}
 				break;
 			}
@@ -325,7 +314,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				menu_display = false;
 			} else {
 				Intent intent = new Intent();
-				intent.setClass(MainActivity.this, Exit.class);
+				intent.setClass(MainActivity.this, ExitFromSettings.class);
 				startActivity(intent);
 			}
 		} else if (keyCode == KeyEvent.KEYCODE_MENU) { // 获取 Menu键
@@ -357,7 +346,7 @@ public class MainActivity extends Activity implements OnClickListener {
 						// Toast.makeText(Main.this, "退出",
 						// Toast.LENGTH_LONG).show();
 						Intent intent = new Intent();
-						intent.setClass(MainActivity.this, Exit.class);
+						intent.setClass(MainActivity.this, ExitFromSettings.class);
 						startActivity(intent);
 						menuWindow.dismiss(); // 响应点击事件之后关闭Menu
 					}
@@ -377,6 +366,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
+		case R.id.btn_basic_inv_once:
+			invOnce();
+			break;
 		case R.id.btn_basic_beginInv:
 			beginInv();
 			break;
@@ -388,6 +380,14 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		default:
 			break;
+		}
+	}
+
+	private void invOnce() {
+		if (null != ReaderUtil.readers) {
+			readerService.invOnce(ReaderUtil.readers, new ReadData());
+		}else{
+			return;
 		}
 	}
 
@@ -507,9 +507,9 @@ public class MainActivity extends Activity implements OnClickListener {
 				@Override
 				public void run() {
 					if (result) {
-						Toasts.makeTextShort(getApplicationContext(), R.string.msg_stop_read_tag_succeed);
+						//Toasts.makeTextShort(getApplicationContext(), R.string.msg_stop_read_tag_succeed);
 					} else {
-						Toasts.makeTextShort(getApplicationContext(), R.string.msg_stop_read_tag_failure);
+						//Toasts.makeTextShort(getApplicationContext(), R.string.msg_stop_read_tag_failure);
 					}
 				}
 			});

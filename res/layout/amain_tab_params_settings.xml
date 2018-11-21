@@ -294,21 +294,6 @@
                     android:src="@drawable/mm_submenu" />
             </RelativeLayout>
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginTop="14dp"
-                android:background="@drawable/btn_style_red"
-                android:gravity="center"
-                android:onClick="exit_settings"
-                android:padding="4dp"
-                android:text="@string/btn_exit"
-                android:textColor="#fff"
-                android:textSize="18sp" />
-
         </LinearLayout>
     </ScrollView>
 

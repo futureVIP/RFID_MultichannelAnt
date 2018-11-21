@@ -45,7 +45,6 @@
     <string name="close_buzzer">关闭</string>
     <string name="open_buzzer">打开</string>
     <string name="buzzer">蜂鸣器</string>
-    <string name="txt_tag_amount">读取次数:</string>
     <string name="antenna">天线号</string>
     <string name="showSerialPort">显示串口</string>
     <string name="connect">连接</string>
@@ -59,6 +58,7 @@
     <string name="tv_info_hint">信息提示</string>
     <string name="tv_serialPort">串口</string>
     <string name="tv_port">端口</string>
+    <string name="tv_baudRate">波特率</string>
     <string name="btn_connect_device">连接设备</string>
     <string name="btn_entry_page">进入界面</string>
     <string name="btn_get_verstion">获取版本号</string>
@@ -73,20 +73,21 @@
     <string name="tab_menu_tag_opera">标签操作</string>
     <string name="tab_menu_params_setting">参数设置</string>
     <string name="tab_menu_other_setting">其它设置</string>
-    <string name="tv_tag_count">标签数量:</string>
-    <string name="tv_read_count">读取次数</string>
+    <string name="tv_tag_count">标签数量&#160;&#160;:&#160;&#160;</string>
+    <string name="tv_read_count">读取次数&#160;&#160;:&#160;&#160;</string>
     <string name="tv_id">序号</string>
     <string name="tv_epc">EPC</string>
     <string name="tv_antenna">天线号</string>
     <string name="tv_count">次数</string>
-    <string name="btn_inventory">开始盘存</string>
-    <string name="btn_stop_inventory">停止盘存</string>
+    <string name="btn_basic_inv_once">寻卡一次</string>
+    <string name="btn_inventory">开始</string>
+    <string name="btn_stop_inventory">停止</string>
     <string name="btn_clear">清空</string>
     <string name="btn_exit">退出</string>
     <string name="btn_cancel">取消</string>
     <string name="btn_no">否</string>
     <string name="btn_yes">是</string>
-    <string name="tv_program_exits">程序退出</string>
+    <string name="tv_program_exits">确认要退出程序吗？  退出（Exit）   取消（Cancel)</string>
     <string name="msg_stop_read_tag_succeed">停止连续读卡成功!</string>
     <string name="msg_stop_read_tag_failure">停止连续读卡失败!</string>
     <string name="tv_designated_area_read_write">指定区域读/写</string>
@@ -218,6 +219,8 @@
     <string name="tv_other_set_buzzer_voice">声音设置</string>
     <string name="btn_other_set_buzzer_read">读取</string>
     <string name="btn_other_set_buzzer_set">设置</string>
+    <string name="rb_other_set_buzzer_on">开启</string>
+    <string name="rb_other_set_buzzer_off">关闭</string>
     <string name="msg_other_set_buzzer_read_failed">读取蜂鸣器失败</string>
     <string name="msg_other_set_buzzer_read_succeed">读取蜂鸣器成功</string>
     <string name="msg_other_set_buzzer_set_failed">设置蜂鸣器失败</string>
@@ -227,5 +230,5 @@
 	<string name="msg_other_set_adjacent_discriminant_set_failed">设置相邻判断别失败</string>
 	<string name="msg_other_set_adjacent_discriminant_set_succeed">设置相邻判断别成功</string>
 	<string name="msg_other_set_adjacent_discriminant_value_scope">无效值(有效值1-254s,0 取消)</string>
-
+	
 </resources>

@@ -5,18 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.ui.R;
 import com.jietong.rfid.util.Toasts;
 
-public class BuzzerSetActivity extends Activity implements OnClickListener,OnItemSelectedListener {
-	private Spinner spinnerBuzzer;
+public class BuzzerSetActivity extends Activity implements OnClickListener{
+	private RadioButton rbBuzzerOn;
+	private RadioButton rbBuzzerOff;
+	private RadioGroup rbGroupBuzzer;
 	private Button btnRead;
 	private Button btnSet;
 	private int state;
@@ -32,28 +33,15 @@ public class BuzzerSetActivity extends Activity implements OnClickListener,OnIte
 	private void inital() {
 		// 启动activity时不自动弹出软键盘
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-		spinnerBuzzer = (Spinner)findViewById(R.id.spinner_buzzer_on_off);
+		rbGroupBuzzer = (RadioGroup)findViewById(R.id.rb_buzzer_group);
+		rbBuzzerOn = (RadioButton)findViewById(R.id.rb_buzzer_on);
+		rbBuzzerOff = (RadioButton)findViewById(R.id.rb_buzzer_off);
 		btnRead =(Button)findViewById(R.id.btn_buzzer_set);
 		btnSet = (Button)findViewById(R.id.btn_buzzer_read);
 		btnRead.setOnClickListener(this);
 		btnSet.setOnClickListener(this);
-		spinnerBuzzer.setOnItemSelectedListener(this);
-	}
-
-
-
-	@Override
-	public void onItemSelected(AdapterView<?> parent, View view, int position,long id) {
-		switch(parent.getId()){
-		case R.id.spinner_buzzer_on_off:
-			state = parent.getSelectedItemPosition();
-			break;
-		}
-	}
-
-	@Override
-	public void onNothingSelected(AdapterView<?> parent) {
-		
+		rbBuzzerOn.setOnClickListener(this);
+		rbBuzzerOff.setOnClickListener(this);
 	}
 
 	@Override
@@ -72,6 +60,11 @@ public class BuzzerSetActivity extends Activity implements OnClickListener,OnIte
 		if(null == ReaderUtil.readers){
 			return;
 		}
+		if(rbBuzzerOn.isChecked()){
+			state = 1;
+		}else if(rbBuzzerOff.isChecked()){
+			state = 0;
+		}
 		boolean result = readerService.setBuzzer(ReaderUtil.readers, (byte)state);
 		if(result){
 			Toasts.makeTextShort(this, R.string.msg_other_set_buzzer_set_succeed);
@@ -86,7 +79,11 @@ public class BuzzerSetActivity extends Activity implements OnClickListener,OnIte
 		}
 		int result = readerService.getBuzzer(ReaderUtil.readers);
 		if(result > -1){
-			spinnerBuzzer.setSelection(result);
+			if(result == 0){
+				rbBuzzerOff.setChecked(true);
+			}else if(result == 1){
+				rbBuzzerOn.setChecked(true);
+			}
 			Toasts.makeTextShort(this, R.string.msg_other_set_buzzer_read_succeed);
 		}else{
 			Toasts.makeTextShort(this, R.string.msg_other_set_buzzer_read_failed);

@@ -9,8 +9,14 @@
         android:id="@+id/lineLay_basic_btn_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/btn_basic_inv_once"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_basic_inv_once" />
 
          <Button
             android:id="@+id/btn_basic_beginInv"
@@ -39,7 +45,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="exit_settings"
-            android:background="@drawable/btn_style_red"
             android:text="@string/btn_exit" />
     </LinearLayout>
 

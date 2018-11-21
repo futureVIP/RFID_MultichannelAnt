@@ -61,13 +61,33 @@
             android:text="@string/tv_other_set_buzzer"
             android:textColor="@color/bg_black" />
 
-        <Spinner
-            android:id="@+id/spinner_buzzer_on_off"
+        <RadioGroup
+            android:id="@+id/rb_buzzer_group"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:entries="@array/buzzer_switch" />
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="fill_vertical"
+			android:orientation="horizontal"
+            android:textColor="@color/bg_black" >
 
+            <RadioButton
+                android:id="@+id/rb_buzzer_on"
+                android:layout_width="0dp"
+            	android:layout_height="fill_parent"
+            	android:layout_weight="1"
+                android:text="@string/rb_other_set_buzzer_on"
+                android:textColor="@color/bg_black" />
+
+            <RadioButton
+                android:id="@+id/rb_buzzer_off"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/rb_other_set_buzzer_off"
+                android:textColor="@color/bg_black" />
+
+        </RadioGroup>
     </LinearLayout>
 
     <LinearLayout
@@ -91,6 +111,5 @@
             android:layout_weight="1"
             android:text="@string/btn_other_set_buzzer_set" />
     </LinearLayout>
-
 
 </RelativeLayout>

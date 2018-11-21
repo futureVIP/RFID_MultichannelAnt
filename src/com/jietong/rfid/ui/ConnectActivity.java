@@ -49,7 +49,6 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 	}
 
 	private void controlInital() {
-		tvConnectHint = (TextView) findViewById(R.id.tv_connect_hint);
 		spinnerSerialPort = (Spinner) findViewById(R.id.spinner_buzzer_on_off);
 		spinnerBaudRate = (Spinner) findViewById(R.id.spinner_connect_port);
 		autoConnect = (Button) findViewById(R.id.btn_auto_connect);
@@ -77,10 +76,10 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 			if (serialPorts.size() > 6) {
 				spinnerSerialPort.setSelection(6);
 			}
-			tvConnectHint.setText(R.string.msg_get_serialPort_succeed);
+			Toasts.makeTextShort(this,R.string.msg_get_serialPort_succeed);
 			deviceConnect.setEnabled(true);
 		} else {
-			tvConnectHint.setText(R.string.msg_get_serialPort_failure);
+			Toasts.makeTextShort(this,R.string.msg_get_serialPort_failure);
 			deviceConnect.setEnabled(false);
 		}
 	}
@@ -99,8 +98,6 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 			getVersion();
 			break;
 		case R.id.btn_entry_page:
-			Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
-			startActivity(intent);
 			break;
 		default:
 			break;
@@ -116,10 +113,12 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 			if (ReaderUtil.readers == null) {
 				ReaderUtil.readers = readerService.serialPortConnect(comm,baudRate);
 				if (ReaderUtil.readers != null) {
-					tvConnectHint.setText(R.string.msg_connect_succeed);
+					Toasts.makeTextShort(this,R.string.msg_connect_succeed);
 					readerService.version(ReaderUtil.readers);
+					Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
+					startActivity(intent);
 				} else {
-					tvConnectHint.setText(R.string.msg_connect_failure);
+					Toasts.makeTextShort(this,R.string.msg_connect_failure);
 				}
 			}
 			isConnect = 1;
@@ -129,7 +128,7 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 			if (ReaderUtil.readers != null) {
 				readerService.disconnect(ReaderUtil.readers);
 				ReaderUtil.readers = null;
-				tvConnectHint.setText(R.string.msg_disconnect_connect);
+				Toasts.makeTextShort(this,R.string.msg_disconnect_connect);
 			}
 			deviceConnect.setText(R.string.btn_connect_device);
 			isConnect = 0;

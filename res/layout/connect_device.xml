@@ -37,38 +37,11 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/rl_connect_serialport"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/rl_connect_device"
-        android:background="@drawable/linearlayout_underline"
-        android:gravity="center" >
-
-        <TextView
-            android:id="@+id/tv_connect_info_hint"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/tv_info_hint"
-            android:textColor="@color/bg_red" />
-
-        <TextView
-            android:id="@+id/tv_connect_hint"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:textColor="@color/bg_black" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/ll_connect_serialport"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/rl_connect_serialport"
+        android:layout_below="@+id/rl_connect_device"
         android:background="@drawable/linearlayout_underline"
         android:gravity="center" >
 
@@ -103,7 +76,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/tv_port"
+            android:text="@string/tv_baudRate"
             android:textColor="@color/bg_black" />
 
         <Spinner
@@ -147,7 +120,8 @@
             android:onClick="entry_page"
             android:text="@string/btn_entry_page"
             android:textColor="#ffffff"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btn_auto_connect"
