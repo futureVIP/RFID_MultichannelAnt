@@ -2,6 +2,8 @@ package com.jietong.rfid.ui.params_set;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -76,13 +78,16 @@ public class Antenna16ChannelActivity extends Activity  implements OnCheckedChan
 		for (int i = 0; i < cbAntenna.length; i++) {
 			cbAntenna[i].setOnCheckedChangeListener(this);
 		}
-		checkedStr = new LinkedList<>();
+		checkedStr = new Vector<String>();
 		
 		btnReaderAntenner = (Button)findViewById(R.id.btn_16read_antenna);
 		btnSetAntenner = (Button)findViewById(R.id.btn_16set_antenna);
 		
 		spinnerWorkTime = (Spinner) findViewById(R.id.spinner_16work_time);
 		spinnerPower = (Spinner) findViewById(R.id.spinner_16power);
+		
+		spinnerWorkTime.setSelection(9);
+		spinnerPower.setSelection(10);
 		
 		btnReaderAntenner.setOnClickListener(this);
 		btnSetAntenner.setOnClickListener(this);

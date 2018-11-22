@@ -57,6 +57,8 @@ public class Antenna4ChannelActivity extends Activity implements
 		for (int i = 0; i < spinnerWorkTime.length; i++) {
 			spinnerWorkTime[i].setOnItemSelectedListener(this);
 			spinnerPower[i].setOnItemSelectedListener(this);
+			spinnerWorkTime[i].setSelection(9);
+			spinnerPower[i].setSelection(10);
 		}
 		btnRead = (Button) findViewById(R.id.btn_4antenna_read);
 		btnSet = (Button) findViewById(R.id.btn_4antenna_set);

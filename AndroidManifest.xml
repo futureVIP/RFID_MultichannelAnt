@@ -54,6 +54,7 @@
         <activity android:name="com.jietong.rfid.ui.params_set.ReadTagPatternActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.params_set.PowerSetActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.params_set.DeviceNumberActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name="com.jietong.rfid.ui.params_set.VersionActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <!-- 参数设置 end -->
         
         <!-- 其他设置 start -->

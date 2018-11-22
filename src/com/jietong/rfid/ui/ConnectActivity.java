@@ -21,7 +21,7 @@ import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.util.Toasts;
 
 public class ConnectActivity extends Activity implements OnItemClickListener,OnClickListener {
-
+	
 	public static ConnectActivity instance = null;
 	private TextView tvConnectHint;
 	private Spinner spinnerSerialPort;

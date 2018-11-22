@@ -109,6 +109,9 @@ public class Antenna32ChannelActivity extends Activity implements OnCheckedChang
 		spinnerWorkTime = (Spinner) findViewById(R.id.spinner_32work_time);
 		spinnerPower = (Spinner) findViewById(R.id.spinner_32power);
 		
+		spinnerWorkTime.setSelection(9);
+		spinnerPower.setSelection(10);
+		
 		btnReaderAntenner.setOnClickListener(this);
 		btnSetAntenner.setOnClickListener(this);
 	}

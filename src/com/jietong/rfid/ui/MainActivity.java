@@ -43,6 +43,7 @@ import com.jietong.rfid.ui.params_set.DeviceNumberActivity;
 import com.jietong.rfid.ui.params_set.FrequencySetActivity;
 import com.jietong.rfid.ui.params_set.PowerSetActivity;
 import com.jietong.rfid.ui.params_set.ReadTagPatternActivity;
+import com.jietong.rfid.ui.params_set.VersionActivity;
 import com.jietong.rfid.ui.params_set.WorkPatternActivity;
 import com.jietong.rfid.ui.system.ExitFromSettings;
 import com.jietong.rfid.ui.system.MainTopRightDialog;
@@ -52,7 +53,7 @@ import com.jietong.rfid.ui.tag_operation.TagDestroyActivity;
 import com.jietong.rfid.ui.tag_operation.TagLockUnlockActivity;
 
 public class MainActivity extends Activity implements OnClickListener {
-
+	
 	public static MainActivity instance = null;
 	private ViewPager mTabPager;
 	private ImageView mTabImg;// ¶¯»­Í¼Æ¬
@@ -76,16 +77,14 @@ public class MainActivity extends Activity implements OnClickListener {
 	private int tagCount = 0;
 	public TextView tvBasicAmount;
 	public TextView tvBasicTime;
-	// ListVie
 	private ListView listViewData;
 	private List<EPC> listEPC;
-	// private Button mRightBtn;
 	RelativeLayout rlAntenna4channel;
 	RelativeLayout rlAntenna16channel;
 	RelativeLayout rlAntenna32channel;
 	RelativeLayout rlAdjacentDiscriminant;
 	private ListViewAdapterWithViewHolder listViewAdapterWithViewHolder;
-	ReaderService readerService = new ReaderServiceImpl();
+	private ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -235,7 +234,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			antennaShowChannel();
 			switch (arg0) {
 			case 0:
-				int tab_weixin_pressed = R.drawable.tab_weixin_pressed;
+				int tab_weixin_pressed = R.drawable.tab_rfid_pressed;
 				mTab1.setImageDrawable(getResources().getDrawable(tab_weixin_pressed));
 				if (currIndex == 1) {
 					animation = new TranslateAnimation(one, 0, 0, 0);
@@ -253,7 +252,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				mTab2.setImageDrawable(getResources().getDrawable(R.drawable.tab_address_pressed));
 				if (currIndex == 0) {
 					animation = new TranslateAnimation(zero, one, 0, 0);
-					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_weixin_normal));
+					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_rfid_normal));
 				} else if (currIndex == 2) {
 					animation = new TranslateAnimation(two, one, 0, 0);
 					mTab3.setImageDrawable(getResources().getDrawable(R.drawable.tab_find_frd_normal));
@@ -266,7 +265,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				mTab3.setImageDrawable(getResources().getDrawable(R.drawable.tab_find_frd_pressed));
 				if (currIndex == 0) {
 					animation = new TranslateAnimation(zero, two, 0, 0);
-					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_weixin_normal));
+					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_rfid_normal));
 				} else if (currIndex == 1) {
 					animation = new TranslateAnimation(one, two, 0, 0);
 					mTab2.setImageDrawable(getResources().getDrawable(R.drawable.tab_address_normal));
@@ -279,7 +278,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				mTab4.setImageDrawable(getResources().getDrawable(R.drawable.tab_settings_pressed));
 				if (currIndex == 0) {
 					animation = new TranslateAnimation(zero, three, 0, 0);
-					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_weixin_normal));
+					mTab1.setImageDrawable(getResources().getDrawable(R.drawable.tab_rfid_normal));
 				} else if (currIndex == 1) {
 					animation = new TranslateAnimation(one, three, 0, 0);
 					mTab2.setImageDrawable(getResources().getDrawable(R.drawable.tab_address_normal));
@@ -533,8 +532,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	// tag operation start
 	public void btn_designated_area_read_and_write(View v) {
-		Intent intent = new Intent(MainActivity.this,
-				DesignatedAreaReadAndWriteActivity.class);
+		Intent intent = new Intent(MainActivity.this,DesignatedAreaReadAndWriteActivity.class);
 		startActivity(intent);
 	}
 
@@ -583,6 +581,11 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	public void btn_device_number(View v) {
 		Intent intent = new Intent(MainActivity.this,DeviceNumberActivity.class);
+		startActivity(intent);
+	}
+	
+	public void btn_get_version(View v){
+		Intent intent = new Intent(MainActivity.this,VersionActivity.class);
 		startActivity(intent);
 	}
 

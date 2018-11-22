@@ -39,20 +39,10 @@
                 android:onClick="btn_work_pattern"
                 android:gravity="center_vertical" >
 
-                <ImageView
-                    android:id="@+id/add_friend"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/find_more_friend_addfriend_icon" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/add_friend"
                     android:padding="8dp"
                     android:text="@string/tv_params_set_work_mode"
                     android:textColor="#000"
@@ -76,20 +66,10 @@
                 android:gravity="center_vertical"
                 android:onClick="btn_communication_mode_r2k" >
 
-                <ImageView
-                    android:id="@+id/add_friend_shake"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/find_more_friend_shake" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/add_friend_shake"
                     android:padding="8dp"
                     android:text="@string/tv_params_set_communication_mode"
                     android:textColor="#000"
@@ -114,20 +94,10 @@
                 android:gravity="center_vertical"
                 android:onClick="btn_antenna4_channel" >
 
-                <ImageView
-                    android:id="@+id/add_friend_shake2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/find_more_friend_shake" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/add_friend_shake2"
                     android:padding="8dp"
                     android:text="@string/tv_params_set_antenna_set_4channel"
                     android:textColor="#000"
@@ -152,20 +122,10 @@
                 android:gravity="center_vertical"
                 android:onClick="btn_antenna16_channel" >
 
-                <ImageView
-                    android:id="@+id/ImageView06"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/find_more_friend_shake" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/ImageView06"
                     android:padding="8dp"
                     android:text="@string/tv_params_set_antenna_set_16channel"
                     android:textColor="#000"
@@ -190,20 +150,10 @@
                 android:gravity="center_vertical"
                 android:onClick="btn_antenna32_channel" >
 
-                <ImageView
-                    android:id="@+id/ImageView05"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/find_more_friend_shake" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/ImageView05"
                     android:padding="8dp"
                     android:text="@string/tv_params_set_antenna_set_32channel"
                     android:textColor="#000"
@@ -228,20 +178,10 @@
                 android:gravity="center_vertical"
                 android:onClick="btn_device_number" >
 
-                <ImageView
-                    android:id="@+id/ImageView01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/find_more_friend_shake" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/ImageView01"
                     android:padding="8dp"
                     android:text="@string/tv_params_set_device_no"
                     android:textColor="#000"
@@ -263,25 +203,14 @@
                 android:background="@drawable/preference_single_item"
                 android:clickable="true"
                 android:gravity="center_vertical"
-                android:onClick="btn_frequency_set"
-                android:visibility="gone" >
-
-                <ImageView
-                    android:id="@+id/ImageView02"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="matrix"
-                    android:src="@drawable/find_more_friend_shake" />
+                android:onClick="btn_get_version" >
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/ImageView02"
                     android:padding="8dp"
-                    android:text="频率设置(美标和欧标)"
+                    android:text="@string/tv_params_set_get_version"
                     android:textColor="#000"
                     android:textSize="17sp" />
 

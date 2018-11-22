@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:scaleType="matrix"
-                    android:src="@drawable/tab_weixin_pressed" />
+                    android:src="@drawable/tab_rfid_pressed" />
 
                 <TextView
                     android:layout_width="wrap_content"
