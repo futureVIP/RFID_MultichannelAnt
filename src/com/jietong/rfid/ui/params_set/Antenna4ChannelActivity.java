@@ -1,5 +1,7 @@
 package com.jietong.rfid.ui.params_set;
 
+import java.util.Map;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.ui.R;
+import com.jietong.rfid.util.DataConvert;
 import com.jietong.rfid.util.Toasts;
 
 public class Antenna4ChannelActivity extends Activity implements
@@ -25,7 +28,8 @@ public class Antenna4ChannelActivity extends Activity implements
 	private Spinner spinnerPower[];
 	private Button btnRead;
 	private Button btnSet;
-	ReaderService readerService = new ReaderServiceImpl();
+	private Button btnCheck;
+	private ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,9 +66,11 @@ public class Antenna4ChannelActivity extends Activity implements
 		}
 		btnRead = (Button) findViewById(R.id.btn_4antenna_read);
 		btnSet = (Button) findViewById(R.id.btn_4antenna_set);
-
+		btnCheck = (Button) findViewById(R.id.btn_4check_antenna);
+		
 		btnRead.setOnClickListener(this);
 		btnSet.setOnClickListener(this);
+		btnCheck.setOnClickListener(this);
 	}
 
 	public void shake_activity_back(View v) { // 标题栏 返回按钮
@@ -113,13 +119,36 @@ public class Antenna4ChannelActivity extends Activity implements
 		case R.id.btn_4antenna_set:
 			antennaSet();
 			break;
+		case R.id.btn_4check_antenna:
+			antennaCheck();
+			break;
 		}
 	}
 
+	private void antennaCheck() {
+		Toasts.makeTextShort(this, R.string.msg_params_set_detection_antenna_please_wait);
+		new Thread(new Runnable() {
+			public void run() {
+				final Map<String, Byte> antennaState = readerService.getAntState(ReaderUtil.readers);
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						if (null == antennaState) {
+							Toasts.makeTextShort(getApplicationContext(),R.string.msg_params_set_detection_antenna_fails);
+							return;
+						}
+						int length = DataConvert.byteToInt(antennaState.get("Channel"));
+						for (int i = 0; i < length; i++) {
+							cbAntenna[i].setChecked(antennaState.get("Ant" + (i + 1)) == 1);
+						}
+						Toasts.makeTextShort(getApplicationContext(), R.string.msg_params_set_detection_antenna_successful);
+					}
+				});
+			}
+		}).start();
+	}
+
 	private void antennaSet() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		AntStruct ant = new AntStruct(ReaderUtil.readers.getChannel());
 		for (int i = 0; i < 4; i++) {
 			ant.enable[i] = (byte) (cbAntenna[i].isChecked() == true ? 1 : 0);
@@ -143,9 +172,6 @@ public class Antenna4ChannelActivity extends Activity implements
 	}
 
 	private void antennaRead() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		AntStruct ant = readerService.getAnt(ReaderUtil.readers);
 		if(ant != null){
 			Toasts.makeTextShort(this,R.string.msg_antenna_params_read_succeed);

@@ -42,7 +42,7 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/ll_read_pattern"
+        android:id="@+id/ll_work_pattern"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -50,7 +50,7 @@
         android:background="@drawable/linearlayout_underline" >
 
         <TextView
-            android:id="@+id/tv_read_pattern"
+            android:id="@+id/tv_work_pattern"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
@@ -67,7 +67,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_read_pattern_btn"
+        android:id="@+id/ll_work_pattern_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"

@@ -59,9 +59,6 @@ public class DeviceNumberActivity extends Activity implements OnClickListener{
 	}
 
 	private void deviceNoRead() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		String result = readerService.getDeviceNo(ReaderUtil.readers);
 		if(null != result){
 			etDeviceNo.setText(result);
@@ -72,21 +69,21 @@ public class DeviceNumberActivity extends Activity implements OnClickListener{
 	}
 
 	private void deviceNoSet() {
-		if(null == ReaderUtil.readers){
+		String device = etDeviceNo.getText().toString().replace(" ", "");
+		if(!Regex.isDecNumber(device)){
+			Toasts.makeTextShort(this,R.string.msg_device_number_value_scope);
 			return;
 		}
-		String device = etDeviceNo.getText().toString().replace(" ", "");
-		boolean value = Regex.isDecNumber(device);
-		if(!value){
+		if(device.length() > 5){
 			Toasts.makeTextShort(this,R.string.msg_device_number_value_scope);
 			return;
 		}
 		int dev = Integer.parseInt(device);
-		if(dev < 0 || dev > 255){
+		if(dev < 0 || dev > 65535){
 			Toasts.makeTextShort(this,R.string.msg_device_number_value_scope);
 			return;
 		}
-		boolean result = readerService.setDeviceNo(ReaderUtil.readers, (byte)dev);
+		boolean result = readerService.setDeviceNo(ReaderUtil.readers, dev);
 		if(result){
 			Toasts.makeTextShort(this,R.string.msg_device_number_set_succeed);
 		}else{

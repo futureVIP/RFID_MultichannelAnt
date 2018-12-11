@@ -1,5 +1,7 @@
 package com.jietong.rfid.ui.other_operation;
 
+import java.util.Map;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,7 @@ import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.ui.R;
+import com.jietong.rfid.util.DataConvert;
 import com.jietong.rfid.util.Regex;
 import com.jietong.rfid.util.Toasts;
 
@@ -19,6 +22,7 @@ public class AdjacentDiscrimnantActivity extends Activity implements OnClickList
 	private TextView tvAdjacentDiscriminantTime;
 	private Button btnAdjacentDiscrimnantRead;
 	private Button btnAdjacentDiscrimnantSet;
+	
 	private ReaderService readerService = new ReaderServiceImpl();
 
 	@Override
@@ -58,9 +62,6 @@ public class AdjacentDiscrimnantActivity extends Activity implements OnClickList
 	}
 
 	private void setAdjacentDiscriminant() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		String adjcentDiscrimnant = tvAdjacentDiscriminantTime.getText().toString();
 		boolean result = Regex.isDecNumber(adjcentDiscrimnant);
 		if (!result) {
@@ -81,12 +82,10 @@ public class AdjacentDiscrimnantActivity extends Activity implements OnClickList
 	}
 
 	private void readAdjacentDiscriminant() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
-		int total = readerService.getNeighJudge(ReaderUtil.readers);
-		if (total != -1) {
-			tvAdjacentDiscriminantTime.setText(String.valueOf(total));
+		Map<String,Byte> total = readerService.getNeighJudge(ReaderUtil.readers);
+		if (null != total) {
+			int neighJudgeTime = DataConvert.byteToInt(total.get("neighJudgeTime"));
+			tvAdjacentDiscriminantTime.setText(String.valueOf(neighJudgeTime));
 			Toasts.makeTextShort(this, R.string.msg_other_set_adjacent_discriminant_read_succeed);
 		} else {
 			Toasts.makeTextShort(this, R.string.msg_other_set_adjacent_discriminant_read_failed);

@@ -168,7 +168,37 @@
                     android:src="@drawable/mm_submenu" />
 
             </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/rl_operating_frequency"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/preference_single_item"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="btn_operating_frequency" >
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="8dp"
+                    android:text="@string/tv_params_set_operating_frequency"
+                    android:textColor="#000"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="matrix"
+                    android:src="@drawable/mm_submenu" />
+
+            </RelativeLayout>
+            
+            
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"

@@ -6,40 +6,6 @@
     android:gravity="top" >
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ll_communication_mode_btn"
-        android:layout_below="@+id/tab_setting" >
-
-        <ScrollView
-            android:id="@+id/sv_setting"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:fadingEdge="vertical"
-            android:scrollbars="vertical"
-            android:visibility="visible" >
-
-           <RelativeLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent" >
-               <include
-                   layout="@layout/template_frequency_hopping_european_standard"
-                   android:visibility="gone" />
-               <include
-                   layout="@layout/template_frequency_hopping_american_standard"
-                   android:visibility="gone" />
-               <include
-                   layout="@layout/template_frequency_fix_american_standard"
-                   android:visibility="gone" />
-               <include
-                   layout="@layout/template_frequency_fix_european_standard"
-                   android:visibility="visible" />
-            </RelativeLayout>
-        </ScrollView>
-
-    </RelativeLayout>
-
-    <RelativeLayout
         android:id="@+id/shake_title_bar"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
@@ -52,7 +18,7 @@
             android:layout_centerVertical="true"
             android:background="@drawable/title_btn_back"
             android:onClick="shake_activity_back"
-            android:text="返回"
+            android:text="@string/btn_return"
             android:textColor="#fff"
             android:textSize="14sp" />
 
@@ -60,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="频率设置"
+            android:text="@string/tv_params_set_frequency_set"
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
@@ -74,96 +40,720 @@
             android:src="@drawable/mm_title_btn_menu" />
     </RelativeLayout>
     <!-- 读卡器设置start -->
+    
+    <!-- 读卡器设置end -->
 
-    <RelativeLayout
-        android:id="@+id/tab_setting"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+    <ScrollView
+        android:id="@+id/sv_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_communication_mode_btn"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/shake_title_bar"
-        android:orientation="horizontal"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical"
         android:visibility="visible" >
 
-        <LinearLayout
-            android:id="@+id/linearLayout_Antenna1"
+        <RelativeLayout
+            android:id="@+id/tab_setting"
             android:layout_width="match_parent"
-            android:layout_height="30dp" >
+            android:layout_height="394dp"
+            android:orientation="horizontal"
+            android:visibility="visible" >
 
-            <TextView
-                android:id="@+id/tv_communication_output_mode"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="欧标和美标"
-                android:textColor="@color/bg_black" />
+            <LinearLayout
+                android:id="@+id/ll_params_set_frequency_area"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
 
-            <TextView
-                android:id="@+id/TextView03"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="频率设置"
-                android:textColor="@color/bg_black" />
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_params_set_frequency_area"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/tv_params_set_frequency_area"
+                    android:textColor="@color/bg_black" />
 
-        <LinearLayout
-            android:id="@+id/ll_communication_mode"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/linearLayout_Antenna1" >
+                <Spinner
+                    android:id="@+id/Spinner_params_set_frequency_area"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:entries="@array/spinner_operationg_frequency" />
+            </LinearLayout>
 
-            <Spinner
-                android:id="@+id/spinner_work_pattern"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:entries="@array/frequency_american_and_european_standard" />
+            <LinearLayout
+                android:id="@+id/ll_params_set_frequency_hopping_set"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_params_set_frequency_area"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
 
-            <Spinner
-                android:id="@+id/spinner_communication_output_mode"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:entries="@array/frequency_set" />
-        </LinearLayout>
-    </RelativeLayout>
-    <!-- 读卡器设置end -->
+                <TextView
+                    android:id="@+id/tv_params_set_frequency_fixed_frequency"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/tv_params_set_frequency_fixed_frequency"
+                    android:textColor="@color/bg_black" />
+
+                <Spinner
+                    android:id="@+id/spinner_params_set_frequency_fixed_frequency"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:entries="@array/spinner_fixed_frequency"
+                    android:textColor="@color/bg_black" />
+
+                <EditText
+                    android:id="@+id/et_params_set_frequency_fixed_frequency"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.5" 
+                    android:inputType="numberDecimal" >
+                </EditText>
+                
+                <TextView
+                    android:id="@+id/tv_unit_Khz"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center_vertical"
+                    android:text="Mhz(Clear content)"
+                    android:textColor="@color/bg_black" />
+            </LinearLayout>
+
+            <!-- frequency point1_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point1_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_params_set_frequency_hopping_set"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="902.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="903.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="903.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="904.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="904.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point1_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point1_group end -->
+            
+            <!-- frequency point2_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point2_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point1_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="905.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="905.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="906.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="906.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point10"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="907.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point2_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point2_group end -->
+            
+            <!-- frequency point3_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point3_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point2_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point11"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="907.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point12"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="908.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point13"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="908.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="909.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="909.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point3_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point3_group end -->
+            
+            <!-- frequency point4_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point4_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point3_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="910.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="910.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="911.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="911.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="912.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point4_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point4_group end -->
+            
+            <!-- frequency point5_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point5_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point4_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="912.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="913.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point23"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="913.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point24"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="914.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="914.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point5_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point5_group end -->
+            
+            <!-- frequency point6_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point6_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point5_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point26"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="915.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point27"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="915.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point28"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="916.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point29"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="916.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="917.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point6_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point6_group end -->
+            
+            <!-- frequency point7_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point7_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point6_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="917.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point32"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="918.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point33"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="918.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point34"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="919.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point35"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="919.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point7_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point7_group end -->
+            
+            <!-- frequency point8_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point8_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point7_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point36"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="920.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point37"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="920.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point38"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="921.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point39"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="921.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point40"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="922.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point8_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point8_group end -->
+            
+            <!-- frequency point9_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point9_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point8_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point41"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="922.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point42"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="923.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point43"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="923.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point44"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="924.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point45"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="924.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point9_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point9_group end -->
+            
+            <!-- frequency point10_group start-->
+            <LinearLayout
+                android:id="@+id/ll_frequency_point10_group"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_frequency_point9_group"
+                android:background="@drawable/linearlayout_underline"
+                android:visibility="visible" >
+                
+                <CheckBox
+                    android:id="@+id/cb_frequency_point46"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="925.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point47"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="925.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point48"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="926.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point49"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="926.5"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point50"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="927.0"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_frequency_point10_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="all"
+                    android:textColor="@color/bg_black" />
+                
+            </LinearLayout>
+            <!-- frequency point10_group end -->
+            
+        </RelativeLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/ll_communication_mode_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
 
         <Button
-            android:id="@+id/btn_communication_mode_readddd"
+            android:id="@+id/btn_params_set_frequency_read"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="0.76"
             android:onClick="on_button_read_antenna"
-            android:text="读取"
+            android:text="@string/btn_params_set_frequency_read"
             android:textColor="#000000"
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btn_communication_mode_default_set"
+            android:id="@+id/btn_params_set_frequency_set"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="0.76"
-            android:onClick="on_button_set_antenna"
-            android:text="默认设置"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/btn_read_pattern_set"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.76"
-            android:text="设置" />
-
+            android:text="@string/btn_params_set_frequency_set" />
     </LinearLayout>
 
 </RelativeLayout>

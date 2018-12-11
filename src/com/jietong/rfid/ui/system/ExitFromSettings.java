@@ -20,7 +20,7 @@ public class ExitFromSettings extends Activity implements OnClickListener {
 	}
 
 	private void inital() {
-		layout=(LinearLayout)findViewById(R.id.exit_layout2);
+		layout=(LinearLayout)findViewById(R.id.ll_dialog_exit);
 		eventListener();
 	}
 
@@ -45,7 +45,7 @@ public class ExitFromSettings extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()){
-		case R.id.exit_layout2:
+		case R.id.ll_dialog_exit:
 			//Toasts.makeTextShort(this, "提示：点击窗口外部关闭窗口！");	
 			break;
 		}

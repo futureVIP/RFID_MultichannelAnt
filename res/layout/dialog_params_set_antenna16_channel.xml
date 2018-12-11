@@ -45,7 +45,7 @@
         android:id="@+id/sv_setting"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/ll_communication_mode_btn"
+        android:layout_above="@+id/ll_16Antenna_btn_group"
         android:layout_below="@+id/shake_title_bar"
         android:fadingEdge="vertical"
         android:scrollbars="vertical"
@@ -317,7 +317,7 @@
     <LinearLayout
         android:id="@+id/ll_16Antenna_btn_group"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
 
@@ -325,9 +325,8 @@
             android:id="@+id/btn_16read_antenna"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.76"
-            android:onClick="on_button_read_antenna"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:text="@string/btn_antenna_params_read"
             android:textColor="#000000"
             android:textSize="16sp" />
@@ -336,12 +335,22 @@
             android:id="@+id/btn_16set_antenna"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.76"
-            android:onClick="on_button_set_antenna"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:text="@string/btn_antenna_params_set"
             android:textColor="#000000"
             android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_16check_antenna"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_16check_antenna"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
+
     </LinearLayout>
 
 </RelativeLayout>

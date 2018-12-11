@@ -43,6 +43,7 @@
         <activity android:name="com.jietong.rfid.ui.tag_operation.TagDestroyActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.tag_operation.FastWriteTagActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <!-- 标签操作 end -->
+        
         <!-- 参数设置 start -->
         <activity android:name="com.jietong.rfid.ui.params_set.WorkPatternActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.params_set.CommunicationModeDisActivity" android:theme="@android:style/Theme.NoTitleBar" />
@@ -50,7 +51,7 @@
         <activity android:name="com.jietong.rfid.ui.params_set.Antenna4ChannelActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.params_set.Antenna16ChannelActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.params_set.Antenna32ChannelActivity" android:theme="@android:style/Theme.NoTitleBar" />
-        <activity android:name="com.jietong.rfid.ui.params_set.FrequencySetActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name="com.jietong.rfid.ui.params_set.OperatingFrequencySetActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.params_set.ReadTagPatternActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.params_set.PowerSetActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.params_set.DeviceNumberActivity" android:theme="@android:style/Theme.NoTitleBar" />
@@ -62,7 +63,9 @@
         <activity android:name="com.jietong.rfid.ui.other_operation.BuzzerSetActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.other_operation.RelayOpenAndCloseActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.jietong.rfid.ui.other_operation.AdjacentDiscrimnantActivity" android:theme="@android:style/Theme.NoTitleBar" />
-        <activity android:name="com.jietong.rfid.ui.other_operation.UsbDeliveryOutletActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name="com.jietong.rfid.ui.other_operation.SpecialReadTagPatternActivity" android:theme="@android:style/Theme.NoTitleBar" />
+        <activity android:name="com.jietong.rfid.ui.other_operation.FactoryDataResetActivity" android:theme="@android:style/Theme.NoTitleBar" />
+      	<activity android:name="com.jietong.rfid.ui.other_operation.InvCardDataOutputFormatActivity" android:theme="@android:style/Theme.NoTitleBar" />
         <!-- 其他设置 end -->
         
         <activity android:name="com.jietong.rfid.ui.system.Exit" android:theme="@style/MyDialogStyle" />        

@@ -10,7 +10,8 @@
         android:layout_width="fill_parent"
         android:layout_height="45dp"
         android:background="@drawable/title_bar"
-        android:gravity="center_vertical" >
+        android:gravity="center_vertical"
+        android:visibility="gone" >
 
         <TextView
             android:id="@+id/tv_basic_head"
@@ -29,9 +30,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
             android:background="@drawable/title_btn_right"
-            android:onClick="btnmainright"
-            android:src="@drawable/title_btn_function"
-            android:visibility="gone" />
+            android:onClick="btn_main_right"
+            android:src="@drawable/mm_title_btn_menu" />
     </RelativeLayout>
 
     <ListView
@@ -46,7 +46,21 @@
         android:cacheColorHint="#00000000"
         android:divider="#0a0f0b"
         android:dividerHeight="1dp" >
+
     </ListView>
+
+    <LinearLayout
+        android:id="@+id/lineLay_old_basic_btn_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lineLay_basic_btn_group"
+        android:layout_alignParentLeft="true"
+        android:visibility="gone" >
+
+        <include
+            android:id="@+id/iclude_old_basic_opera_btn_group"
+            layout="@layout/include_old_basic_opera_btn_group" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/lineLay_basic_btn_group"
@@ -55,9 +69,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
 
-        <include 
-            android:id="@+id/iclude_basic_opera_btn_group" 
-            layout="@layout/template_basic_opera_btn_group"/>
+        <include
+            android:id="@+id/iclude_basic_opera_btn_group"
+            layout="@layout/include_basic_opera_btn_group" />
     </LinearLayout>
 
     <RelativeLayout
@@ -68,7 +82,7 @@
         android:layout_below="@+id/title"
         android:gravity="center_vertical" >
 
-        <include layout="@layout/template_basic_opera_header" />
+        <include layout="@layout/include_basic_opera_header" />
     </RelativeLayout>
 
 </RelativeLayout>

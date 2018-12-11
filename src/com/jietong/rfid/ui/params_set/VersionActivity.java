@@ -4,6 +4,7 @@ import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.ui.R;
+import com.jietong.rfid.util.Toasts;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -58,6 +59,9 @@ public class VersionActivity extends Activity implements OnClickListener {
 		String version = readerService.version(ReaderUtil.readers);
 		if(null != version){
 			tvVersionInfo.setText(version);
+			Toasts.makeTextShort(this, R.string.msg_params_set_get_version_succeed);
+		}else{
+			Toasts.makeTextShort(this, R.string.msg_params_set_get_version_failed);
 		}
 	}
 }

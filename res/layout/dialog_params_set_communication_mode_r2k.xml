@@ -24,18 +24,6 @@
                android:layout_width="match_parent"
                android:layout_height="match_parent" >
 
-               <include
-                   layout="@layout/template_frequency_hopping_european_standard"
-                   android:visibility="gone" />
-
-               <include
-                   layout="@layout/template_frequency_hopping_american_standard"
-                   android:visibility="gone" />
-
-               <include
-                   layout="@layout/template_frequency_fix_american_standard"
-                   android:visibility="gone" />
-
             </RelativeLayout>
         </ScrollView>
 
@@ -113,14 +101,14 @@
     <LinearLayout
         android:id="@+id/ll_communication_mode_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
 
         <Button
             android:id="@+id/btn_communication_mode_output_read"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="0.76"
             android:onClick="on_button_read_antenna"
             android:text="@string/btn_output_port_setting_read"
@@ -130,7 +118,7 @@
         <Button
             android:id="@+id/btn_communication_mode_output_set"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="0.76"
             android:text="@string/btn_output_port_setting_set" />
 

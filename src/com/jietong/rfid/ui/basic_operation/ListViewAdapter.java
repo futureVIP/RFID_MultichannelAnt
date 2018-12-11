@@ -45,7 +45,6 @@ public abstract class ListViewAdapter<T> extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         //初始化ViewHolder,使用通用的ViewHolder，一行代码就搞定ViewHolder的初始化咯
         ViewHolder holder = ViewHolder.get(mContext, convertView, parent, layoutId, position);//layoutId就是单个item的布局
-
         convert(holder, getItem(position));
         return holder.getConvertView(); //这一行的代码要注意了
     }

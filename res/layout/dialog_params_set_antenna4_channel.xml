@@ -227,7 +227,7 @@
     <LinearLayout
         android:id="@+id/ll_communication_mode_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
 
@@ -235,8 +235,8 @@
             android:id="@+id/btn_4antenna_read"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.76"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:onClick="on_button_read_antenna"
             android:text="@string/btn_antenna_params_read"
             android:textColor="#000000"
@@ -246,12 +246,22 @@
             android:id="@+id/btn_4antenna_set"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.76"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:onClick="on_button_set_antenna"
             android:text="@string/btn_antenna_params_set"
             android:textColor="#000000"
             android:textSize="16sp" />
+        
+        <Button
+            android:id="@+id/btn_4check_antenna"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_4check_antenna"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
     </LinearLayout>
 
 </RelativeLayout>

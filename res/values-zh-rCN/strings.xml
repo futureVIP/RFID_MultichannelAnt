@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">R2K_MultiChannel_V1.00</string>
-    <!-- 2018-11-13 modify -->
     <!-- 连接设备页面 -->
     <string name="btn_return">返回</string>
     <string name="tv_connect_device">连接设备</string>
@@ -20,6 +19,9 @@
     <string name="msg_connect_failure">连接失败</string>
     <string name="msg_disconnect_connect">断开连接</string>
     <string name="msg_get_version_failure">获取失败，请检查连接是否正常!</string>
+    <string name="msg_please_connect_the_device">请连接设备</string>
+    
+    
     <!-- 基本操作页面 -->
     <string name="tab_menu_basic_opera">基本操作</string>
     <string name="tab_menu_tag_opera">标签操作</string>
@@ -29,11 +31,24 @@
     <string name="tv_read_count">读取次数&#160;&#160;:&#160;&#160;</string>
     <string name="tv_id">序号</string>
     <string name="tv_epc">EPC</string>
+     <string name="tv_rssi">Rssi</string>
     <string name="tv_antenna">天线号</string>
+    
+    <string name="tv_device_no">设备号</string>
+    <string name="tv_direction">方向</string>
+    
     <string name="tv_count">次数</string>
+    
+    
     <string name="btn_basic_inv_once">寻卡一次</string>
     <string name="btn_inventory">开始</string>
     <string name="btn_stop_inventory">停止</string>
+    
+    <string name="btn_old_basic_inv_once">(原)寻卡一次</string>
+    <string name="btn_old_inventory">(原)开始</string>
+    <string name="btn_old_stop_inventory">(原)停止</string>
+    
+    
     <string name="btn_clear">清空</string>
     <string name="btn_exit">退出</string>
     <string name="btn_cancel">取消</string>
@@ -43,6 +58,7 @@
     <string name="msg_stop_read_tag_succeed">停止连续读卡成功!</string>
     <string name="msg_stop_read_tag_failure">停止连续读卡失败!</string>
     <string name="tv_designated_area_read_write">指定区域读/写</string>
+    <string name="tv_old_version_protocol">旧版本协议</string>
     <!-- tag operation -->
     <string name="tv_tag_lock_unlock">标签加解锁</string>
     <string name="tv_tag_destroy">标签销毁</string>
@@ -96,10 +112,104 @@
     <string name="tv_params_set_antenna_set_4channel">天线设置(4通道)</string>
     <string name="tv_params_set_antenna_set_16channel">天线设置(16通道)</string>
     <string name="tv_params_set_antenna_set_32channel">天线设置(32通道)</string>
+    <string name="msg_params_set_detection_antenna_please_wait">请稍等......</string>
+    <string name="msg_params_set_detection_antenna_fails">检测天线失败</string>
+    <string name="msg_params_set_detection_antenna_successful">检测天线成功</string>
+    
+    <!-- 频率操作 start -->
+    <string name="tv_params_set_operating_frequency">工作频段</string>
+    <string name="tv_params_set_frequency_set">频率设置</string>
+    <string name="tv_params_set_frequency_area">频率区域</string>
+    <string name="tv_params_set_frequency_fixed_frequency">定频频点</string>
+    <string name="btn_params_set_frequency_set">设置</string>
+    <string name="btn_params_set_frequency_read">读取</string>
+    <string name="msg_params_set_input_frequency_error">输入定频频点有误</string>
+    <string name="msg_params_set_set_fixed_frequency_succeed">设置定频成功</string>
+    <string name="msg_params_set_set_fixed_frequency_failed">设置定频失败</string>
+    <string name="msg_params_set_set_hopping_frequency_succeed">设置跳频成功</string>
+    <string name="msg_params_set_set_hopping_frequency_failed">设置跳频失败</string>
+    <string name="msg_params_set_read_fixed_frequency_succeed">读取定频成功</string>
+    <string name="msg_params_set_read_hopping_frequency_succeed">读取跳频成功</string>
+    
+    <string name="msg_params_set_read_frequency_failed">读取频率失败</string>
+    <string name="msg_params_set_read_frequency_succeed">读取频率成功</string>
+    
+    <string name="msg_params_set_set_frequency_failed">设置频率失败</string>
+    <string name="msg_params_set_set_frequency_succeed">设置频率成功</string>
+    
+     <string-array name="spinner_fixed_frequency">
+        <item>1-902.5Mhz</item>
+        <item>2-903.0Mhz</item>
+        <item>3-903.5Mhz</item>
+        <item>4-904.0Mhz</item>
+        <item>5-904.5Mhz</item>
+        <item>6-905.0Mhz</item>
+        <item>7-905.5Mhz</item>
+        <item>8-906.0Mhz</item>
+        <item>9-906.5Mhz</item>
+        <item>10-907.0Mhz</item>
+        <item>11-907.5Mhz</item>
+        <item>12-908.0Mhz</item>
+        <item>13-908.5Mhz</item>
+        <item>14-909.0Mhz</item>
+        <item>15-909.5Mhz</item>
+        <item>16-910.0Mhz</item>
+        <item>17-910.5Mhz</item>
+        <item>18-911.0Mhz</item>
+        <item>19-911.5Mhz</item>
+        <item>20-912.0Mhz</item>
+        <item>21-912.5Mhz</item>
+        <item>22-913.0Mhz</item>
+        <item>23-913.5Mhz</item>
+        <item>24-914.0Mhz</item>
+        <item>25-914.5Mhz</item>
+        <item>26-915.0Mhz</item>
+        <item>27-915.5Mhz</item>
+        <item>28-916.0Mhz</item>
+        <item>29-916.5Mhz</item>
+        <item>30-917.0Mhz</item>
+        <item>31-917.5Mhz</item>
+        <item>32-918.0Mhz</item>
+        <item>33-918.5Mhz</item>
+        <item>34-919.0Mhz</item>
+        <item>35-919.5Mhz</item>
+        <item>36-920.0Mhz</item>
+        <item>37-920.5Mhz</item>
+        <item>38-921.0Mhz</item>
+        <item>39-921.5Mhz</item>
+        <item>40-922.0Mhz</item>
+        <item>41-922.5Mhz</item>
+        <item>42-923.0Mhz</item>
+        <item>43-923.5Mhz</item>
+        <item>44-924.0Mhz</item>
+        <item>45-924.5Mhz</item>
+        <item>46-925.0Mhz</item>
+        <item>47-925.5Mhz</item>
+        <item>48-926.0Mhz</item>
+        <item>49-926.5Mhz</item>
+        <item>50-927.0Mhz</item>
+    </string-array>
+    <string-array name="spinner_operationg_frequency">
+        <item>美标(902.00-928.00)</item>
+        <item>国标1(920.50-924.50)</item>
+        <item>国标2(840.50-844.50)</item>
+        <item>欧标(866.00-867.50)</item>
+        <item>自定义频点(跳频)</item>
+        <item>自定义频点(定频)</item>
+    </string-array>
+    <!-- 频率操作  end -->
+    
+    <string name="btn_4check_antenna">检测天线</string>
+    <string name="btn_16check_antenna">检测天线</string>
+    <string name="btn_32check_antenna">检测天线</string>
     <string name="tv_params_set_device_no">设备号</string>
     <string name="btn_params_set_work_mode_read">读取</string>
     <string name="btn_params_set_work_mode_set">设置</string>
     <string name="tv_params_set_get_version">获取版本号</string>
+    
+    <string name="msg_params_set_get_version_succeed">获取版本成功</string>
+    <string name="msg_params_set_get_version_failed">获取版本失败</string>
+    
     <string name="msg_work_mode_read_failed">读取工作模式失败</string>
     <string name="msg_work_mode_read_succeed">读取工作模式成功</string>
     <string name="msg_work_mode_set_failed">设置工作模式失败</string>
@@ -166,7 +276,9 @@
     <string name="msg_device_number_set_succeed">设置设备号成功</string>
     <string name="msg_device_number_read_failed">读取设备号失败</string>
     <string name="msg_device_number_read_succeed">读取设备号成功</string>
-    <string name="msg_device_number_value_scope">有效值(0-255)</string>
+    <string name="msg_device_number_value_scope">有效值(0-65535)</string>
+    
+    <!-- other setting 2018-11-30 zhu -->
     <string name="tv_other_set_buzzer">蜂鸣器</string>
     <string name="tv_other_set_adjacent_discriminant">相邻判别</string>
     <string name="tv_other_set_buzzer_voice">声音设置</string>
@@ -179,6 +291,39 @@
     <string name="msg_other_set_buzzer_set_failed">设置蜂鸣器失败</string>
     <string name="msg_other_set_buzzer_set_succeed">设置蜂鸣器成功</string>
     <string name="tv_other_set_adjacent_discriminant_time">相邻判别时间(0-254s,0 取消)</string>
+    
+    <!-- 2018-12-03 modify start -->
+	<string name="tv_params_set_read_pattern">(特殊设置)读卡模式</string>
+    <string name="btn_special_read_tag_pattern_read">读取</string>
+	<string name="btn_special_read_tag_pattern_set">设置</string>
+	
+	<string name="tv_factory_data_reset">恢复出厂设置</string>
+	<string name="btn_factory_data_reset_set">设置</string>
+	
+	<string name="msg_factory_data_reset_set_succeed">恢复出厂设置成功</string>
+	<string name="msg_factory_data_reset_set_failed">恢复出厂设置失败</string>
+	
+	<string name="msg_read_tag_pattern_params_set_failed">设置读卡模式参数失败</string>
+	<string name="msg_read_tag_pattern_params_set_succeed">设置读卡模式参数成功</string>
+	<string name="msg_read_tag_pattern_params_read_failed">读取读卡模式参数失败</string>
+	<string name="msg_read_tag_pattern_params_read_succeed">读取读卡模式参数成功</string>
+	
+	<string name="tv_inv_card_data_output_format">寻卡数据输出格式</string>
+	<string name="cb_inv_card_data_output_format_ant">天线号</string>
+	<string name="cb_inv_card_data_output_format_rssi">Rssi</string>
+	<string name="cb_inv_card_data_output_format_deviceNo">设备号</string>
+	<string name="cb_inv_card_data_output_format_access_door_direction">通道门进出方向</string>
+	
+	<string name="msg_inv_card_data_output_format_set_succeed">设置数据的输出格式成功</string>
+	<string name="msg_inv_card_data_output_format_set_failed">设置数据的输出格式失败</string>
+	
+	<string name="msg_inv_card_data_output_format_read_succeed">读取数据的输出格式成功</string>
+	<string name="msg_inv_card_data_output_format_read_failed">读取数据的输出格式失败</string>
+	
+	<string name="btn_inv_card_data_output_format_set">设置</string>
+	<string name="btn_inv_card_data_output_format_read">读取</string>
+	 <!-- 2018-12-03 modify end -->
+   
     <string name="msg_other_set_adjacent_discriminant_read_failed">读取相邻判断别失败</string>
 	<string name="msg_other_set_adjacent_discriminant_read_succeed">读取相邻判断别成功</string>
 	<string name="msg_other_set_adjacent_discriminant_set_failed">设置相邻判断别失败</string>

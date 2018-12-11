@@ -58,9 +58,6 @@ public class TagLockUnlockActivity extends Activity implements OnClickListener, 
 	}
 
 	private void tagLockUnlock() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		visitPwd = etVisitPwd.getText().toString().replace(" ", "");
 		if (visitPwd.length() != 8) {
 			Toasts.makeTextShort(this,R.string.msg_pwd_must_eight);

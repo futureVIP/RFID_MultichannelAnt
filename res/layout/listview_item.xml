@@ -6,17 +6,17 @@
         android:layout_alignParentLeft="true" >
     
       <TextView
-        android:id="@+id/textView_id"
+        android:id="@+id/tv_id"
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text=""
+        android:text="No."
         android:textColor="#000000"
          />
 
     <TextView
-        android:id="@+id/textView_epc"
+        android:id="@+id/tv_epc"
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_weight="2"
@@ -25,23 +25,57 @@
         android:textSize="12sp"
         android:textColor="#000000"
          />
+    
     <TextView
-        android:id="@+id/textView_antenna"
+        android:id="@+id/tv_rssi"
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:text=""
+        android:text="Rssi"
+        android:textSize="12sp"
+        android:textColor="#000000"
+         />
+    
+    <TextView
+        android:id="@+id/tv_antenna"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Ant"
+        android:textSize="12sp"
+        android:textColor="#000000"
+         />
+    
+     <TextView
+        android:id="@+id/tv_device_no"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Dev"
+        android:textSize="12sp"
+        android:textColor="#000000"
+         />
+     
+      <TextView
+        android:id="@+id/tv_direction"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Dir"
         android:textSize="12sp"
         android:textColor="#000000"
          />
 
     <TextView
-        android:id="@+id/textView_count"
+        android:id="@+id/tv_count"
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_weight="1" 
         android:gravity="center"
-        android:text=""
+        android:text="Count"
         android:textColor="#000000"/>
 </LinearLayout>

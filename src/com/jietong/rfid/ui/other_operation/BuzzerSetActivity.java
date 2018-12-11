@@ -57,9 +57,6 @@ public class BuzzerSetActivity extends Activity implements OnClickListener{
 	}
 	
 	private void buzzerSet() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		if(rbBuzzerOn.isChecked()){
 			state = 1;
 		}else if(rbBuzzerOff.isChecked()){
@@ -74,9 +71,6 @@ public class BuzzerSetActivity extends Activity implements OnClickListener{
 	}
 
 	private void buzzerRead() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		int result = readerService.getBuzzer(ReaderUtil.readers);
 		if(result > -1){
 			if(result == 0){

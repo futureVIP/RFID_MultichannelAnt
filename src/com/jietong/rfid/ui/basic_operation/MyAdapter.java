@@ -44,10 +44,13 @@ public class MyAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.listview_item, parent, false); //加载布局
             holder = new ViewHolder();
 
-            holder.titleTv = (TextView) convertView.findViewById(R.id.textView_id);
-            holder.descTv = (TextView) convertView.findViewById(R.id.textView_epc);
-            holder.timeTv = (TextView) convertView.findViewById(R.id.textView_antenna);
-            holder.phoneTv = (TextView) convertView.findViewById(R.id.textView_count);
+            holder.tvId = (TextView) convertView.findViewById(R.id.tv_id);
+            holder.tvEPC = (TextView) convertView.findViewById(R.id.tv_epc);
+            holder.tvRssi = (TextView) convertView.findViewById(R.id.tv_rssi);
+            holder.tvAntenna = (TextView) convertView.findViewById(R.id.tv_antenna);
+            holder.tvDeviceNo = (TextView) convertView.findViewById(R.id.tv_device_no);
+            holder.tvDirection = (TextView) convertView.findViewById(R.id.tv_direction);
+            holder.tvCount = (TextView) convertView.findViewById(R.id.tv_count);
 
             convertView.setTag(holder);
         } else {   //else里面说明，convertView已经被复用了，说明convertView中已经设置过tag了，即holder
@@ -55,19 +58,25 @@ public class MyAdapter extends BaseAdapter {
         }
 
         EPC bean = mDatas.get(position);
-        holder.titleTv.setText(String.valueOf(bean.getId()));
-        holder.descTv.setText(bean.getEpc());
-        holder.timeTv.setText(String.valueOf(bean.getAnt()));
-        holder.phoneTv.setText(String.valueOf(bean.getCount()));
+        holder.tvId.setText(String.valueOf(bean.getId()));
+        holder.tvEPC.setText(bean.getEpc());
+        holder.tvRssi.setText(String.valueOf(bean.getRssi()));
+        holder.tvAntenna.setText(String.valueOf(bean.getAnt()));
+        holder.tvDeviceNo.setText(String.valueOf(bean.getDeviceNo()));
+        holder.tvDirection.setText(String.valueOf(bean.getDirection()));
+        holder.tvCount.setText(String.valueOf(bean.getCount()));
 
         return convertView;
     }
 
     //这个ViewHolder只能服务于当前这个特定的adapter，因为ViewHolder里会指定item的控件，不同的ListView，item可能不同，所以ViewHolder写成一个私有的类
     private class ViewHolder {
-        TextView titleTv;
-        TextView descTv;
-        TextView timeTv;
-        TextView phoneTv;
+        TextView tvId;
+        TextView tvEPC;
+        TextView tvRssi;
+        TextView tvAntenna;
+        TextView tvDeviceNo;
+        TextView tvDirection;
+        TextView tvCount;
     }
 }

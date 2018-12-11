@@ -46,7 +46,7 @@
         android:gravity="center" >
 
         <TextView
-            android:id="@+id/tv_read_pattern"
+            android:id="@+id/tv_serialPorts"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
@@ -55,7 +55,7 @@
             android:textColor="@color/bg_black" />
 
         <Spinner
-            android:id="@+id/spinner_buzzer_on_off"
+            android:id="@+id/spinner_serialPorts"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="2" />
@@ -80,7 +80,7 @@
             android:textColor="@color/bg_black" />
 
         <Spinner
-            android:id="@+id/spinner_connect_port"
+            android:id="@+id/spinner_baudRates"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="2"
@@ -120,8 +120,7 @@
             android:onClick="entry_page"
             android:text="@string/btn_entry_page"
             android:textColor="#ffffff"
-            android:textSize="18sp"
-            android:visibility="gone" />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_auto_connect"

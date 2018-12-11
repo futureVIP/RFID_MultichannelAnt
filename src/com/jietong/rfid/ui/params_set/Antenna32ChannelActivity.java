@@ -2,6 +2,8 @@ package com.jietong.rfid.ui.params_set;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
 import com.jietong.rfid.ui.R;
+import com.jietong.rfid.util.DataConvert;
 import com.jietong.rfid.util.Toasts;
 
 public class Antenna32ChannelActivity extends Activity implements OnCheckedChangeListener, OnClickListener {
@@ -28,8 +31,9 @@ public class Antenna32ChannelActivity extends Activity implements OnCheckedChang
 	private boolean checkFoUser = true;
 	private Spinner spinnerWorkTime;
 	private Spinner spinnerPower;
-	private Button btnReaderAntenner;
-	private Button btnSetAntenner;
+	private Button btnRead;
+	private Button btnSet;
+	private Button btnCheck;
 	
 	ReaderService readerService = new ReaderServiceImpl();
 
@@ -103,8 +107,9 @@ public class Antenna32ChannelActivity extends Activity implements OnCheckedChang
 		}
 		checkedStr = new LinkedList<>();
 		
-		btnReaderAntenner = (Button)findViewById(R.id.btn_32read_antenna);
-		btnSetAntenner = (Button)findViewById(R.id.btn_32set_antenna);
+		btnRead = (Button)findViewById(R.id.btn_32read_antenna);
+		btnSet = (Button)findViewById(R.id.btn_32set_antenna);
+		btnCheck = (Button)findViewById(R.id.btn_32check_antenna);
 		
 		spinnerWorkTime = (Spinner) findViewById(R.id.spinner_32work_time);
 		spinnerPower = (Spinner) findViewById(R.id.spinner_32power);
@@ -112,8 +117,9 @@ public class Antenna32ChannelActivity extends Activity implements OnCheckedChang
 		spinnerWorkTime.setSelection(9);
 		spinnerPower.setSelection(10);
 		
-		btnReaderAntenner.setOnClickListener(this);
-		btnSetAntenner.setOnClickListener(this);
+		btnRead.setOnClickListener(this);
+		btnSet.setOnClickListener(this);
+		btnCheck.setOnClickListener(this);
 	}
 
 	@Override
@@ -122,81 +128,81 @@ public class Antenna32ChannelActivity extends Activity implements OnCheckedChang
 		String str = buttonView.getText().toString();
 		switch (buttonView.getId()) {
 		case R.id.cb_32antenna1_group:
-			Multichannel32_16AntCb.selectCheckAll(checkFoUser, cbAntenna, 0, 4, isChecked);
+			Multichannel32_16AntCheckBox.selectCheckAll(checkFoUser, cbAntenna, 0, 4, isChecked);
 			break;
 		case R.id.cb_32antenna2_group:
-			Multichannel32_16AntCb.selectCheckAll(checkFoUser, cbAntenna, 4, 8, isChecked);
+			Multichannel32_16AntCheckBox.selectCheckAll(checkFoUser, cbAntenna, 4, 8, isChecked);
 			break;
 		case R.id.cb_32antenna3_group:
-			Multichannel32_16AntCb.selectCheckAll(checkFoUser, cbAntenna, 8, 12, isChecked);
+			Multichannel32_16AntCheckBox.selectCheckAll(checkFoUser, cbAntenna, 8, 12, isChecked);
 			break;
 		case R.id.cb_32antenna4_group:
-			Multichannel32_16AntCb.selectCheckAll(checkFoUser, cbAntenna, 12, 16, isChecked);
+			Multichannel32_16AntCheckBox.selectCheckAll(checkFoUser, cbAntenna, 12, 16, isChecked);
 			break;
 		case R.id.cb_32antenna5_group:
-			Multichannel32_16AntCb.selectCheckAll(checkFoUser, cbAntenna, 16, 20, isChecked);
+			Multichannel32_16AntCheckBox.selectCheckAll(checkFoUser, cbAntenna, 16, 20, isChecked);
 			break;
 		case R.id.cb_32antenna6_group:
-			Multichannel32_16AntCb.selectCheckAll(checkFoUser, cbAntenna, 20, 24, isChecked);
+			Multichannel32_16AntCheckBox.selectCheckAll(checkFoUser, cbAntenna, 20, 24, isChecked);
 			break;
 		case R.id.cb_32antenna7_group:
-			Multichannel32_16AntCb.selectCheckAll(checkFoUser, cbAntenna, 24, 28, isChecked);
+			Multichannel32_16AntCheckBox.selectCheckAll(checkFoUser, cbAntenna, 24, 28, isChecked);
 			break;
 		case R.id.cb_32antenna8_group:
-			Multichannel32_16AntCb.selectCheckAll(checkFoUser, cbAntenna, 28, 32, isChecked);
+			Multichannel32_16AntCheckBox.selectCheckAll(checkFoUser, cbAntenna, 28, 32, isChecked);
 			break;
 		case R.id.cb_32antenna1:
 		case R.id.cb_32antenna2:
 		case R.id.cb_32antenna3:
 		case R.id.cb_32antenna4:
-			Multichannel32_16AntCb.selectCheckSingle(flag, str, isChecked, checkedStr,
+			Multichannel32_16AntCheckBox.selectCheckSingle(flag, str, isChecked, checkedStr,
 					cbAntennaGroup, cbAntenna, 0, 4, 0, this);
 			break;
 		case R.id.cb_32antenna5:
 		case R.id.cb_32antenna6:
 		case R.id.cb_32antenna7:
 		case R.id.cb_32antenna8:
-			Multichannel32_16AntCb.selectCheckSingle(flag, str, isChecked, checkedStr,
+			Multichannel32_16AntCheckBox.selectCheckSingle(flag, str, isChecked, checkedStr,
 					cbAntennaGroup, cbAntenna, 4, 8, 1, this);
 			break;
 		case R.id.cb_32antenna9:
 		case R.id.cb_32antenna10:
 		case R.id.cb_32antenna11:
 		case R.id.cb_32antenna12:
-			Multichannel32_16AntCb.selectCheckSingle(flag, str, isChecked, checkedStr,cbAntennaGroup, cbAntenna, 8, 12, 2, this);
+			Multichannel32_16AntCheckBox.selectCheckSingle(flag, str, isChecked, checkedStr,cbAntennaGroup, cbAntenna, 8, 12, 2, this);
 			break;
 		case R.id.cb_32antenna13:
 		case R.id.cb_32antenna14:
 		case R.id.cb_32antenna15:
 		case R.id.cb_32antenna16:
-			Multichannel32_16AntCb.selectCheckSingle(flag, str, isChecked, checkedStr,cbAntennaGroup, cbAntenna, 12, 16, 3, this);
+			Multichannel32_16AntCheckBox.selectCheckSingle(flag, str, isChecked, checkedStr,cbAntennaGroup, cbAntenna, 12, 16, 3, this);
 			break;
 		case R.id.cb_32antenna17:
 		case R.id.cb_32antenna18:
 		case R.id.cb_32antenna19:
 		case R.id.cb_32antenna20:
-			Multichannel32_16AntCb.selectCheckSingle(flag, str, isChecked, checkedStr,
+			Multichannel32_16AntCheckBox.selectCheckSingle(flag, str, isChecked, checkedStr,
 					cbAntennaGroup, cbAntenna, 16, 20, 4, this);
 			break;
 		case R.id.cb_32antenna21:
 		case R.id.cb_32antenna22:
 		case R.id.cb_32antenna23:
 		case R.id.cb_32antenna24:
-			Multichannel32_16AntCb.selectCheckSingle(flag, str, isChecked, checkedStr,
+			Multichannel32_16AntCheckBox.selectCheckSingle(flag, str, isChecked, checkedStr,
 					cbAntennaGroup, cbAntenna, 20, 24, 5, this);
 			break;
 		case R.id.cb_32antenna25:
 		case R.id.cb_32antenna26:
 		case R.id.cb_32antenna27:
 		case R.id.cb_32antenna28:
-			Multichannel32_16AntCb.selectCheckSingle(flag, str, isChecked, checkedStr,
+			Multichannel32_16AntCheckBox.selectCheckSingle(flag, str, isChecked, checkedStr,
 					cbAntennaGroup, cbAntenna, 24, 28, 6, this);
 			break;
 		case R.id.cb_32antenna29:
 		case R.id.cb_32antenna30:
 		case R.id.cb_32antenna31:
 		case R.id.cb_32antenna32:
-			Multichannel32_16AntCb.selectCheckSingle(flag, str, isChecked, checkedStr,cbAntennaGroup, cbAntenna, 28, 32, 7, this);
+			Multichannel32_16AntCheckBox.selectCheckSingle(flag, str, isChecked, checkedStr,cbAntennaGroup, cbAntenna, 28, 32, 7, this);
 			break;
 		}
 	}
@@ -205,19 +211,42 @@ public class Antenna32ChannelActivity extends Activity implements OnCheckedChang
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.btn_32read_antenna:
-			readAntenna();
+			antennaRead();
 			break;
 		case R.id.btn_32set_antenna:
-			setAntenna();
+			antennaSet();
+			break;
+		case R.id.btn_32check_antenna:
+			antennaCheck();
 			break;
 		}
 	}
 
+	private void antennaCheck() {
+		Toasts.makeTextShort(this, R.string.msg_params_set_detection_antenna_please_wait);
+		new Thread(new Runnable() {
+			public void run() {
+				final Map<String, Byte> antennaState = readerService.getAntState(ReaderUtil.readers);
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						if (null == antennaState) {
+							Toasts.makeTextShort(getApplicationContext(),R.string.msg_params_set_detection_antenna_fails);
+							return;
+						}
+						int length = DataConvert.byteToInt(antennaState.get("Channel"));
+						for (int i = 0; i < length; i++) {
+							cbAntenna[i].setChecked(antennaState.get("Ant" + (i + 1)) == 1);
+						}
+						Toasts.makeTextShort(getApplicationContext(), R.string.msg_params_set_detection_antenna_successful);
+					}
+				});
+			}
+		}).start();
+	}
+
 	@SuppressLint("ShowToast")
-	private void setAntenna() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
+	private void antennaSet() {
 		AntStruct ant = new AntStruct(ReaderUtil.readers.getChannel());
 		for (int i = 0; i < cbAntenna.length; i++) {
 			ant.enable[i] = (byte) (cbAntenna[i].isChecked() ? 1 : 0);
@@ -233,22 +262,18 @@ public class Antenna32ChannelActivity extends Activity implements OnCheckedChang
 		}
 	}
 
-	private void readAntenna() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
+	private void antennaRead() {
 		AntStruct  ant = readerService.getAnt(ReaderUtil.readers);
-		if(ant != null){
-			Toasts.makeTextShort(this,R.string.msg_antenna_params_read_succeed);
-		}else{
+		if(null == ant){
 			Toasts.makeTextShort(this,R.string.msg_antenna_params_read_failed);
 			return;
 		}
+		Toasts.makeTextShort(this,R.string.msg_antenna_params_read_succeed);
 		for (int i = 0; i < cbAntenna.length; i++) {
 			cbAntenna[i].setChecked(ant.enable[i] == 1);
 		}
-		spinnerWorkTime.setSelection(Multichannel32_16AntCb.positionWorkTime(ant.dwellTime[0]));
-		spinnerPower.setSelection(Multichannel32_16AntCb.positionPower(ant.power[0]/10));
+		spinnerWorkTime.setSelection(Multichannel32_16AntCheckBox.positionWorkTime(ant.dwellTime[0]));
+		spinnerPower.setSelection(Multichannel32_16AntCheckBox.positionPower(ant.power[0]/10));
 	}
 
 	/************************************************************************************/

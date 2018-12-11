@@ -1,0 +1,200 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="top" >
+
+    <RelativeLayout
+        android:id="@+id/shake_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/title_bar"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:onClick="shake_activity_back"
+            android:text="@string/btn_return"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+       <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/tv_params_set_read_pattern"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:src="@drawable/mm_title_btn_menu" />
+    </RelativeLayout>
+    <!-- 读卡器设置start -->
+
+    <ScrollView
+        android:id="@+id/sv_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_special_read_tag_pattern_btn"
+        android:layout_below="@+id/shake_title_bar"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:id="@+id/tab_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/ll_4antenna_workTime_power"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/linearlayout_underline" >
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Session:"
+                    android:textColor="@color/bg_black" />
+
+                <Spinner
+                    android:id="@+id/spinner_special_session"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/special_session" />
+
+            </LinearLayout>
+            <!-- 1号_天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_4antenna_group1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_underline"
+                android:layout_below="@+id/ll_4antenna_workTime_power" >
+
+                <TextView
+                    android:id="@+id/cb_4antenna1"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Q Value:"
+                    android:textColor="@color/bg_black" />
+
+                <Spinner
+                    android:id="@+id/spinner_special_Q_value"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/special_Q_value" />
+            </LinearLayout>
+            <!-- 1号_天线参数设置 end -->
+
+
+            <!-- 2号_天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_4antenna_group2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_underline"
+                android:layout_below="@+id/ll_4antenna_group1" >
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="tagfocus"
+                    android:textColor="@color/bg_black" />
+
+                <Spinner
+                    android:id="@+id/spinner_special_tag_focus"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/special_tag_focus" />
+            </LinearLayout>
+            <!-- 2号_天线参数设置 end -->
+
+
+            <!-- 3号_天线参数设置 start -->
+            <LinearLayout
+                android:id="@+id/ll_4antenna_group3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/linearlayout_underline"
+                android:layout_below="@+id/ll_4antenna_group2" >
+
+                <TextView
+                    android:id="@+id/TextView03"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="AB Value"
+                    android:textColor="@color/bg_black" />
+
+                <Spinner
+                    android:id="@+id/spinner_special_ab_value"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/special_AB_value" />
+            </LinearLayout>
+            <!-- 3号_天线参数设置 end -->
+
+
+            <!-- 4号_天线参数设置 start -->
+            <!-- 4号_天线参数设置 end -->
+
+        </RelativeLayout>
+    </ScrollView>
+    <!-- 读卡器设置end -->
+
+    <LinearLayout
+        android:id="@+id/ll_special_read_tag_pattern_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/btn_special_read_pattern_read"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.76"
+            android:text="@string/btn_special_read_tag_pattern_read"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_special_read_pattern_set"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.76"
+            android:text="@string/btn_special_read_tag_pattern_set"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

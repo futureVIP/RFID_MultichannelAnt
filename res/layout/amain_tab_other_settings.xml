@@ -87,7 +87,92 @@
                     android:scaleType="matrix"
                     android:src="@drawable/mm_submenu" />
             </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/rl_read_tag_pattern"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/preference_single_item"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="btn_special_read_tag_pattern" >
+               <TextView
+                    android:id="@+id/tv_read_tag_pattern"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/tv_params_set_read_pattern"
+                    android:textColor="#000"
+                    android:textSize="17sp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="matrix"
+                    android:src="@drawable/mm_submenu" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/rl_factory_data_reset"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/preference_single_item"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="btn_factory_data_reset" >
+
+                <TextView
+                    android:id="@+id/tv_factory_data_reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/tv_factory_data_reset"
+                    android:textColor="#000"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="matrix"
+                    android:src="@drawable/mm_submenu" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/rl_inv_data_ouput_format"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/preference_single_item"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="btn_inv_card_data_output_format" >
+
+                <TextView
+                    android:id="@+id/tv_inv_data_ouput_format"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="@string/tv_inv_card_data_output_format"
+                    android:textColor="#000"
+                    android:textSize="17sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="matrix"
+                    android:src="@drawable/mm_submenu" />
+            </RelativeLayout>
+            
         </LinearLayout>
+        
+        
     </ScrollView>
 
 </LinearLayout>

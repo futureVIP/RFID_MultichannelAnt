@@ -78,7 +78,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_lock_unlock"
+        android:id="@+id/ll_designated_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -112,7 +112,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ll_lock_unlock"
+        android:layout_below="@+id/ll_designated_area"
         android:orientation="horizontal" >
 
         <TextView
@@ -167,7 +167,7 @@
     <LinearLayout
         android:id="@+id/ll_designated_area_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true" >
 
@@ -181,7 +181,7 @@
         <Button
             android:id="@+id/btn_designated_area_write"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
             android:text="@string/btn_read_write_write_tag" />
 

@@ -12,13 +12,10 @@ public class ViewHolder {
 	private int mPosition;
 	private View mConvertView;
 
-	public ViewHolder(Context context, ViewGroup parent, int layoutId,
-			int position) {
+	public ViewHolder(Context context, ViewGroup parent, int layoutId,int position) {
 		this.mPosition = position;
 		this.mViews = new SparseArray<View>();
-
 		mConvertView = LayoutInflater.from(context).inflate(layoutId, parent,false);
-
 		mConvertView.setTag(this);
 
 	}

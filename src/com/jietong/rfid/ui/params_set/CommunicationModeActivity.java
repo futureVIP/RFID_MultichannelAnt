@@ -1,12 +1,10 @@
 package com.jietong.rfid.ui.params_set;
 
-import java.nio.ByteBuffer;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
@@ -81,9 +79,6 @@ public class CommunicationModeActivity extends Activity implements OnClickListen
 	}
 
 	private void outputSet() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		boolean result = readerService.setOutputMode(ReaderUtil.readers, (byte)modeOutput);
 		if(result){
 			Toasts.makeTextShort(this,R.string.msg_output_port_setting_set_succeed);
@@ -93,9 +88,6 @@ public class CommunicationModeActivity extends Activity implements OnClickListen
 	}
 
 	private void outputRead() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		int result = readerService.getOutputMode(ReaderUtil.readers);
 		if(result > -1){
 			Toasts.makeTextShort(this, R.string.msg_output_port_setting_read_succeed);

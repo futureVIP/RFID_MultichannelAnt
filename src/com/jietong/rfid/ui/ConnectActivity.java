@@ -14,7 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-
+import android_serialport_api.service.SerialPortsService;
+import android_serialport_api.service.impl.SerialPortsServiceImpl;
 import com.jietong.rfid.uhf.service.ReaderService;
 import com.jietong.rfid.uhf.service.impl.ReaderServiceImpl;
 import com.jietong.rfid.uhf.tool.ReaderUtil;
@@ -49,8 +50,8 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 	}
 
 	private void controlInital() {
-		spinnerSerialPort = (Spinner) findViewById(R.id.spinner_buzzer_on_off);
-		spinnerBaudRate = (Spinner) findViewById(R.id.spinner_connect_port);
+		spinnerSerialPort = (Spinner) findViewById(R.id.spinner_serialPorts);
+		spinnerBaudRate = (Spinner) findViewById(R.id.spinner_baudRates);
 		autoConnect = (Button) findViewById(R.id.btn_auto_connect);
 		deviceConnect = (Button) findViewById(R.id.btn_device_connect);
 		btnEntryPage = (Button) findViewById(R.id.btn_entry_page);
@@ -64,7 +65,10 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 
 	private void getSerialPorts() {
 		spinnerBaudRate.setSelection(4);
-		List<String> serialPorts = readerService.findSerialPorts();
+		
+		SerialPortsService  serialPortsService = new SerialPortsServiceImpl();
+		List<String> serialPorts = serialPortsService.findSerialPorts();
+		
 		ArrayAdapter<String> aspnDevices = null;
 		if (serialPorts != null) {
 			int simple_spinner_item = android.R.layout.simple_spinner_item;
@@ -98,6 +102,8 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 			getVersion();
 			break;
 		case R.id.btn_entry_page:
+			Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
+			startActivity(intent);
 			break;
 		default:
 			break;
@@ -108,32 +114,40 @@ public class ConnectActivity extends Activity implements OnItemClickListener,OnC
 		deviceConnect.setText("");
 		switch (isConnect) {
 		case 0:
-			comm = spinnerSerialPort.getSelectedItem().toString();
-			baudRate = Integer.parseInt(spinnerBaudRate.getSelectedItem().toString());
-			if (ReaderUtil.readers == null) {
-				ReaderUtil.readers = readerService.serialPortConnect(comm,baudRate);
-				if (ReaderUtil.readers != null) {
-					Toasts.makeTextShort(this,R.string.msg_connect_succeed);
-					readerService.version(ReaderUtil.readers);
-					Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
-					startActivity(intent);
-				} else {
-					Toasts.makeTextShort(this,R.string.msg_connect_failure);
-				}
-			}
-			isConnect = 1;
-			deviceConnect.setText(R.string.msg_disconnect_connect);
+			connectDev();
 			break;
 		case 1:
-			if (ReaderUtil.readers != null) {
-				readerService.disconnect(ReaderUtil.readers);
-				ReaderUtil.readers = null;
-				Toasts.makeTextShort(this,R.string.msg_disconnect_connect);
-			}
-			deviceConnect.setText(R.string.btn_connect_device);
-			isConnect = 0;
+			disconnect();
 			break;
 		}
+	}
+
+	private void disconnect() {
+		if (ReaderUtil.readers != null) {
+			readerService.disconnect(ReaderUtil.readers);
+			ReaderUtil.readers = null;
+			Toasts.makeTextShort(this,R.string.msg_disconnect_connect);
+		}
+		deviceConnect.setText(R.string.btn_connect_device);
+		isConnect = 0;
+	}
+
+	private void connectDev() {
+		comm = spinnerSerialPort.getSelectedItem().toString();
+		baudRate = Integer.parseInt(spinnerBaudRate.getSelectedItem().toString());
+		if (ReaderUtil.readers == null) {
+			ReaderUtil.readers = readerService.serialPortConnect(comm,baudRate);
+			if (ReaderUtil.readers != null) {
+				Toasts.makeTextShort(this,R.string.msg_connect_succeed);
+				readerService.version(ReaderUtil.readers);
+				Intent intent = new Intent(ConnectActivity.this, MainActivity.class);
+				startActivity(intent);
+			} else {
+				Toasts.makeTextShort(this,R.string.msg_connect_failure);
+			}
+		}
+		isConnect = 1;
+		deviceConnect.setText(R.string.msg_disconnect_connect);
 	}
 
 	private void getVersion() {

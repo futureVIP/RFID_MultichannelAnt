@@ -15,9 +15,12 @@ public class ListViewAdapterWithViewHolder extends ListViewAdapter<EPC> {
 
 	@Override
 	public void convert(ViewHolder holder, EPC bean) {
-		((TextView) holder.getView(R.id.textView_id)).setText(String.valueOf(bean.getId()));
-		((TextView) holder.getView(R.id.textView_epc)).setText(bean.getEpc());
-		((TextView) holder.getView(R.id.textView_antenna)).setText(String.valueOf(bean.getAnt()));
-		((TextView) holder.getView(R.id.textView_count)).setText(String.valueOf(bean.getCount()));
+		((TextView) holder.getView(R.id.tv_id)).setText(String.valueOf(bean.getId()));
+		((TextView) holder.getView(R.id.tv_epc)).setText(bean.getEpc());
+		((TextView) holder.getView(R.id.tv_rssi)).setText(bean.getRssi());
+		((TextView) holder.getView(R.id.tv_antenna)).setText(String.valueOf(bean.getAnt()));
+		((TextView) holder.getView(R.id.tv_device_no)).setText(bean.getDeviceNo());
+		((TextView) holder.getView(R.id.tv_direction)).setText(bean.getDirection());
+		((TextView) holder.getView(R.id.tv_count)).setText(String.valueOf(bean.getCount()));
 	}
 }

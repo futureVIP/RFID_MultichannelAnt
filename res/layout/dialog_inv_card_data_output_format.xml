@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="top" >
+
+    <RelativeLayout
+        android:id="@+id/shake_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/title_bar"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_btn_back"
+            android:onClick="shake_activity_back"
+            android:text="@string/btn_return"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/tv_inv_card_data_output_format"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/title_btn_right"
+            android:src="@drawable/mm_title_btn_menu" />
+    </RelativeLayout>
+    <!-- 读卡器设置start -->
+
+    <ScrollView
+        android:id="@+id/sv_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_special_read_tag_pattern_btn"
+        android:layout_below="@+id/shake_title_bar"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:id="@+id/tab_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/ll_4antenna_workTime_power"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/linearlayout_underline" >
+
+                <CheckBox
+                    android:id="@+id/cb_inv_card_data_output_format_ant"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:entries="@array/special_session"
+                    android:text="@string/cb_inv_card_data_output_format_ant"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_inv_card_data_output_format_rssi"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:entries="@array/special_session"
+                    android:gravity="center|start"
+                    android:text="@string/cb_inv_card_data_output_format_rssi"
+                    android:textColor="@color/bg_black" />
+
+                <CheckBox
+                    android:id="@+id/cb_inv_card_data_output_format_deviceNo"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.5"
+                    android:text="@string/cb_inv_card_data_output_format_deviceNo"
+                    android:textColor="@color/bg_black" />
+
+            </LinearLayout>
+            <!-- 1号_天线参数设置 start -->
+            <!-- 1号_天线参数设置 end -->
+
+
+            <!-- 2号_天线参数设置 start -->
+
+            <LinearLayout
+                android:id="@+id/ll_4antenna_group2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_4antenna_workTime_power"
+                android:background="@drawable/linearlayout_underline" >
+
+                <CheckBox
+                    android:id="@+id/cb_inv_card_data_output_format_access_door_direction"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="2"
+                    android:entries="@array/special_tag_focus"
+                    android:text="@string/cb_inv_card_data_output_format_access_door_direction"
+                    android:textColor="@color/bg_black" />
+
+            </LinearLayout>
+            <!-- 2号_天线参数设置 end -->
+
+        </RelativeLayout>
+    </ScrollView>
+    <!-- 读卡器设置end -->
+
+    <LinearLayout
+        android:id="@+id/ll_special_read_tag_pattern_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/btn_inv_card_data_output_format_read"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.76"
+            android:text="@string/btn_inv_card_data_output_format_read"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btn_inv_card_data_output_format_set"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.76"
+            android:text="@string/btn_inv_card_data_output_format_set"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>

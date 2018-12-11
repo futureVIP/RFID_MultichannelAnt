@@ -55,9 +55,6 @@ public class TagDestroyActivity extends Activity implements OnClickListener {
 	}
 
 	private void tagDestroy() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		byte [] accessPwd = new byte[4];
 		byte [] killPwd = new byte[4];
 		

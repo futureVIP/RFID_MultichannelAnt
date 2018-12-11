@@ -200,9 +200,6 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 	}
 
 	private void continueReadTag() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		final byte bank = (byte) areaPosition;
 		final byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress.getSelectedItem().toString());
 		final byte size = (byte) Integer.parseInt(spinnerDesignatedLength.getSelectedItem().toString());
@@ -260,14 +257,9 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 	}
 
 	private void writeTag() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		byte bank = (byte) areaPosition;
-		byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress
-				.getSelectedItem().toString());
-		byte size = (byte) Integer.parseInt(spinnerDesignatedLength
-				.getSelectedItem().toString());
+		byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress.getSelectedItem().toString());
+		byte size = (byte) Integer.parseInt(spinnerDesignatedLength.getSelectedItem().toString());
 		byte[] password = new byte[4];
 		String visit = etVisitPwd.getText().toString().trim();
 		if (visit.length() != 8) {
@@ -278,12 +270,12 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 			return;
 		}
 		String inData = mactvDataArea.getText().toString().replace(" ", "");
-		if (inData.length() % 4 != 0 || inData.length() / 4 != size) {
-			Toasts.makeTextShort(this,R.string.msg_length_diff);
-			return;
-		}
 		if (!Regex.isHexCharacter(inData)) {
 			Toasts.makeTextShort(this, R.string.msg_pwd_Invalid_char);
+			return;
+		}
+		if ((inData.length() % 4 != 0) || (inData.length() / 4 != size)) {
+			Toasts.makeTextShort(this,R.string.msg_length_diff);
 			return;
 		}
 		boolean result = readerService.writeTagData(ReaderUtil.readers, bank, begin, size, inData,password);
@@ -295,9 +287,6 @@ public class DesignatedAreaReadAndWriteActivity extends Activity implements	OnCl
 	}
 
 	private void readTag() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		byte bank = (byte) areaPosition;
 		byte begin = (byte) Integer.parseInt(spinnerDesignatedStartAddress.getSelectedItem().toString());
 		byte size = (byte) Integer.parseInt(spinnerDesignatedLength.getSelectedItem().toString());

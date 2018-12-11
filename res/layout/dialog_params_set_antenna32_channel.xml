@@ -39,14 +39,17 @@
             android:src="@drawable/mm_title_btn_menu" />
     </RelativeLayout>
     <!-- 读卡器设置start -->
+
     <ScrollView
         android:id="@+id/sv_setting"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_above="@+id/ll_32setAntenna"
         android:layout_below="@+id/shake_title_bar"
         android:fadingEdge="vertical"
         android:scrollbars="vertical"
-        android:visibility="visible">
+        android:visibility="visible" >
+
         <RelativeLayout
             android:id="@+id/tab_setting"
             android:layout_width="match_parent"
@@ -498,7 +501,7 @@
     <LinearLayout
         android:id="@+id/ll_32setAntenna"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
 
@@ -506,8 +509,8 @@
             android:id="@+id/btn_32read_antenna"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.76"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:text="@string/btn_antenna_params_read"
             android:textColor="#000000"
             android:textSize="16sp" />
@@ -516,11 +519,21 @@
             android:id="@+id/btn_32set_antenna"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.76"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:text="@string/btn_antenna_params_set"
             android:textColor="#000000"
             android:textSize="16sp" />
+        
+        <Button
+            android:id="@+id/btn_32check_antenna"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/btn_32check_antenna"
+            android:textColor="#000000"
+            android:textSize="16sp"/>
     </LinearLayout>
 
 </RelativeLayout>

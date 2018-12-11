@@ -78,9 +78,6 @@ public class WorkPatternActivity extends Activity implements OnClickListener,OnI
 	}
 
 	private void workPatternSet() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		boolean result = readerService.setWorkMode(ReaderUtil.readers, workPattern);
 		if(result){
 			Toasts.makeTextShort(this, R.string.msg_work_mode_set_succeed);
@@ -90,9 +87,6 @@ public class WorkPatternActivity extends Activity implements OnClickListener,OnI
 	}
 
 	private void workPatternRead() {
-		if(null == ReaderUtil.readers){
-			return;
-		}
 		int result = readerService.getWorkMode(ReaderUtil.readers);
 		if(result > -1 && result < 3){
 			spinnerWorkPattern.setSelection(result);
