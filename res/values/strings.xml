@@ -265,7 +265,7 @@
     <string name="tv_device_number">Device Number</string>
     <string name="btn_device_number_read">Read</string>
     <string name="btn_device_number_set">Set</string>
-    <string name="tv_device_number_value_scope">effective value(0 en dash 255)</string>
+    <string name="tv_device_number_value_scope">effective value(0 en dash 65535)</string>
     <string name="msg_device_number_set_failed">Setting the device number failed</string>
     <string name="msg_device_number_set_succeed">Setting the device number succeed</string>
     <string name="msg_device_number_read_failed">Device number read failure</string>

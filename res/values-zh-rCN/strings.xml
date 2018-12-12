@@ -271,7 +271,7 @@
     <string name="tv_device_number">设备号</string>
     <string name="btn_device_number_read">读取</string>
     <string name="btn_device_number_set">设置</string>
-    <string name="tv_device_number_value_scope">有效值(0-255)</string>
+    <string name="tv_device_number_value_scope">有效值(0-65535)</string>
     <string name="msg_device_number_set_failed">设置设备号失败</string>
     <string name="msg_device_number_set_succeed">设置设备号成功</string>
     <string name="msg_device_number_read_failed">读取设备号失败</string>
