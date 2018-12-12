@@ -42,6 +42,8 @@ public class BuzzerSetActivity extends Activity implements OnClickListener{
 		btnSet.setOnClickListener(this);
 		rbBuzzerOn.setOnClickListener(this);
 		rbBuzzerOff.setOnClickListener(this);
+		
+		btnRead.performClick();
 	}
 
 	@Override

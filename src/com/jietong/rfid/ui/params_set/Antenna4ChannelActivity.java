@@ -71,6 +71,8 @@ public class Antenna4ChannelActivity extends Activity implements
 		btnRead.setOnClickListener(this);
 		btnSet.setOnClickListener(this);
 		btnCheck.setOnClickListener(this);
+		
+		btnRead.performClick();
 	}
 
 	public void shake_activity_back(View v) { // 标题栏 返回按钮

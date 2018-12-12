@@ -20,8 +20,8 @@ import com.jietong.rfid.util.Toasts;
 public class AdjacentDiscrimnantActivity extends Activity implements OnClickListener {
 
 	private TextView tvAdjacentDiscriminantTime;
-	private Button btnAdjacentDiscrimnantRead;
-	private Button btnAdjacentDiscrimnantSet;
+	private Button btnRead;
+	private Button btnSet;
 	
 	private ReaderService readerService = new ReaderServiceImpl();
 
@@ -40,13 +40,15 @@ public class AdjacentDiscrimnantActivity extends Activity implements OnClickList
 	private void controlInital() {
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		tvAdjacentDiscriminantTime = (TextView) findViewById(R.id.et_adjacent_discriminant);
-		btnAdjacentDiscrimnantRead = (Button) findViewById(R.id.btn_adjacent_discriminant_read);
-		btnAdjacentDiscrimnantSet = (Button) findViewById(R.id.btn_adjacent_discriminant_set);
+		btnRead = (Button) findViewById(R.id.btn_adjacent_discriminant_read);
+		btnSet = (Button) findViewById(R.id.btn_adjacent_discriminant_set);
 	}
 	
 	private void eventListener() {
-		btnAdjacentDiscrimnantRead.setOnClickListener(this);
-		btnAdjacentDiscrimnantSet.setOnClickListener(this);
+		btnRead.setOnClickListener(this);
+		btnSet.setOnClickListener(this);
+		
+		btnRead.performClick();
 	}
 
 	@Override

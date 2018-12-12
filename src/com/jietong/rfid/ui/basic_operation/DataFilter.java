@@ -20,9 +20,10 @@ public class DataFilter {
 			for (int i = 0; i < listEPC.size(); i++) {
 				int count = listEPC.size();
 				EPC mEPC = listEPC.get(i);
-				if (epc.equals(mEPC.getEpc()) && ant.equals(mEPC.getAnt())) {
+				if (epc.equals(mEPC.getEpc())) {
 					mEPC.setCount(mEPC.getCount() + 1);
 					mEPC.setRssi(rssi);
+					mEPC.setAnt(ant);
 					listEPC.set(i, mEPC);
 					break;
 				} else if (i == (listEPC.size() - 1)) {
@@ -53,8 +54,9 @@ public class DataFilter {
 			for (int i = 0; i < listEPC.size(); i++) {
 				int count = listEPC.size();
 				EPC mEPC = listEPC.get(i);
-				if (epc.equals(mEPC.getEpc()) && ant.equals(mEPC.getAnt())) {
+				if (epc.equals(mEPC.getEpc())) {
 					mEPC.setCount(mEPC.getCount() + 1);
+					mEPC.setAnt(ant);
 					listEPC.set(i, mEPC);
 					break;
 				} else if (i == (listEPC.size() - 1)) {

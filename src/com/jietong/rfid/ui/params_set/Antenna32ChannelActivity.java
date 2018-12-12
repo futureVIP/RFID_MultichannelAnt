@@ -120,6 +120,8 @@ public class Antenna32ChannelActivity extends Activity implements OnCheckedChang
 		btnRead.setOnClickListener(this);
 		btnSet.setOnClickListener(this);
 		btnCheck.setOnClickListener(this);
+		
+		btnRead.performClick();
 	}
 
 	@Override

@@ -32,6 +32,7 @@ public class VersionActivity extends Activity implements OnClickListener {
 		btnRead = (Button) findViewById(R.id.btn_params_set_version_btn);
 		tvVersionInfo = (TextView) findViewById(R.id.tv_version_info);
 		btnRead.setOnClickListener(this);
+		
 		btnRead.performClick();
 	}
 

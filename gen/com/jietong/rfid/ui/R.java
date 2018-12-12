@@ -279,6 +279,7 @@ public final class R {
         public static final int TextView01=0x7f0b0128;
         public static final int TextView02=0x7f0b012b;
         public static final int TextView03=0x7f0b012d;
+        public static final int action_settings=0x7f0b0196;
         public static final int anim_text=0x7f0b018d;
         public static final int btn_16check_antenna=0x7f0b0071;
         public static final int btn_16read_antenna=0x7f0b006f;

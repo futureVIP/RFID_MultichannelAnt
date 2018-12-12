@@ -39,6 +39,8 @@ public class WorkPatternActivity extends Activity implements OnClickListener,OnI
 		spinnerWorkPattern.setOnItemSelectedListener(this);
 		btnRead.setOnClickListener(this);
 		btnSet.setOnClickListener(this);
+		
+		btnRead.performClick();
 	}
 
 	/*****************************************************************************/

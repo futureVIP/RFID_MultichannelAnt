@@ -218,6 +218,7 @@ int id Spinner_params_set_frequency_area 0x7f0b00cf
 int id TextView01 0x7f0b0128
 int id TextView02 0x7f0b012b
 int id TextView03 0x7f0b012d
+int id action_settings 0x7f0b0196
 int id anim_text 0x7f0b018d
 int id btn_16check_antenna 0x7f0b0071
 int id btn_16read_antenna 0x7f0b006f

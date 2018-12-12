@@ -71,6 +71,8 @@ public class OperatingFrequencySetActivity extends Activity implements OnClickLi
 		
 		spinnerFrequencyArea.setOnItemSelectedListener(this);
 		spinnerFrequencyFixed.setOnItemSelectedListener(this);
+		
+		btnRead.performClick();
 	}
 
 	private void frequencyRange() {

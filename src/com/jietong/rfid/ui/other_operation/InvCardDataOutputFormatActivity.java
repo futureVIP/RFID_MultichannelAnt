@@ -50,6 +50,8 @@ public class InvCardDataOutputFormatActivity  extends Activity implements  OnCli
 		
 		btnRead.setOnClickListener(this);
 		btnSet.setOnClickListener(this);
+		
+		btnRead.performClick();
 	}
 
 	public void shake_activity_back(View v) { // 标题栏 返回按钮
